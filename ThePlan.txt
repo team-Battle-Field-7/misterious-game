@@ -1,0 +1,90 @@
+﻿enum Condition
+{
+	Empty,
+	Bomb,
+	BlownUp
+}
+
+class Field
+{
+	Condition condition; // an enum
+
+	int explosivePower; // (0-5)
+
+	int DetonateIntentional()
+	{
+		if (this.condition is bomb)
+		{
+			this.condition = BlownUp;
+			throw an event that a bomb has been blown up
+		}
+		return this.explosivePower;
+	}
+
+	void DetonateByChainReaction()
+	{
+		if (this.condition is bomb)
+		{
+			this.condition = BlownUp;
+			throw an event that a bomb has been blown up
+		}
+	}
+ }
+
+ class Drawer
+ {
+	void DrawGame(gameField) {}
+	string AskForImput() {}
+	void ShowMessage() {}
+ }
+
+ class Engine {
+	int bombsCount;
+	int sizeX;
+	int sizeY;
+
+	void Run(drawer)
+	{
+		var gameField = InitializeGameField(bombsCount, sizeX, sizeY);
+		
+		drawer.DrawGame(gameField);
+
+		int turnsCount = 0;
+		while(bombsCount > 0)
+		{
+			string input = drawer.AskForImput();
+			int coordX;
+			int coordY;
+			bool inputValid = TryGetCoords(inpit, sizeX, sizeY, out coordX, out coordY);
+
+			if (!inputValid) {
+				drawer.ShowMessage("That sucks!");
+				continue;
+			}
+
+			steps++;
+
+			Field selectedField = // get field from gameField by coordX and coordY
+
+			ing explosionPower = selectedField.IntentionalDetonate();
+			if (explosionPower > 0)
+			{
+				DetonateNearbyFields(gameField, x, y, explosionPower);
+				drawer.ShowMessage("Gues I should tell you that a bomb has been blown up, shouldn't I?");
+			}
+		}
+		drawer.ShowMessage("You beat the game in " + turnsCount + " turns. Congrats!");
+		// not sure if the game should restart now.
+	}
+
+	void DetonateNearbyFields(x, y, explosionPower) {
+		foreach (field in reach of the explosion)
+		{
+			field.DetonateByChainReaction();
+		}
+	}
+
+	void onBombBlownUpEvent() {
+		bombsCount--;
+	}
+ }

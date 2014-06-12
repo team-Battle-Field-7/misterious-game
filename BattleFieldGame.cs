@@ -6,18 +6,16 @@ using System.Text;
 
 namespace BattleFieldNamespace
 {
-    /// <summary>
-    /// Ако това ще е енджин на играта, няма да я наследява, а ще извиква публичните методи от нея.
-    /// Методите, които са private в класа Battlegame са само такива, използвани помощно от дрги методи //vnci    /// 
-    /// </summary>
-    class BattleField : BattleGame
+    class BattleFieldGame
     {
-        
-        static void Main(string[] args)
+        /// <summary>
+        /// Simply calls the engine and runs it.
+        /// </summary>
+        static void Main()
         {
-            BattleField BF = new BattleField();
-
-            BF.Start();
+            // TODO - When all the classes are compleated, remove this and replace it with Engine initialization and Engine.Run()
+            BattleGame battleFieldGameOld = new BattleGame();
+            battleFieldGameOld.Start();
         }
     }
 }

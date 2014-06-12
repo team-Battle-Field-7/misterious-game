@@ -45,9 +45,18 @@
   <ItemGroup>
     <Compile Include="BattleFieldGame.cs" />
     <Compile Include="BattleGame.cs" />
+    <Compile Include="Condition.cs" />
+    <Compile Include="ConsoleDrawer.cs" />
+    <Compile Include="Drawer.cs" />
+    <Compile Include="Engine.cs" />
+    <Compile Include="Field.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Instructions.txt" />
+    <Content Include="ThePlan.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

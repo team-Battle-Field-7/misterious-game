@@ -1,0 +1,2 @@
+﻿We are to use everything we can gat in the BattleFieldGame.cs file to fill up the gaps other files.
+After that we need to make correct all the errors and bugs.
