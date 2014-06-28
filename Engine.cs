@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BattleFieldNamespace
+namespace BattleField7Namespace
 {
     class Engine
     {
@@ -20,19 +20,26 @@ namespace BattleFieldNamespace
             // TODO - attach Engine.onBombBlownUpEvent() to the event thrown by the exploded Fields;
             // not sure how though...
 
-            initializeExplosionRanges();
+            InitializeExplosionRanges();
 
-            // TODO - implement a proper validation of the input of size
             drawer.ShowMessage("input size of of game field:");
-            int size = int.Parse(drawer.AskForImput());
+            int size;
+            bool stringInputIsInt = int.TryParse(drawer.AskForImput(), out size);
+            if (!stringInputIsInt 
+                || size < 0 
+                || size > 10)
+            {
+                throw new ArgumentException(
+                    "Invalid size input", 
+                    "drawer.AskForImput();"
+                    );
+            }
 
             sizeX = size;
             sizeY = size;
             bombsCount = (int)(size * size * bombsFrequency);
 
-            // TODO - Decide the Data Type of gameField
-            object gameField = new Object();
-            gameField = InitializeGameField(bombsCount, sizeX, sizeY);
+            Field[,] gameField = InitializeGameField(bombsCount, sizeX, sizeY);
 
             drawer.DrawGame(gameField);
 
@@ -50,14 +57,13 @@ namespace BattleFieldNamespace
                 if (!inputValid)
                 {
                     // TODO - write a propper message for that case
-                    drawer.ShowMessage("That sucks!");
+                    drawer.ShowMessage("The input sucks! Give me another!!!");
                     continue;
                 }
 
                 steps++;
 
-                // TODO - Select the field by it's coordinates (coordX and coordY)
-                Field selectedField = new Field(Condition.Empty, 0);
+                Field selectedField = gameField[coordX, coordY];
 
                 int explosionPower = selectedField.DetonateIntentional();
                 if (explosionPower > 0)
@@ -65,21 +71,21 @@ namespace BattleFieldNamespace
                     DetonateNearbyFields(gameField, coordX, coordY, explosionPower);
 
                     // TODO - write a propper message for that case
-                    drawer.ShowMessage("Gues I should tell you that a bomb has been blown up, shouldn't I?");
+                    drawer.ShowNote("Gues I should tell you that a bomb has been blown up, shouldn't I?");
                 }
                 drawer.DrawGame(gameField);
             }
             // TODO - write a propper message for that case
-            drawer.ShowMessage("You beat the game in " + turnsCount + " turns. Congrats!");
+            drawer.ShowCongratulations("You beat the game in " + turnsCount + " turns. Congrats!");
+            
             // not sure if the game should restart now.
+            // TODO - Decide weather to reset the game or not.
         }
 
-        void DetonateNearbyFields(object gameField, int positionX, int positionY, int explosionPower)
+        void DetonateNearbyFields(Field[,] gameField, int positionX, int positionY, int explosionPower)
         {
-            // TODO - initialize these size variables, using gameField
-            throw new NotImplementedException("In Engine.DetonateNearbyFields() - sizes of gameField are not initialized");
-            int sizeX = 0;
-            int sizeY = 0;
+            int sizeX = gameField.GetLength(0);
+            int sizeY = gameField.GetLength(1);
 
             for (int power = 0; power < explosionPower; power++)
             {
@@ -88,30 +94,45 @@ namespace BattleFieldNamespace
                     int coordX = positionX + relativePosition[0];
                     int coordY = positionX + relativePosition[1];
 
-                    if (0 > coordX || coordX >= sizeX)
+                    if (0 > coordX || coordX >= sizeX || 
+                        0 > coordY || coordY >= sizeY)
                     {
                         continue;
                     }
-                    if (0 > coordY || coordY >= sizeY)
-                    {
-                        continue;
-                    }
 
-                    Field fieldToDetonate;
-
-                    // TODO - Select The Field by the calculated coordinates
-                    throw new NotImplementedException("In Engine.DetonateNearbyFields() - field to Detonate is not selected");
-
+                    Field fieldToDetonate = gameField[coordX, coordY];
                     fieldToDetonate.DetonateByChainReaction();
                 }
 
             }
         }
 
-        bool TryGetCoords(string inpit, int sizeX, int sizeY, out int coordX, out int coordY)
+        bool TryGetCoords(string input, int sizeX, int sizeY, out int coordX, out int coordY)
         {
-            // TODO - Implement Engine.TryGetCoords();
-            throw new NotImplementedException("Engine.TryGetCoords() is not implemented");
+            coordX = 0;
+            coordY = 0;
+
+            if (input.IndexOf(" ") == -1)
+            {
+                return false;
+            }
+
+            string inputX = input.Substring(0, input.IndexOf(" "));
+            string inputY = input.Substring(input.IndexOf(" ") + 1);
+
+            int x = 0;
+            int y = 0;
+
+            if (!int.TryParse(inputX, out x) ||
+                !int.TryParse(inputY, out y))
+            {
+                return false;
+            }
+
+            coordX = x;
+            coordY = y;
+
+            return true;
         }
 
         void onBombBlownUpEvent()
@@ -119,18 +140,54 @@ namespace BattleFieldNamespace
             bombsCount--;
         }
 
-        #region InitializeBattleField7Game
-        
-        object InitializeGameField(int bombsCount, int sizeX, int sizeY)
+        #region MethodsForInitializingBattleField7Game
+
+        Field[,] InitializeGameField(int bombsCount, int sizeX, int sizeY)
         {
-            // TODO - Implement Engine.InitializeGameField();
-            throw new NotImplementedException("Engine.InitializeGameField() is not implemented");
+            Random rnd = new Random();
+
+            int maxSize = sizeX * sizeY;
+            List<int> bombPositions = new List<int>();
+            for (int i = 0; i < bombsCount; i++)
+            {
+                int position = rnd.Next(0, maxSize);
+                if (!bombPositions.Contains(position))
+                {
+                    bombPositions.Add(position);
+                }
+                else
+                {
+                    i--;
+                    continue;
+                }
+            }
+
+            Field[,] gameField = new Field[sizeX, sizeY];
+            for (int x = 0; x < sizeX; x++)
+            {
+                for (int y = 0; y < sizeY; y++)
+                {
+                    if (!bombPositions.Contains(x * sizeY + y))
+                    {
+                        gameField[x, y] = new Field(Condition.Empty, 0);
+                    }
+                    else
+                    {
+                        gameField[x, y] = new Field(Condition.Bomb, rnd.Next(1, 6));
+                    }
+                }
+            }
+            return gameField;
         }
 
-        void initializeExplosionRanges() // hard coded, but easy to change
+        // hard coded, but easy to understand and change
+        void InitializeExplosionRanges()
         {
             List<int[]> powerLevelOne = new List<int[]>();
             powerLevelOne.Add(new int[] { 1, 1 });
+            powerLevelOne.Add(new int[] { -1, 1 });
+            powerLevelOne.Add(new int[] { 1, -1 });
+            powerLevelOne.Add(new int[] { -1, -1 });
 
             List<int[]> powerLevelTwo = new List<int[]>();
             powerLevelTwo.Add(new int[] { 1, 0 });

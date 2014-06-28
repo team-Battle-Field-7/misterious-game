@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BattleFieldNamespace
+namespace BattleField7Namespace
 {
     class ConsoleDrawer : Drawer
     {
-        // I'm still not sure what the gameField will be, so I simply wrote 'object'.
         // TODO - implement ConsoleDrawer.DrawGame();
-        public override void DrawGame(object gameField)
+        public override void DrawGame(Field[,] gameField)
         {
             throw new NotImplementedException("ConsoleDrawer.DrawGame() is not implemented");
         }
@@ -24,6 +23,24 @@ namespace BattleFieldNamespace
         public override void ShowMessage(string message)
         {
             throw new NotImplementedException("ConsoleDrawer.ShowMessage() is not implemented");
+        }
+
+        // TODO - implement ConsoleDrawer.ShowCongratulations();
+        public override void ShowCongratulations(string message)
+        {
+            throw new NotImplementedException("ConsoleDrawer.ShowCongratulations() is not implemented");
+        }
+
+        // TODO - implement ConsoleDrawer.ShowGameOver();
+        public override void ShowGameOver(string message)
+        {
+            throw new NotImplementedException("ConsoleDrawer.ShowGameOver() is not implemented");
+        }
+
+        // TODO - implement ConsoleDrawer.ShowNote(();
+        public override void ShowNote(string message)
+        {
+            throw new NotImplementedException("ConsoleDrawer.ShowNote() is not implemented");
         }
     }
 }

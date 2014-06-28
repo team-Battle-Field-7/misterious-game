@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BattleField7</name>
+    </assembly>
+    <members>
+        <member name="M:BattleField7Namespace.BattleFieldGame.Main">
+            <summary>
+            Simply calls the engine and runs it.
+            </summary>
+        </member>
+        <member name="T:BattleField7Namespace.BattleGame">
+            <summary>
+            Това е по - лесен за четене вариант на основния клас. Единствените промени до момента са в именуването и подреждането,
+            има изведени и няколко помощни метода от повтарящия се код. Оставил съм закоментирани старите съдържания на най - 
+            безобразно заплетените методи за сравнение и в случай, че абстракцията ми не е сработила добре.
+            Не съм променял нищо по логиката, макар на места да може да има нужда (NumberInRange() методът със сигурност).
+            Ако ще пренаписваме всичко отначало, поне ще може да сравняваме функционалността с този вариант.
+            Оставих името Bombi, за да не заемам някое по - подходящо, което да дадем на нов проект. //vnci
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.BattleGame.NumberInRange(System.Int32,System.Int32)">
+            <summary>
+            Random number generator
+            </summary>
+            <param name="min">lower bound</param>
+            <param name="max">upper bound</param>
+            <returns>An Integer in the range between <paramref name="min"/> and <paramref name="max"/></returns>
+            <remarks>Needs rebuild to generate new numbers, otherwise the field prodiced is always the
+            same for the given size.</remarks>
+        </member>
+        <member name="M:BattleField7Namespace.BattleGame.StraightSplash(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Represents an explosion that spreads straight in all four directions,
+            clearing bombs and empty cells in its path
+            </summary>
+            <param name="row"></param>
+            <param name="column"></param>
+            <param name="range"></param>
+        </member>
+        <member name="M:BattleField7Namespace.BattleGame.DiagonalSplash(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Represents an explosion that spreads diagonally in all four directions,
+            clearing bombs and empty cells in its path
+            </summary>
+            <param name="row"></param>
+            <param name="column"></param>
+            <param name="range"></param>
+        </member>
+        <member name="M:BattleField7Namespace.BattleGame.ValidCoordinates(System.Int32,System.Int32)">
+            <summary>
+            Checks if the coordinates given are within the field
+            </summary>
+            <param name="row"></param>
+            <param name="column"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BattleField7Namespace.BattleGame.IsBomb(System.Int32,System.Int32)">
+            <summary>
+            Determines if there is a bomb at given coordinates
+            </summary>
+            <param name="row"></param>
+            <param name="column"></param>
+            <returns>True if the cell has not been cleared already and is not marked as empty in the beginning</returns>
+        </member>
+    </members>
+</doc>

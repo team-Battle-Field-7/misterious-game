@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BattleFieldNamespace
+namespace BattleField7Namespace
 {
     /// <summary>
     /// Това е по - лесен за четене вариант на основния клас. Единствените промени до момента са в именуването и подреждането,

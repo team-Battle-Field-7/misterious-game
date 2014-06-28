@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BattleFieldNamespace
+namespace BattleField7Namespace
 {
     abstract class Drawer
     {
-        public abstract void DrawGame(object gameField);
-        // I'm still not sure what the gameField will be, so I simply wrote 'object'.
+        public abstract void DrawGame(Field[,] gameField);
 
         public abstract string AskForImput();
 
         public abstract void ShowMessage(string message);
+        public abstract void ShowCongratulations(string message);
+        public abstract void ShowGameOver(string message);
+        public abstract void ShowNote(string message);
     }
 }

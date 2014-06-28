@@ -1,0 +1,6 @@
+D:\BattleField7\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\BattleField7\bin\Debug\BattleField7.exe
+D:\BattleField7\bin\Debug\BattleField7.pdb
+D:\BattleField7\obj\x86\Debug\BattleField7.exe
+D:\BattleField7\obj\x86\Debug\BattleField7.pdb
+D:\BattleField7\bin\Debug\BattleField7.XML
