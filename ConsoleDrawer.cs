@@ -8,15 +8,20 @@ namespace BattleField7Namespace
     class ConsoleDrawer : Drawer
     {
         // TODO - implement ConsoleDrawer.DrawGame();
+        /// <summary>
+        /// Draws the game in the console.
+        /// </summary>
+        /// <param name="gameField">The game field.</param>
+        /// <exception cref="System.NotImplementedException">ConsoleDrawer.DrawGame() is not implemented</exception>
         public override void DrawGame(Field[,] gameField)
         {
             throw new NotImplementedException("ConsoleDrawer.DrawGame() is not implemented");
         }
 
-        // TODO - implement ConsoleDrawer.AskForImput();
-        public override string AskForImput()
+        // TODO - implement ConsoleDrawer.AskForInput();
+        public override string AskForInput()
         {
-            throw new NotImplementedException("ConsoleDrawer.AskForImput() is not implemented");
+            throw new NotImplementedException("ConsoleDrawer.AskForInput() is not implemented");
         }
 
         // TODO - implement ConsoleDrawer.ShowMessage();

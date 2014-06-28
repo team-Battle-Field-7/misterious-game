@@ -5,6 +5,9 @@ using System.Text;
 
 namespace BattleField7Namespace
 {
+    /// <summary>
+    /// Engine that runs the Battle Field 7 game
+    /// </summary>
     class Engine
     {
         readonly double bombsFrequency = 0.15;
@@ -15,7 +18,12 @@ namespace BattleField7Namespace
 
         List<List<int[]>> explosionRangePositionsGroupedByPower;
 
-        void Run(Drawer drawer)
+        /// <summary>
+        /// Runs the game.
+        /// </summary>
+        /// <param name="drawer">The drawer.</param>
+        /// <exception cref="System.ArgumentException">Size input must be a number between 1 and 10;size</exception>
+        public void RunGame(Drawer drawer)
         {
             // TODO - attach Engine.onBombBlownUpEvent() to the event thrown by the exploded Fields;
             // not sure how though...
@@ -24,14 +32,14 @@ namespace BattleField7Namespace
 
             drawer.ShowMessage("input size of of game field:");
             int size;
-            bool stringInputIsInt = int.TryParse(drawer.AskForImput(), out size);
+            bool stringInputIsInt = int.TryParse(drawer.AskForInput(), out size);
             if (!stringInputIsInt 
                 || size < 0 
                 || size > 10)
             {
                 throw new ArgumentException(
-                    "Invalid size input", 
-                    "drawer.AskForImput();"
+                    "Size input must be a number between 1 and 10", 
+                    "size"
                     );
             }
 
@@ -48,7 +56,7 @@ namespace BattleField7Namespace
             {
                 // TODO - write a propper message for that case
                 drawer.ShowMessage("Give me INPUT!!!");
-                string input = drawer.AskForImput();
+                string input = drawer.AskForInput();
 
                 int coordX;
                 int coordY;
@@ -65,7 +73,7 @@ namespace BattleField7Namespace
 
                 Field selectedField = gameField[coordX, coordY];
 
-                int explosionPower = selectedField.DetonateIntentional();
+                int explosionPower = selectedField.IntentionalDetonate();
                 if (explosionPower > 0)
                 {
                     DetonateNearbyFields(gameField, coordX, coordY, explosionPower);
@@ -82,6 +90,13 @@ namespace BattleField7Namespace
             // TODO - Decide weather to reset the game or not.
         }
 
+        /// <summary>
+        /// Detonates the nearby fields after explosion.
+        /// </summary>
+        /// <param name="gameField">The game field.</param>
+        /// <param name="positionX">The position x.</param>
+        /// <param name="positionY">The position y.</param>
+        /// <param name="explosionPower">The explosion power.</param>
         void DetonateNearbyFields(Field[,] gameField, int positionX, int positionY, int explosionPower)
         {
             int sizeX = gameField.GetLength(0);
@@ -107,6 +122,15 @@ namespace BattleField7Namespace
             }
         }
 
+        /// <summary>
+        /// Tries the get coordinates.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <param name="sizeX">The size x.</param>
+        /// <param name="sizeY">The size y.</param>
+        /// <param name="coordX">The coord x.</param>
+        /// <param name="coordY">The coord y.</param>
+        /// <returns></returns>
         bool TryGetCoords(string input, int sizeX, int sizeY, out int coordX, out int coordY)
         {
             coordX = 0;
@@ -129,12 +153,21 @@ namespace BattleField7Namespace
                 return false;
             }
 
+            if (0 < x || x >= sizeX ||
+                0 < y || y >= sizeY)
+            {
+                return false;
+            }
+
             coordX = x;
             coordY = y;
 
             return true;
         }
 
+        /// <summary>
+        /// Activates on the BombBlownUp event. Counts the detonated bombs.
+        /// </summary>
         void onBombBlownUpEvent()
         {
             bombsCount--;
@@ -142,6 +175,13 @@ namespace BattleField7Namespace
 
         #region MethodsForInitializingBattleField7Game
 
+        /// <summary>
+        /// Initializes the game field.
+        /// </summary>
+        /// <param name="bombsCount">The bombs count.</param>
+        /// <param name="sizeX">The size x.</param>
+        /// <param name="sizeY">The size y.</param>
+        /// <returns></returns>
         Field[,] InitializeGameField(int bombsCount, int sizeX, int sizeY)
         {
             Random rnd = new Random();
@@ -180,8 +220,12 @@ namespace BattleField7Namespace
             return gameField;
         }
 
-        // hard coded, but easy to understand and change
-        void InitializeExplosionRanges()
+
+        /// <summary>
+        /// Initializes the explosion ranges.
+        /// ExplosionRanges holds the reletive positions to detonate for each explosion power
+        /// </summary>
+        void InitializeExplosionRanges()// hard coded, but easy to understand and change
         {
             List<int[]> powerLevelOne = new List<int[]>();
             powerLevelOne.Add(new int[] { 1, 1 });

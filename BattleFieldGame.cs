@@ -13,9 +13,13 @@ namespace BattleField7Namespace
         /// </summary>
         static void Main()
         {
+            ConsoleDrawer consoleDrawer = new ConsoleDrawer();
+            Engine engine = new Engine();
+            engine.RunGame(consoleDrawer);
+
             // TODO - When all the classes are compleated, remove this and replace it with Engine initialization and Engine.Run()
-            BattleGame battleFieldGameOld = new BattleGame();
-            battleFieldGameOld.Start();
+            //BattleGame battleFieldGameOld = new BattleGame();
+            //battleFieldGameOld.Start();
         }
     }
 }
