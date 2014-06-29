@@ -10,53 +10,90 @@ namespace BattleField7Namespace
     /// </summary>
     class Engine
     {
-        readonly double bombsFrequency = 0.15;
-        int bombsCount;
-        int cols;
-        int rows;
+        private readonly double bombsFrequency = 0.15;
+        private int bombsCount;
+        private int turnsCount;
+        private int cols;
+        private int rows;
+        private IDrawer drawer;
+        private Field[,] gameField;
 
-        List<List<int[]>> explosionRangePositionsGroupedByPower;
+        private List<List<int[]>> explosionRangePositionsGroupedByPower;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Engine"/> class.
+        /// </summary>
+        /// <param name="drawer">The drawer.</param>
+        public Engine(IDrawer drawer)
+        {
+            this.drawer = drawer;
+        }
+
+        /// <summary>
+        /// Gets or sets the turns count.
+        /// </summary>
+        /// <value>
+        /// The turns count.
+        /// </value>
+        private int TurnsCount 
+        {
+            get 
+            {
+                return this.turnsCount;
+            }
+            set 
+            {
+                this.turnsCount = value;
+                drawer.ShowTurnsCount(this.turnsCount);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the bombs count.
+        /// </summary>
+        /// <value>
+        /// The bombs count.
+        /// </value>
+        private int BombsCount
+        {
+            get
+            {
+                return this.bombsCount;
+            }
+            set
+            {
+                this.bombsCount = value;
+                drawer.ShowBombsCount(this.BombsCount);
+            }
+        }
         /// <summary>
         /// Runs the game.
         /// </summary>
         /// <param name="drawer">The drawer.</param>
         /// <exception cref="System.ArgumentException">Size input must be a number between 1 and 10;size</exception>
-        public void RunGame(Drawer drawer)
+        public void RunGame()
         {
             InitializeExplosionRanges();
+            SetSizeOfGameField();
+            gameField = InitializeGameField(cols, rows);
+            StartGame();
 
-            drawer.ShowMessage("Input game field size (1-10): ");
-            int size;
-            bool stringInputIsInt = int.TryParse(drawer.AskForInput(), out size);
-            while (true)
-            {
-                if (!stringInputIsInt
-                || size < 0
-                || size > 10)
-                {
-                    drawer.ShowMessage("bad input - try again. Input game field size (1-10): ");
-                    stringInputIsInt = int.TryParse(drawer.AskForInput(), out size);
-                    continue;
-                }
-                break;
-            }
-            
+            // TODO - write a propper message for that case
+            drawer.ShowCongratulations("You beat the game in " + turnsCount + " turns. Congrats!");
+        }
 
-            cols = size;
-            rows = size;
-            bombsCount = (int)(size * size * bombsFrequency);
-
-            Field[,] gameField = InitializeGameField(bombsCount, cols, rows);
-
+        /// <summary>
+        /// Starts the game.
+        /// </summary>
+        private void StartGame()
+        {
             drawer.DrawGame(gameField);
-
-            int turnsCount = 0;
-            while (bombsCount > 0)
+            TurnsCount = 0;
+            while (BombsCount > 0)
             {
                 // TODO - write a propper message for that case
-                drawer.ShowMessage("Give me INPUT!!! ( in format 'row col' ): ");
-                string input = drawer.AskForInput();
+                drawer.ShowAskInput("Give me INPUT!!! ( in format 'row col' ): ");
+                string input = drawer.AskForPositionInput();
 
                 int row;
                 int col;
@@ -65,11 +102,11 @@ namespace BattleField7Namespace
                 if (!inputValid)
                 {
                     // TODO - write a propper message for that case
-                    drawer.ShowMessage("The input sucks! Give me another!!!");
+                    drawer.ShowNote("The input sucks! Give me another!!!");
                     continue;
                 }
 
-                turnsCount++;
+                TurnsCount++;
 
                 Field selectedField = gameField[row, col];
 
@@ -78,16 +115,10 @@ namespace BattleField7Namespace
                 {
                     OnBombBlownUpEvent();
                     DetonateNearbyFields(gameField, row, col, explosionPower);
+                    drawer.ShowNote("You hit a bomb with power level of " + explosionPower);
                 }
                 drawer.DrawGame(gameField);
             }
-            // TODO - write a propper message for that case
-            drawer.ShowCongratulations("You beat the game in " + turnsCount + " turns. Congrats!");
-            
-            // not sure if the game should restart now.
-            // TODO - Decide weather to reset the game or not.
-            Console.WriteLine("press enter to go on");
-            Console.ReadLine();
         }
 
         /// <summary>
@@ -97,7 +128,7 @@ namespace BattleField7Namespace
         /// <param name="positionCol">The position x.</param>
         /// <param name="positionRow">The position y.</param>
         /// <param name="explosionPower">The explosion power.</param>
-        void DetonateNearbyFields(Field[,] gameField, int positionRow, int positionCol, int explosionPower)
+        private void DetonateNearbyFields(Field[,] gameField, int positionRow, int positionCol, int explosionPower)
         {
             int cols = gameField.GetLength(0);
             int rows = gameField.GetLength(1);
@@ -118,6 +149,7 @@ namespace BattleField7Namespace
                     Field fieldToDetonate = gameField[row, col];
                     if (fieldToDetonate.Condition == Condition.Bomb)
                     {
+                        drawer.ShowNote("A bomb was detonated by chain reaction.");
                         OnBombBlownUpEvent();
                     }
                     fieldToDetonate.DetonateByChainReaction();
@@ -135,7 +167,7 @@ namespace BattleField7Namespace
         /// <param name="col">The coord x.</param>
         /// <param name="row">The coord y.</param>
         /// <returns></returns>
-        bool TryGetCoords(string input, int rows, int cols, out int row, out int col)
+        private bool TryGetCoords(string input, int rows, int cols, out int row, out int col)
         {
             col = 0;
             row = 0;
@@ -172,9 +204,9 @@ namespace BattleField7Namespace
         /// <summary>
         /// Keeps count of the bombs left.
         /// </summary>
-        void OnBombBlownUpEvent()
+        private void OnBombBlownUpEvent()
         {
-            bombsCount--;
+            BombsCount--;
         }
 
         #region MethodsForInitializingBattleField7Game
@@ -186,13 +218,13 @@ namespace BattleField7Namespace
         /// <param name="col">The size x.</param>
         /// <param name="row">The size y.</param>
         /// <returns></returns>
-        Field[,] InitializeGameField(int bombsCount, int col, int row)
+        private Field[,] InitializeGameField(int col, int row)
         {
             Random rnd = new Random();
 
             int maxSize = col * row;
             List<int> bombPositions = new List<int>();
-            for (int i = 0; i < bombsCount; i++)
+            for (int i = 0; i < BombsCount; i++)
             {
                 int position = rnd.Next(0, maxSize);
                 if (!bombPositions.Contains(position))
@@ -224,12 +256,38 @@ namespace BattleField7Namespace
             return gameField;
         }
 
+        /// <summary>
+        /// Sets the size of game field.
+        /// </summary>
+        private void SetSizeOfGameField()
+        {
+            drawer.ShowAskInput("Input game field size (1-10): ");
+            int size;
+            bool stringInputIsInt = int.TryParse(drawer.AskForSizeInput(), out size);
+            while (true)
+            {
+                if (!stringInputIsInt
+                || size < 0
+                || size > 10)
+                {
+                    drawer.ShowNote("Bad input - try again.");
+                    drawer.ShowAskInput("Input game field size (1-10): ");
+                    stringInputIsInt = int.TryParse(drawer.AskForSizeInput(), out size);
+                    continue;
+                }
+                break;
+            }
+
+            cols = size;
+            rows = size;
+            BombsCount = (int)(size * size * bombsFrequency);
+        }
 
         /// <summary>
         /// Initializes the explosion ranges.
         /// ExplosionRanges holds the reletive positions to detonate for each explosion power
         /// </summary>
-        void InitializeExplosionRanges()// hard coded, but easy to understand and change
+        private void InitializeExplosionRanges()// hard coded, but easy to understand and change
         {
             List<int[]> powerLevelOne = new List<int[]>();
             powerLevelOne.Add(new int[] { 1, 1 });

@@ -8,7 +8,7 @@ namespace BattleField7Namespace
     /// <summary>
     /// Condition types for Field
     /// </summary>
-    enum Condition
+    public enum Condition
     {
         Empty,
         Bomb,

@@ -6,7 +6,7 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{85255C43-CCD7-4E3B-8C0B-79AC0D498B85}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BattleField7Namespace</RootNamespace>
     <AssemblyName>BattleField7</AssemblyName>
@@ -34,9 +34,14 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,16 +53,43 @@
     <Compile Include="InitialGameClass\BattleGame.cs" />
     <Compile Include="Condition.cs" />
     <Compile Include="ConsoleDrawer.cs" />
-    <Compile Include="Drawer.cs" />
+    <Compile Include="IDrawer.cs" />
     <Compile Include="Engine.cs" />
     <Compile Include="Field.cs" />
+    <Compile Include="PopupSizeInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupSizeInput.Designer.cs">
+      <DependentUpon>PopupSizeInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="WinFormsDrawer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinFormsDrawer.Designer.cs">
+      <DependentUpon>WinFormsDrawer.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Instructions.txt" />
     <Content Include="ThePlan.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PopupSizeInput.resx">
+      <DependentUpon>PopupSizeInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinFormsDrawer.resx">
+      <DependentUpon>WinFormsDrawer.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

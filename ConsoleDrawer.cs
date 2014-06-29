@@ -5,14 +5,14 @@ using System.Text;
 
 namespace BattleField7Namespace
 {
-    class ConsoleDrawer : Drawer
+    class ConsoleDrawer : IDrawer
     {
         /// <summary>
         /// Draws the game in the console.
         /// </summary>
         /// <param name="gameField">The game field.</param>
         /// <exception cref="System.NotImplementedException">ConsoleDrawer.DrawGame() is not implemented</exception>
-        public override void DrawGame(Field[,] gameField)
+        public void DrawGame(Field[,] gameField)
         {
             Console.Clear();
 
@@ -46,29 +46,49 @@ namespace BattleField7Namespace
             Console.WriteLine();
         }
 
-        public override string AskForInput()
+        public string AskForSizeInput()
         {
             return Console.ReadLine();
         }
 
-        public override void ShowMessage(string message)
+        public string AskForPositionInput()
+        {
+            return Console.ReadLine();
+        }
+
+        public void ShowMessage(string message)
         {
             Console.Write("\n" + message);
         }
 
-        public override void ShowCongratulations(string message)
+        public void ShowCongratulations(string message)
         {
             ShowMessage(message);
         }
 
-        public override void ShowGameOver(string message)
+        public void ShowGameOver(string message)
         {
             ShowMessage(message);
         }
 
-        public override void ShowNote(string message)
+        public void ShowNote(string message)
         {
             ShowMessage(message);
+        }
+
+        public void ShowAskInput(string message)
+        {
+            ShowMessage(message);
+        }
+
+        public void ShowBombsCount(int count) 
+        { 
+            // Do Nothing
+        }
+
+        public void ShowTurnsCount(int count)
+        {
+            // Do Nothing
         }
     }
 }
