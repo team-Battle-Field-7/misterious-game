@@ -22,10 +22,10 @@ namespace BattleField7Namespace
             //Engine engine = new Engine();
             //engine.RunGame(consoleDrawer);
 
+
             // this is the newest windows forms version
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
             WinFormsDrawer form = new WinFormsDrawer();
             Thread formThread = new Thread(
                 delegate()
@@ -37,7 +37,6 @@ namespace BattleField7Namespace
             formThread.Start();
             Application.Run(form);
 
-            
 
             //// this is the old version. It's kept here for testing
             //BattleGame battleFieldGameOld = new BattleGame();

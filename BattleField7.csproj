@@ -76,7 +76,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Instructions.txt" />
     <Content Include="ThePlan.txt" />
   </ItemGroup>
   <ItemGroup>

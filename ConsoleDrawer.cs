@@ -46,46 +46,82 @@ namespace BattleField7Namespace
             Console.WriteLine();
         }
 
+        /// <summary>
+        /// Asks for size input.
+        /// </summary>
+        /// <returns></returns>
         public string AskForSizeInput()
         {
             return Console.ReadLine();
         }
 
+        /// <summary>
+        /// Asks for position input.
+        /// </summary>
+        /// <returns></returns>
         public string AskForPositionInput()
         {
             return Console.ReadLine();
         }
 
+        /// <summary>
+        /// Shows the message.
+        /// </summary>
+        /// <param name="message">The message.</param>
         public void ShowMessage(string message)
         {
             Console.Write("\n" + message);
         }
 
+        /// <summary>
+        /// Shows the congratulations message.
+        /// </summary>
+        /// <param name="message">The message.</param>
         public void ShowCongratulations(string message)
         {
             ShowMessage(message);
         }
 
+        /// <summary>
+        /// Shows the game over message.
+        /// </summary>
+        /// <param name="message">The message.</param>
         public void ShowGameOver(string message)
         {
             ShowMessage(message);
         }
 
+        /// <summary>
+        /// Shows a note message.
+        /// </summary>
+        /// <param name="message">The message.</param>
         public void ShowNote(string message)
         {
             ShowMessage(message);
         }
 
+        /// <summary>
+        /// Shows a request for input message.
+        /// </summary>
+        /// <param name="message">The message.</param>
         public void ShowAskInput(string message)
         {
             ShowMessage(message);
         }
 
+        /// <summary>
+        /// Shows the bombs count.
+        /// </summary>
+        /// <param name="count">The count.</param>
         public void ShowBombsCount(int count) 
         { 
             // Do Nothing
         }
 
+        /// <summary>
+        /// Shows the turns count.
+        /// </summary>
+        /// <param name="count">The count.</param>
         public void ShowTurnsCount(int count)
         {
             // Do Nothing

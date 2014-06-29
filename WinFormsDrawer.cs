@@ -34,6 +34,7 @@ namespace BattleField7Namespace
         public WinFormsDrawer()
         {
             InitializeComponent();
+            this.messagesListView.Columns[0].Width = this.messagesListView.Width-25;
         }
 
         /// <summary>
@@ -77,6 +78,10 @@ namespace BattleField7Namespace
             }
         }
 
+        /// <summary>
+        /// Asks for size input.
+        /// </summary>
+        /// <returns>size input</returns>
         public string AskForSizeInput()
         {
             if (this.gameFieldGridView.InvokeRequired)
@@ -101,6 +106,10 @@ namespace BattleField7Namespace
             }
         }
 
+        /// <summary>
+        /// Asks for position input.
+        /// </summary>
+        /// <returns>position input</returns>
         public string AskForPositionInput()
         {
             string resultPosition = "";
@@ -123,6 +132,10 @@ namespace BattleField7Namespace
             return resultPosition;
         }
 
+        /// <summary>
+        /// Shows the message.
+        /// </summary>
+        /// <param name="message">The message.</param>
         public void ShowMessage(string message)
         {
             if (this.messagesListView.InvokeRequired)
@@ -141,26 +154,46 @@ namespace BattleField7Namespace
             }
         }
 
+        /// <summary>
+        /// Shows the congratulations message.
+        /// </summary>
+        /// <param name="message">The message.</param>
         public void ShowCongratulations(string message)
         {
             MessageBox.Show(message);
         }
 
+        /// <summary>
+        /// Shows the game over message.
+        /// </summary>
+        /// <param name="message">The message.</param>
         public void ShowGameOver(string message)
         {
             ShowMessage(message);
         }
 
+        /// <summary>
+        /// Shows a note message.
+        /// </summary>
+        /// <param name="message">The message.</param>
         public void ShowNote(string message)
         {
             ShowMessage(message);
         }
 
+        /// <summary>
+        /// Shows a request for input message.
+        /// </summary>
+        /// <param name="message">The message.</param>
         public void ShowAskInput(string message)
         {
             // Do nothing
         }
 
+        /// <summary>
+        /// Shows the bombs count.
+        /// </summary>
+        /// <param name="count">The count.</param>
         public void ShowBombsCount(int count)
         {
             if (this.bombsCountLabel.InvokeRequired)
@@ -175,6 +208,10 @@ namespace BattleField7Namespace
             }
         }
 
+        /// <summary>
+        /// Shows the turns count.
+        /// </summary>
+        /// <param name="count">The count.</param>
         public void ShowTurnsCount(int count)
         {
             if (this.turnsCountLabel.InvokeRequired)
@@ -189,6 +226,10 @@ namespace BattleField7Namespace
             }
         }
 
+        /// <summary>
+        /// Sets the size of the game field.
+        /// </summary>
+        /// <param name="size">The size.</param>
         private void SetGameFieldSize(int size)
         {
             if (this.gameFieldGridView.InvokeRequired)
@@ -216,6 +257,10 @@ namespace BattleField7Namespace
             }
         }
 
+        /// <summary>
+        /// Sets the field value.
+        /// </summary>
+        /// <param name="paramsOfField">The parameters of field.</param>
         private void SetFieldValue(string[] paramsOfField) 
         {
 
@@ -234,22 +279,27 @@ namespace BattleField7Namespace
             }
         }
 
+        /// <summary>
+        /// Handles the FormClosing event of the WinFormsDrawer control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="FormClosingEventArgs"/> instance containing the event data.</param>
         private void WinFormsDrawer_FormClosing(object sender, FormClosingEventArgs e)
         {
             Environment.Exit(Environment.ExitCode);
         }
 
+        /// <summary>
+        /// Handles the CellMouseClick event of the gameFieldGridView control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="DataGridViewCellMouseEventArgs"/> instance containing the event data.</param>
         private void gameFieldGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (awaitingGameFieldCellSelection)
             {
                 gameFieldCellIsSelected = true;
             }
-        }
-
-        private void WinFormsDrawer_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

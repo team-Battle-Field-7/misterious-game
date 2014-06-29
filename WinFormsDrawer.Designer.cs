@@ -33,6 +33,7 @@
             this.gameFieldGridView = new System.Windows.Forms.DataGridView();
             this.bombsCountLabel = new System.Windows.Forms.Label();
             this.messagesListView = new System.Windows.Forms.ListView();
+            this.col1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.turnsLabel = new System.Windows.Forms.Label();
             this.bombsLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gameFieldGridView)).BeginInit();
@@ -73,14 +74,18 @@
             // 
             // messagesListView
             // 
-            this.messagesListView.LabelWrap = false;
+            this.messagesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.col1});
             this.messagesListView.Location = new System.Drawing.Point(151, 308);
             this.messagesListView.Name = "messagesListView";
-            this.messagesListView.Scrollable = false;
             this.messagesListView.Size = new System.Drawing.Size(246, 121);
             this.messagesListView.TabIndex = 8;
             this.messagesListView.UseCompatibleStateImageBehavior = false;
-            this.messagesListView.View = System.Windows.Forms.View.List;
+            this.messagesListView.View = System.Windows.Forms.View.Details;
+            // 
+            // col1
+            // 
+            this.col1.Text = "";
             // 
             // turnsLabel
             // 
@@ -119,7 +124,6 @@
             this.Name = "WinFormsDrawer";
             this.Text = "WinFormsGameUI";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WinFormsDrawer_FormClosing);
-            this.Load += new System.EventHandler(this.WinFormsDrawer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gameFieldGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -134,5 +138,6 @@
         private System.Windows.Forms.ListView messagesListView;
         private System.Windows.Forms.Label turnsLabel;
         private System.Windows.Forms.Label bombsLabel;
+        private System.Windows.Forms.ColumnHeader col1;
     }
 }
