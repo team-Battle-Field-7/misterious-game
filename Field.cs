@@ -75,31 +75,22 @@ namespace BattleField7Namespace
         }
 
         /// <summary>
-        /// Intentionaly detonates the field and throws an event about that
+        /// Intentionaly detonates the field
         /// </summary>
         /// <returns>Fields explosive power</returns>
         public int IntentionalDetonate()
         {
-            if (this.Condition == Condition.Bomb)
-            {
-                this.Condition = Condition.BlownUp;
-                // TODO - throw an event that a bomb has been blown up
-                // I'm not sure how to do that... sorry
-            }
-            return this.explosivePower;
+            int power = this.ExplosivePower;
+            this.Condition = Condition.BlownUp;
+            return power;
         }
 
         /// <summary>
-        /// Detonates the field by chain reaction and throws an event about that
+        /// Detonates the field by chain reaction
         /// </summary>
         public void DetonateByChainReaction()
         {
-            if (this.Condition == Condition.Bomb)
-            {
-                this.Condition = Condition.BlownUp;
-                // TODO - throw an event that a bomb has been blown up
-                // I'm not sure how to do that... sorry
-            }
+            this.Condition = Condition.BlownUp;
         }
     }
 }

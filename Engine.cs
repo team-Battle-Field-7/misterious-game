@@ -12,9 +12,8 @@ namespace BattleField7Namespace
     {
         readonly double bombsFrequency = 0.15;
         int bombsCount;
-        int sizeX;
-        int sizeY;
-        int steps = 0;
+        int cols;
+        int rows;
 
         List<List<int[]>> explosionRangePositionsGroupedByPower;
 
@@ -25,29 +24,30 @@ namespace BattleField7Namespace
         /// <exception cref="System.ArgumentException">Size input must be a number between 1 and 10;size</exception>
         public void RunGame(Drawer drawer)
         {
-            // TODO - attach Engine.onBombBlownUpEvent() to the event thrown by the exploded Fields;
-            // not sure how though...
-
             InitializeExplosionRanges();
 
-            drawer.ShowMessage("input size of of game field:");
+            drawer.ShowMessage("Input game field size (1-10): ");
             int size;
             bool stringInputIsInt = int.TryParse(drawer.AskForInput(), out size);
-            if (!stringInputIsInt 
-                || size < 0 
-                || size > 10)
+            while (true)
             {
-                throw new ArgumentException(
-                    "Size input must be a number between 1 and 10", 
-                    "size"
-                    );
+                if (!stringInputIsInt
+                || size < 0
+                || size > 10)
+                {
+                    drawer.ShowMessage("bad input - try again. Input game field size (1-10): ");
+                    stringInputIsInt = int.TryParse(drawer.AskForInput(), out size);
+                    continue;
+                }
+                break;
             }
+            
 
-            sizeX = size;
-            sizeY = size;
+            cols = size;
+            rows = size;
             bombsCount = (int)(size * size * bombsFrequency);
 
-            Field[,] gameField = InitializeGameField(bombsCount, sizeX, sizeY);
+            Field[,] gameField = InitializeGameField(bombsCount, cols, rows);
 
             drawer.DrawGame(gameField);
 
@@ -55,12 +55,12 @@ namespace BattleField7Namespace
             while (bombsCount > 0)
             {
                 // TODO - write a propper message for that case
-                drawer.ShowMessage("Give me INPUT!!!");
+                drawer.ShowMessage("Give me INPUT!!! ( in format 'row col' ): ");
                 string input = drawer.AskForInput();
 
-                int coordX;
-                int coordY;
-                bool inputValid = TryGetCoords(input, sizeX, sizeY, out coordX, out coordY);
+                int row;
+                int col;
+                bool inputValid = TryGetCoords(input, rows, cols, out row, out col);
 
                 if (!inputValid)
                 {
@@ -69,17 +69,15 @@ namespace BattleField7Namespace
                     continue;
                 }
 
-                steps++;
+                turnsCount++;
 
-                Field selectedField = gameField[coordX, coordY];
+                Field selectedField = gameField[row, col];
 
                 int explosionPower = selectedField.IntentionalDetonate();
                 if (explosionPower > 0)
                 {
-                    DetonateNearbyFields(gameField, coordX, coordY, explosionPower);
-
-                    // TODO - write a propper message for that case
-                    drawer.ShowNote("Gues I should tell you that a bomb has been blown up, shouldn't I?");
+                    OnBombBlownUpEvent();
+                    DetonateNearbyFields(gameField, row, col, explosionPower);
                 }
                 drawer.DrawGame(gameField);
             }
@@ -88,34 +86,40 @@ namespace BattleField7Namespace
             
             // not sure if the game should restart now.
             // TODO - Decide weather to reset the game or not.
+            Console.WriteLine("press enter to go on");
+            Console.ReadLine();
         }
 
         /// <summary>
         /// Detonates the nearby fields after explosion.
         /// </summary>
         /// <param name="gameField">The game field.</param>
-        /// <param name="positionX">The position x.</param>
-        /// <param name="positionY">The position y.</param>
+        /// <param name="positionCol">The position x.</param>
+        /// <param name="positionRow">The position y.</param>
         /// <param name="explosionPower">The explosion power.</param>
-        void DetonateNearbyFields(Field[,] gameField, int positionX, int positionY, int explosionPower)
+        void DetonateNearbyFields(Field[,] gameField, int positionRow, int positionCol, int explosionPower)
         {
-            int sizeX = gameField.GetLength(0);
-            int sizeY = gameField.GetLength(1);
+            int cols = gameField.GetLength(0);
+            int rows = gameField.GetLength(1);
 
             for (int power = 0; power < explosionPower; power++)
             {
                 foreach (int[] relativePosition in explosionRangePositionsGroupedByPower[power])
                 {
-                    int coordX = positionX + relativePosition[0];
-                    int coordY = positionX + relativePosition[1];
+                    int col = positionCol + relativePosition[0];
+                    int row = positionRow + relativePosition[1];
 
-                    if (0 > coordX || coordX >= sizeX || 
-                        0 > coordY || coordY >= sizeY)
+                    if (0 > col || col >= cols || 
+                        0 > row || row >= rows)
                     {
                         continue;
                     }
 
-                    Field fieldToDetonate = gameField[coordX, coordY];
+                    Field fieldToDetonate = gameField[row, col];
+                    if (fieldToDetonate.Condition == Condition.Bomb)
+                    {
+                        OnBombBlownUpEvent();
+                    }
                     fieldToDetonate.DetonateByChainReaction();
                 }
 
@@ -126,49 +130,49 @@ namespace BattleField7Namespace
         /// Tries the get coordinates.
         /// </summary>
         /// <param name="input">The input.</param>
-        /// <param name="sizeX">The size x.</param>
-        /// <param name="sizeY">The size y.</param>
-        /// <param name="coordX">The coord x.</param>
-        /// <param name="coordY">The coord y.</param>
+        /// <param name="cols">The size x.</param>
+        /// <param name="rows">The size y.</param>
+        /// <param name="col">The coord x.</param>
+        /// <param name="row">The coord y.</param>
         /// <returns></returns>
-        bool TryGetCoords(string input, int sizeX, int sizeY, out int coordX, out int coordY)
+        bool TryGetCoords(string input, int rows, int cols, out int row, out int col)
         {
-            coordX = 0;
-            coordY = 0;
+            col = 0;
+            row = 0;
 
             if (input.IndexOf(" ") == -1)
             {
                 return false;
             }
 
-            string inputX = input.Substring(0, input.IndexOf(" "));
-            string inputY = input.Substring(input.IndexOf(" ") + 1);
+            string inputRow = input.Substring(0, input.IndexOf(" "));
+            string inputCol = input.Substring(input.IndexOf(" ") + 1);
 
-            int x = 0;
-            int y = 0;
+            int c = 0;
+            int r = 0;
 
-            if (!int.TryParse(inputX, out x) ||
-                !int.TryParse(inputY, out y))
+            if (!int.TryParse(inputCol, out c) ||
+                !int.TryParse(inputRow, out r))
             {
                 return false;
             }
 
-            if (0 < x || x >= sizeX ||
-                0 < y || y >= sizeY)
+            if (0 > c || c >= cols ||
+                0 > r || r >= rows)
             {
                 return false;
             }
 
-            coordX = x;
-            coordY = y;
+            col = c;
+            row = r;
 
             return true;
         }
 
         /// <summary>
-        /// Activates on the BombBlownUp event. Counts the detonated bombs.
+        /// Keeps count of the bombs left.
         /// </summary>
-        void onBombBlownUpEvent()
+        void OnBombBlownUpEvent()
         {
             bombsCount--;
         }
@@ -179,14 +183,14 @@ namespace BattleField7Namespace
         /// Initializes the game field.
         /// </summary>
         /// <param name="bombsCount">The bombs count.</param>
-        /// <param name="sizeX">The size x.</param>
-        /// <param name="sizeY">The size y.</param>
+        /// <param name="col">The size x.</param>
+        /// <param name="row">The size y.</param>
         /// <returns></returns>
-        Field[,] InitializeGameField(int bombsCount, int sizeX, int sizeY)
+        Field[,] InitializeGameField(int bombsCount, int col, int row)
         {
             Random rnd = new Random();
 
-            int maxSize = sizeX * sizeY;
+            int maxSize = col * row;
             List<int> bombPositions = new List<int>();
             for (int i = 0; i < bombsCount; i++)
             {
@@ -202,18 +206,18 @@ namespace BattleField7Namespace
                 }
             }
 
-            Field[,] gameField = new Field[sizeX, sizeY];
-            for (int x = 0; x < sizeX; x++)
+            Field[,] gameField = new Field[row, col];
+            for (int r = 0; r < row; r++)
             {
-                for (int y = 0; y < sizeY; y++)
+                for (int c = 0; c < col; c++)
                 {
-                    if (!bombPositions.Contains(x * sizeY + y))
+                    if (!bombPositions.Contains(c * row + r))
                     {
-                        gameField[x, y] = new Field(Condition.Empty, 0);
+                        gameField[r, c] = new Field(Condition.Empty, 0);
                     }
                     else
                     {
-                        gameField[x, y] = new Field(Condition.Bomb, rnd.Next(1, 6));
+                        gameField[r, c] = new Field(Condition.Bomb, rnd.Next(1, 6));
                     }
                 }
             }

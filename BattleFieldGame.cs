@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+// TODO - remove the line below when all testing is compleated
+using BattleField7Namespace.InitialGameClass;
 
 namespace BattleField7Namespace
 {
@@ -13,11 +15,14 @@ namespace BattleField7Namespace
         /// </summary>
         static void Main()
         {
+            // this is the new version.
+
             ConsoleDrawer consoleDrawer = new ConsoleDrawer();
             Engine engine = new Engine();
             engine.RunGame(consoleDrawer);
 
-            // TODO - When all the classes are compleated, remove this and replace it with Engine initialization and Engine.Run()
+            // this is the old version. It's kept here for testing
+
             //BattleGame battleFieldGameOld = new BattleGame();
             //battleFieldGameOld.Start();
         }

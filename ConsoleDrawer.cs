@@ -7,7 +7,6 @@ namespace BattleField7Namespace
 {
     class ConsoleDrawer : Drawer
     {
-        // TODO - implement ConsoleDrawer.DrawGame();
         /// <summary>
         /// Draws the game in the console.
         /// </summary>
@@ -15,37 +14,61 @@ namespace BattleField7Namespace
         /// <exception cref="System.NotImplementedException">ConsoleDrawer.DrawGame() is not implemented</exception>
         public override void DrawGame(Field[,] gameField)
         {
-            throw new NotImplementedException("ConsoleDrawer.DrawGame() is not implemented");
+            Console.Clear();
+
+            string line = new String('-', 8 + (gameField.GetLength(1) * 4));
+            Console.Write("r\\c  || ");
+            for (int col = 0; col < gameField.GetLength(1); col++)
+            {
+                Console.Write("{0,-2}| ", col);
+            }
+            Console.WriteLine("\n" + "\n" + line + "\n" + line + "\n");
+            for (int row = 0; row < gameField.GetLength(0); row++)
+            {
+                Console.Write("{0,-2}   || ", row);
+                for (int col = 0; col < gameField.GetLength(1); col++)
+                {
+                    char symbolToShow = '-';
+                    if (gameField[row, col].ExplosivePower > 0)
+                    {
+                        symbolToShow = gameField[row, col].ExplosivePower.ToString()[0];
+                    } 
+                    if (gameField[row, col].Condition == Condition.BlownUp)
+                    {
+                        symbolToShow = 'X';
+                    }
+
+                    Console.Write("{0,-2}| ", symbolToShow);
+                }
+                Console.WriteLine();
+                Console.WriteLine(line);
+            }
+            Console.WriteLine();
         }
 
-        // TODO - implement ConsoleDrawer.AskForInput();
         public override string AskForInput()
         {
-            throw new NotImplementedException("ConsoleDrawer.AskForInput() is not implemented");
+            return Console.ReadLine();
         }
 
-        // TODO - implement ConsoleDrawer.ShowMessage();
         public override void ShowMessage(string message)
         {
-            throw new NotImplementedException("ConsoleDrawer.ShowMessage() is not implemented");
+            Console.Write("\n" + message);
         }
 
-        // TODO - implement ConsoleDrawer.ShowCongratulations();
         public override void ShowCongratulations(string message)
         {
-            throw new NotImplementedException("ConsoleDrawer.ShowCongratulations() is not implemented");
+            ShowMessage(message);
         }
 
-        // TODO - implement ConsoleDrawer.ShowGameOver();
         public override void ShowGameOver(string message)
         {
-            throw new NotImplementedException("ConsoleDrawer.ShowGameOver() is not implemented");
+            ShowMessage(message);
         }
 
-        // TODO - implement ConsoleDrawer.ShowNote(();
         public override void ShowNote(string message)
         {
-            throw new NotImplementedException("ConsoleDrawer.ShowNote() is not implemented");
+            ShowMessage(message);
         }
     }
 }
