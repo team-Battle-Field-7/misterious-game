@@ -14,6 +14,21 @@
             Simply calls the engine and runs it.
             </summary>
         </member>
+        <member name="M:BattleField7Namespace.BattleFieldGame.RunOldVersion">
+            <summary>
+            Runs the old version of the game.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.BattleFieldGame.RunNewConsoleVersion">
+            <summary>
+            Runs the new console version of the game.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.BattleFieldGame.RunNewWinFormsVersion">
+            <summary>
+            Runs the new windows forms version of the game.
+            </summary>
+        </member>
         <member name="T:BattleField7Namespace.IDrawer">
             <summary>
             Basic functionality to display Battle Field 7 game.

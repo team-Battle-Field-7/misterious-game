@@ -17,13 +17,36 @@ namespace BattleField7Namespace
         /// </summary>
         static void Main()
         {
-            //// this is the new console version.
-            //ConsoleDrawer consoleDrawer = new ConsoleDrawer();
-            //Engine engine = new Engine();
-            //engine.RunGame(consoleDrawer);
+            BattleFieldGame game = new BattleFieldGame();
+            //game.RunOldVersion();
+            //game.RunNewConsoleVersion();
+            game.RunNewWinFormsVersion();
+        }
 
+        /// <summary>
+        /// Runs the old version of the game.
+        /// </summary>
+        public void RunOldVersion()
+        {
+            InitialGameClass.BattleGame battleFieldGameOld = new InitialGameClass.BattleGame();
+            battleFieldGameOld.Start();
+        }
 
-            // this is the newest windows forms version
+        /// <summary>
+        /// Runs the new console version of the game.
+        /// </summary>
+        public void RunNewConsoleVersion()
+        {
+            ConsoleDrawer consoleDrawer = new ConsoleDrawer();
+            Engine engine = new Engine(consoleDrawer);
+            engine.RunGame();
+        }
+
+        /// <summary>
+        /// Runs the new windows forms version of the game.
+        /// </summary>
+        public void RunNewWinFormsVersion()
+        {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             WinFormsDrawer form = new WinFormsDrawer();
@@ -36,11 +59,6 @@ namespace BattleField7Namespace
             );
             formThread.Start();
             Application.Run(form);
-
-
-            //// this is the old version. It's kept here for testing
-            //BattleGame battleFieldGameOld = new BattleGame();
-            //battleFieldGameOld.Start();
         }
     }
 }
