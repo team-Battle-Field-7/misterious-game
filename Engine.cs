@@ -10,14 +10,48 @@ namespace BattleField7Namespace
     /// </summary>
     class Engine
     {
+        /// <summary>
+        /// The bombs frequency is the percentage of the cells that will become bombs.
+        /// </summary>
         private readonly double bombsFrequency = 0.15;
+
+        /// <summary>
+        /// Keeps track of the bombs left to blow up.
+        /// </summary>
         private int bombsCount;
+
+        /// <summary>
+        /// Keeps track of the turns.
+        /// </summary>
         private int turnsCount;
+
+        /// <summary>
+        /// The columns of the game grid.
+        /// </summary>
         private int cols;
+
+        /// <summary>
+        /// The rows of the game grid.
+        /// </summary>
         private int rows;
+
+        /// <summary>
+        /// The drawer witch displays the game.
+        /// </summary>
         private IDrawer drawer;
+
+        /// <summary>
+        /// The game field.
+        /// </summary>
         private Field[,] gameField;
 
+        /// <summary>
+        /// The explosion range positions grouped by power.
+        /// The outer List has 5 elements (lists), representing the 5 possible explosive powers.
+        /// The middle List has all the relative cell positions for a specific explosive power (only the unique positions)
+        /// A relative position is represented by an int array of 2 elements - row and column,
+        /// witch are to be added to the detonation position in order to get the coordinates of the specified position.
+        /// </summary>
         private List<List<int[]>> explosionRangePositionsGroupedByPower;
 
         /// <summary>

@@ -11,7 +11,15 @@ namespace BattleField7Namespace
     /// </summary>
     public class Field
     {
+        /// <summary>
+        /// The condition of the field.
+        /// </summary>
         private Condition condition;
+
+        /// <summary>
+        /// The explosive power of the field.
+        /// It is always 0 if the condition of the field is not Condition.Bomb
+        /// </summary>
 	    private int explosivePower;
 
         /// <summary>

@@ -15,16 +15,60 @@ namespace BattleField7Namespace
     /// </summary>
     public partial class WinFormsDrawer : Form, IDrawer
     {
+        /// <summary>
+        /// Delegate used to safely access a count label (bombs or turns) from the thread of the game.
+        /// </summary>
+        /// <param name="count">The count to be displayed.</param>
         private delegate void ShowCountCallBack(int count);
+
+        /// <summary>
+        /// Delegate used to safely access the grid controle from the thread of the game, in order to set its sizes.
+        /// </summary>
+        /// <param name="size">The size.</param>
         private delegate void SetGameFieldSizeCallback(int size);
+
+        /// <summary>
+        /// Delegate used to safely access a grid cell's value from the thread of the game.
+        /// </summary>
+        /// <param name="paramsOfField">The parameters of field.</param>
         private delegate void SetFieldValueCallBack(string[] paramsOfField);
+
+        /// <summary>
+        /// Delegate used to safely access the AskForSizeInput() method from the thread of the game.
+        /// </summary>
+        /// <returns></returns>
         private delegate string GetInputCallBack();
+
+        /// <summary>
+        /// Delegate used to safely access the message area of the form, from the thread of the game.
+        /// </summary>
+        /// <param name="message">The message.</param>
         private delegate void ShowMessageCallBack(string message);
 
-        private PopupSizeInput inputWindow = new PopupSizeInput();
+        /// <summary>
+        /// The size input window
+        /// </summary>
+        private PopupSizeInput sizeInputWindow = new PopupSizeInput();
 
+        /// <summary>
+        /// Needed for a check before drawing the game field,
+        /// becouse the thread of the form might still not be ready with setting up the game grid's size,
+        /// when the Drawer.DrawGame() method is called.
+        /// </summary>
         private bool gameFieldIsInitialized = false;
+
+        /// <summary>
+        /// Needed for the active waiting for cell position input.
+        /// It is false when input is not needed, or when a cell isn't yet clicked.
+        /// It becomes true only for a moment, when a cell is selected during an active waiting.
+        /// </summary>
         private bool gameFieldCellIsSelected = false;
+
+        /// <summary>
+        /// Needed for for a check on game grid cell selection.
+        /// If there is an active waiting for input, the method will set gameFieldCellIsSelected to true.
+        /// Otherwise it will ignore the input.
+        /// </summary>
         private bool awaitingGameFieldCellSelection = false;
 
 
@@ -93,10 +137,10 @@ namespace BattleField7Namespace
             else
             {
                 string result = "";
-                DialogResult dialogResult = inputWindow.ShowDialog(this);
+                DialogResult dialogResult = sizeInputWindow.ShowDialog(this);
                 if (dialogResult == DialogResult.OK)
                 {
-                    result = inputWindow.Input;
+                    result = sizeInputWindow.Input;
                 }
                 else
                 {

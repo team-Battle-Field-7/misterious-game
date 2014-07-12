@@ -11,7 +11,14 @@ namespace BattleField7Namespace
     /// </summary>
     internal static class Logger
     {
+        /// <summary>
+        /// The restriction level of the logger.
+        /// </summary>
         private static LoggingRestrictionLevels restrictionLevel = LoggingRestrictionLevels.All;
+
+        /// <summary>
+        /// The file path of the logger. Only *.txt paths are acceptable.
+        /// </summary>
         private static string filePath = "loggs.txt";
 
         /// <summary>
