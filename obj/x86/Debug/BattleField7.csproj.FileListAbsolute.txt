@@ -9,3 +9,14 @@ D:\BattleField7\obj\x86\Debug\BattleField7Namespace.Properties.Resources.resourc
 D:\BattleField7\obj\x86\Debug\BattleField7Namespace.WinFormsDrawer.resources
 D:\BattleField7\obj\x86\Debug\BattleField7Namespace.PopupSizeInput.resources
 D:\BattleField7\bin\Debug\BattleField7.XML
+D:\git\Teamwork-C#Quality--BattleField7\bin\Debug\BattleField7.XML
+D:\git\Teamwork-C#Quality--BattleField7\obj\x86\Debug\BattleField7.exe
+D:\git\Teamwork-C#Quality--BattleField7\obj\x86\Debug\BattleField7.pdb
+D:\git\Teamwork-C#Quality--BattleField7\bin\Debug\BattleField7.exe
+D:\git\Teamwork-C#Quality--BattleField7\bin\Debug\BattleField7.pdb
+D:\git\Teamwork-C#Quality--BattleField7\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\git\Teamwork-C#Quality--BattleField7\obj\x86\Debug\BattleField7Namespace.PopupSizeInput.resources
+D:\git\Teamwork-C#Quality--BattleField7\obj\x86\Debug\BattleField7Namespace.Properties.Resources.resources
+D:\git\Teamwork-C#Quality--BattleField7\obj\x86\Debug\BattleField7Namespace.WinFormsDrawer.resources
+D:\git\Teamwork-C#Quality--BattleField7\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\git\Teamwork-C#Quality--BattleField7\obj\x86\Debug\GenerateResource.write.1.tlog

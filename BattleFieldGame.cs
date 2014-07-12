@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 using System.Threading;
@@ -10,17 +8,26 @@ namespace BattleField7Namespace
 {
     class BattleFieldGame
     {
-        private delegate void runFormCallback();
-
         /// <summary>
         /// Simply calls the engine and runs it.
         /// </summary>
         static void Main()
         {
+            Logger.LogStartUp();
+
             BattleFieldGame game = new BattleFieldGame();
-            //game.RunOldVersion();
-            //game.RunNewConsoleVersion();
-            game.RunNewWinFormsVersion();
+
+            try
+            {
+                //game.RunOldVersion();
+                //game.RunNewConsoleVersion();
+                game.RunNewWinFormsVersion();
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex.ToString());
+                throw ex;
+            }
         }
 
         /// <summary>

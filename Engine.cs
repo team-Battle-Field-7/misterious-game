@@ -101,6 +101,7 @@ namespace BattleField7Namespace
 
                 if (!inputValid)
                 {
+                    Logger.LogEvent("Invalid cell input attempt");
                     // TODO - write a propper message for that case
                     drawer.ShowNote("The input sucks! Give me another!!!");
                     continue;
@@ -270,6 +271,7 @@ namespace BattleField7Namespace
                 || size < 0
                 || size > 10)
                 {
+                    Logger.LogEvent("Invalid size input attempt");
                     drawer.ShowNote("Bad input - try again.");
                     drawer.ShowAskInput("Input game field size (1-10): ");
                     stringInputIsInt = int.TryParse(drawer.AskForSizeInput(), out size);
