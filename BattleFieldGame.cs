@@ -17,7 +17,6 @@ namespace BattleField7Namespace
         {
             BattleFieldGame game = new BattleFieldGame();
             game.logger = new Logger();
-            game.logger.LogStartUp();
 
             try
             {
@@ -27,7 +26,10 @@ namespace BattleField7Namespace
             }
             catch (Exception ex)
             {
-                game.logger.LogError(ex.ToString());
+                if (game.logger != null)
+                {
+                    game.logger.LogError(ex.ToString());
+                }
                 throw ex;
             }
         }
