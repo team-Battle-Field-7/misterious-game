@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\BattleField7\obj\x86\Debug\ResolveAssemblyReference.cache
 D:\BattleField7\bin\Debug\BattleField7.exe
 D:\BattleField7\bin\Debug\BattleField7.pdb
@@ -29,3 +30,9 @@ D:\git\misterious-game\obj\x86\Debug\BattleField7Namespace.PopupSizeInput.resour
 D:\git\misterious-game\obj\x86\Debug\BattleField7Namespace.Properties.Resources.resources
 D:\git\misterious-game\obj\x86\Debug\BattleField7.csproj.GenerateResource.Cache
 D:\git\misterious-game\obj\x86\Debug\BattleField7Namespace.WinFormsUI.resources
+=======
+D:\git\misterious-game\obj\x86\Debug\BattleField7Namespace.WinFormsDrawer.resources
+D:\C#\GitReps\misterious-game\bin\Debug\BattleField7.XML
+D:\C#\GitReps\misterious-game\obj\x86\Debug\BattleField7.exe
+D:\C#\GitReps\misterious-game\obj\x86\Debug\BattleField7.pdb
+>>>>>>> origin/master
