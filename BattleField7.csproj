@@ -53,8 +53,8 @@
     <Compile Include="ILogger.cs" />
     <Compile Include="InitialGameClass\BattleGame.cs" />
     <Compile Include="Condition.cs" />
-    <Compile Include="ConsoleDrawer.cs" />
-    <Compile Include="IDrawer.cs" />
+    <Compile Include="ConsoleUI.cs" />
+    <Compile Include="IUserInterface.cs" />
     <Compile Include="Engine.cs" />
     <Compile Include="Field.cs" />
     <Compile Include="Logger.cs" />
@@ -70,11 +70,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="WinFormsDrawer.cs">
+    <Compile Include="WinFormsUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WinFormsDrawer.Designer.cs">
-      <DependentUpon>WinFormsDrawer.cs</DependentUpon>
+    <Compile Include="WinFormsUI.Designer.cs">
+      <DependentUpon>WinFormsUI.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
@@ -89,8 +89,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="WinFormsDrawer.resx">
-      <DependentUpon>WinFormsDrawer.cs</DependentUpon>
+    <EmbeddedResource Include="WinFormsUI.resx">
+      <DependentUpon>WinFormsUI.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

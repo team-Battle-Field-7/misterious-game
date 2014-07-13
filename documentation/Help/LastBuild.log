@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shfbBuild product="Sandcastle Help File Builder" version="2014.5.31.0" projectFile="D:\git\misterious-game\documentation\Battle Field 7 Help.shfbproj" started="13.7.2014 г. 14:52:16 ч.">
+<shfbBuild product="Sandcastle Help File Builder" version="2014.5.31.0" projectFile="D:\git\misterious-game\documentation\Battle Field 7 Help.shfbproj" started="13.7.2014 г. 15:21:26 ч.">
 <buildStep step="Initializing">
 Finding tools...
 The Sandcastle tools are located in &#39;D:\Program Files\EWSoftware\Sandcastle Help File Builder\&#39;
@@ -25,16 +25,16 @@ Copying XML comments files
 <buildStep step="GenerateSharedContent">
 Generating shared content files (en-US, English (United States))...
 <plugIn name="Lightweight Website Style" behavior="After" priority="1000">
-</plugIn>    Last step completed in 00:00:00.1152
+</plugIn>    Last step completed in 00:00:00.0645
 </buildStep>
 <buildStep step="GenerateApiFilter">
 Generating API filter for MRefBuilder...
-    Last step completed in 00:00:00.0205
+    Last step completed in 00:00:00.0078
 </buildStep>
 <buildStep step="GenerateReflectionInfo">
 Generating reflection information...
 [C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe]
-Build started 13.7.2014 Ј. 14:52:18 з..
+Build started 13.7.2014 Ј. 15:21:28 з..
 Project &quot;D:\git\misterious-game\documentation\Help\Working\GenerateRefInfo.proj&quot; on node 1 (default targets).
 PrepareForBuild:
   Creating directory &quot;obj\Debug\&quot;.
@@ -53,13 +53,13 @@ Done Building Project &quot;D:\git\misterious-game\documentation\Help\Working\Ge
 
 Build succeeded.
 
-Time Elapsed 00:00:01.51
-    Last step completed in 00:00:01.6768
+Time Elapsed 00:00:01.40
+    Last step completed in 00:00:01.5605
 </buildStep>
 <buildStep step="TransformReflectionInfo">
 Transforming reflection output...
 [C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe]
-Build started 13.7.2014 Ј. 14:52:20 з..
+Build started 13.7.2014 Ј. 15:21:29 з..
 Project &quot;D:\git\misterious-game\documentation\Help\Working\TransformManifest.proj&quot; on node 1 (default targets).
 TransformManifest:
   XslTransform (v2014.5.31.0)
@@ -79,26 +79,26 @@ Done Building Project &quot;D:\git\misterious-game\documentation\Help\Working\Tr
 
 Build succeeded.
 
-Time Elapsed 00:00:02.96
-    Last step completed in 00:00:03.2021
+Time Elapsed 00:00:02.83
+    Last step completed in 00:00:03.1523
 </buildStep>
 <buildStep step="GenerateNamespaceSummaries">
 Generating namespace summary information...
-    Last step completed in 00:00:00.1182
+    Last step completed in 00:00:00.1768
 </buildStep>
 <buildStep step="CopyAdditionalContent">
 Copying additional content files...
 No additional content to copy
-    Last step completed in 00:00:00.0088
+    Last step completed in 00:00:00.0195
 </buildStep>
 <buildStep step="MergeTablesOfContents">
 Merging conceptual and additional tables of contents...
-    Last step completed in 00:00:00.0039
+    Last step completed in 00:00:00.0029
 </buildStep>
 <buildStep step="GenerateIntermediateTableOfContents">
 Generating intermediate table of contents file...
 [C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe]
-Build started 13.7.2014 Ј. 14:52:23 з..
+Build started 13.7.2014 Ј. 15:21:33 з..
 Project &quot;D:\git\misterious-game\documentation\Help\Working\GenerateIntermediateTOC.proj&quot; on node 1 (default targets).
 GenerateIntermediateTOC:
   XslTransform (v2014.5.31.0)
@@ -109,24 +109,24 @@ Done Building Project &quot;D:\git\misterious-game\documentation\Help\Working\Ge
 
 Build succeeded.
 
-Time Elapsed 00:00:00.37
+Time Elapsed 00:00:00.56
 Generating conceptual content intermediate TOC file...
-    Last step completed in 00:00:00.5313
+    Last step completed in 00:00:01.1025
 </buildStep>
 <buildStep step="CreateBuildAssemblerConfigs">
 Creating Sandcastle configuration files...
     sandcastle.config
-    Last step completed in 00:00:01.2314
+    Last step completed in 00:00:01.2988
 </buildStep>
 <buildStep step="MergeCustomConfigs">
 Merging custom build component configurations
 D:\git\misterious-game\documentation\Help\Working\sandcastle.config
-    Last step completed in 00:00:00.1455
+    Last step completed in 00:00:00.1475
 </buildStep>
 <buildStep step="BuildReferenceTopics">
 Building reference help topics...
 [C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe]
-Build started 13.7.2014 Ј. 14:52:25 з..
+Build started 13.7.2014 Ј. 15:21:36 з..
 Project &quot;D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj&quot; on node 1 (default targets).
 BuildReferenceTopics:
   BuildAssembler (v2014.5.31.0)
@@ -217,14 +217,14 @@ Done Building Project &quot;D:\git\misterious-game\documentation\Help\Working\Bu
 
 Build succeeded.
 
-Time Elapsed 00:00:47.46
-    Last step completed in 00:00:47.7061
+Time Elapsed 00:00:41.89
+    Last step completed in 00:00:42.1357
 </buildStep>
 <buildStep step="CombiningIntermediateTocFiles">
 Combining conceptual and API intermediate TOC files...
 
 Clearing any prior web output
-    Last step completed in 00:00:00.1406
+    Last step completed in 00:00:00.1133
 </buildStep>
 <buildStep step="ExtractingHtmlInfo">
 Extracting HTML info for HTML Help 1 and/or website...
@@ -246,7 +246,7 @@ Processed 170 HTML files
 Sorting keywords and generating See Also indices
 Saving website keyword index to D:\git\misterious-game\documentation\Help\Working\WebKI.xml
 Saving website table of contents to D:\git\misterious-game\documentation\Help\Working\WebTOC.xml
-    Last step completed in 00:00:01.0068
+    Last step completed in 00:00:01.2861
 </buildStep>
 <buildStep step="CopyStandardHelpContent">
 Copying standard help content...
@@ -389,7 +389,7 @@ D:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS20
 D:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\icons\TocOpen.gif -&gt; D:\git\misterious-game\documentation\Help\Working\Output\Website\icons\TocOpen.gif
 D:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\scripts\branding-Website.js -&gt; D:\git\misterious-game\documentation\Help\Working\Output\Website\scripts\branding-Website.js
 D:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\scripts\jquery-1.11.0.min.js -&gt; D:\git\misterious-game\documentation\Help\Working\Output\Website\scripts\jquery-1.11.0.min.js
-    Last step completed in 00:00:01.5439
+    Last step completed in 00:00:00.7061
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContents">
 Generating HTML Help 1 table of contents file...
@@ -397,11 +397,11 @@ Generating HTML Help 1 table of contents file...
 </buildStep>
 <buildStep step="GenerateHelpFileIndex">
 Generating HTML Help 1 index file...
-    Last step completed in 00:00:00.0039
+    Last step completed in 00:00:00.0059
 </buildStep>
 <buildStep step="GenerateHelpProject">
 Generating HTML Help 1 project file...
-    Last step completed in 00:00:00.0117
+    Last step completed in 00:00:00.0156
 </buildStep>
 <buildStep step="CompilingHelpFile">
 Compiling HTML Help 1 file...
@@ -434,18 +434,18 @@ Compiling HTML Help 1 file...
   
   Compression decreased file by 1,995,792 bytes.
   
-    Last step completed in 00:00:06.7734
+    Last step completed in 00:00:06.0107
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContents">
 Generating website table of contents file...
-    Last step completed in 00:00:00.0059
+    Last step completed in 00:00:00.0186
 </buildStep>
 <buildStep step="GenerateFullTextIndex">
 Generating full-text index for the website...
 
 <plugIn name="Lightweight Website Style" behavior="After" priority="1000">
 Adding lightweight search and TOC elements to each topic...
-</plugIn>    Last step completed in 00:00:02.4990
+</plugIn>    Last step completed in 00:00:02.1777
 </buildStep>
 <buildStep step="CopyingWebsiteFiles">
 Copying website files to output folder...
@@ -454,15 +454,15 @@ Copied 100 files
 Copied 200 files
 Copied 300 files
 Copied 322 files for the website content
-    Last step completed in 00:00:00.4668
+    Last step completed in 00:00:00.8271
 </buildStep>
 <buildStep step="CleanIntermediates">
 Removing intermediate files...
-    Last step completed in 00:00:00.2412
+    Last step completed in 00:00:00.2305
 </buildStep>
 <buildStep step="Completed">
 
-Build completed successfully at 07.13.2014 02:53 .  Total time: 00:01:09,3955
+Build completed successfully at 07.13.2014 03:22 .  Total time: 00:01:02,7188
 
 </buildStep>
 </shfbBuild>
