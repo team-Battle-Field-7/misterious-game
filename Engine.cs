@@ -309,7 +309,7 @@ namespace BattleField7Namespace
             while (true)
             {
                 if (!stringInputIsInt
-                || size < 0
+                || size <= 0
                 || size > 10)
                 {
                     this.Logger.LogEvent("Invalid size input attempt");
