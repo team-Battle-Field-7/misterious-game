@@ -1,10 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <HelpTOC>
 
-  <HelpTOCNode Id="950449f0-a1af-49db-be6c-31d6a6f5d95b" Title="BattleField7Namespace" Url="html/ec833ad7-63ab-793f-80ee-6c6e7d00bd83.htm">
-    <HelpTOCNode Id="4c162e95-b009-4acb-b60c-290fdea262ee" Title="BattleFieldGame Class" Url="html/daf069b4-67e4-24e5-8539-c8016d6ecc64.htm">
+  <HelpTOCNode Id="a62565c6-dab5-4ed5-97fe-05f0191aa94a" Title="BattleField7Namespace" Url="html/ec833ad7-63ab-793f-80ee-6c6e7d00bd83.htm">
+    <HelpTOCNode Id="06634f47-b71f-43c5-a72b-1b9e63cd1e54" Title="BattleFieldGame Class" Url="html/daf069b4-67e4-24e5-8539-c8016d6ecc64.htm">
       <HelpTOCNode Title="BattleFieldGame Constructor " Url="html/cbdcb89f-ac49-b2cd-7392-15aa761cc36e.htm" />
-      <HelpTOCNode Id="1336ba98-6b4b-4eed-94d7-e34f84fc93a4" Title="BattleFieldGame Methods" Url="html/03ce6b65-1794-99d1-e5eb-454b89865812.htm">
+      <HelpTOCNode Id="e01d87da-04dc-46d1-b14d-e3f6f41595ca" Title="BattleFieldGame Fields" Url="html/0eb0e824-f39f-85b5-9bda-1849c48cd67b.htm">
+        <HelpTOCNode Title="logger Field" Url="html/95b7c91d-6eed-4893-01fe-d0069e7aa078.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="6d90f097-8068-4488-9f36-91999ca2c2b2" Title="BattleFieldGame Methods" Url="html/03ce6b65-1794-99d1-e5eb-454b89865812.htm">
         <HelpTOCNode Title="Main Method " Url="html/027a2984-6996-0b9f-8168-8aa858e8c287.htm" />
         <HelpTOCNode Title="RunNewConsoleVersion Method " Url="html/4389515d-213a-7335-0ea8-6a2ca86adc17.htm" />
         <HelpTOCNode Title="RunNewWinFormsVersion Method " Url="html/a214e8c3-91d0-57ba-6a3e-310edf11d8a4.htm" />
@@ -12,24 +15,23 @@
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="Condition Enumeration" Url="html/4c3b0f2f-ffab-a99e-7482-1b52820bc5e9.htm" />
-    <HelpTOCNode Id="d048db3b-6578-4539-9bb1-ef502fb068df" Title="ConsoleDrawer Class" Url="html/b7458339-e4fb-26bb-2354-3b7bb387caae.htm">
-      <HelpTOCNode Title="ConsoleDrawer Constructor " Url="html/3aec75c9-cbfc-3db4-7830-f4f9a2fe0503.htm" />
-      <HelpTOCNode Id="d277c686-f76d-4d61-b922-b5a2bf04b2ea" Title="ConsoleDrawer Methods" Url="html/80d5e37c-51d1-f72c-43e1-746484bea492.htm">
-        <HelpTOCNode Title="AskForPositionInput Method " Url="html/e3d4c5e4-5cf7-acf6-89f7-372334f15f85.htm" />
-        <HelpTOCNode Title="AskForSizeInput Method " Url="html/354fcdfd-9cf5-a0cd-6ef1-991c33a5d1d0.htm" />
-        <HelpTOCNode Title="DrawGame Method " Url="html/f09e1359-f893-5950-fd39-5e854b1bfdb5.htm" />
-        <HelpTOCNode Title="ShowAskInput Method " Url="html/b54d2edf-1ff7-57f6-9b35-4a81a8abb3a8.htm" />
-        <HelpTOCNode Title="ShowBombsCount Method " Url="html/a24c1073-faf6-1565-0152-4fb3e9a6ba42.htm" />
-        <HelpTOCNode Title="ShowCongratulations Method " Url="html/ce3185e1-b321-36d1-d2aa-2b0c841364e9.htm" />
-        <HelpTOCNode Title="ShowGameOver Method " Url="html/9aabe0eb-a695-18d3-7b1b-a80f5e7887fe.htm" />
-        <HelpTOCNode Title="ShowMessage Method " Url="html/dbf3ce1f-242b-056a-059d-77997a235b69.htm" />
-        <HelpTOCNode Title="ShowNote Method " Url="html/496d75c6-7cb9-e879-64bc-8ee272e7f91b.htm" />
-        <HelpTOCNode Title="ShowTurnsCount Method " Url="html/0da389ce-ec33-8721-490b-4605990434d5.htm" />
+    <HelpTOCNode Id="a9cc66c9-f00d-400f-96fb-f6fef7d47ac3" Title="ConsoleUI Class" Url="html/82c54ea2-5170-d9e0-3c7f-1379db6e9aa8.htm">
+      <HelpTOCNode Title="ConsoleUI Constructor " Url="html/bc1f908a-eb8a-cd3c-affa-3cac959d7611.htm" />
+      <HelpTOCNode Id="5ac636fa-4441-410b-95aa-48d7d4fcc0f2" Title="ConsoleUI Methods" Url="html/bf4c3ffa-fbed-00c8-0287-221576ba8c6b.htm">
+        <HelpTOCNode Title="AskForPositionInput Method " Url="html/7bf304a4-8973-7149-df8b-232e3d9fd738.htm" />
+        <HelpTOCNode Title="AskForSizeInput Method " Url="html/75adacb4-f8e7-e28d-e025-54806f278bf6.htm" />
+        <HelpTOCNode Title="DrawGame Method " Url="html/98abc8bb-3913-a3e2-4cbe-489a7fcba063.htm" />
+        <HelpTOCNode Title="ShowBombsCount Method " Url="html/bea3ef6e-68c0-5333-0787-7de4c872bc20.htm" />
+        <HelpTOCNode Title="ShowCongratulations Method " Url="html/5479f1b1-898d-6ce1-e7b9-0ae6421c19d5.htm" />
+        <HelpTOCNode Title="ShowGameOver Method " Url="html/8427a68b-12de-cfff-9fd8-75a37f2e7288.htm" />
+        <HelpTOCNode Title="ShowMessage Method " Url="html/7877ef43-d0a9-fee0-1d81-3d5ee2a3f2bd.htm" />
+        <HelpTOCNode Title="ShowNote Method " Url="html/949ebc53-b4af-6d83-9cb8-a080fda8c782.htm" />
+        <HelpTOCNode Title="ShowTurnsCount Method " Url="html/b8317290-4cc3-b735-6d6e-5edf9c170bf7.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="6dd22459-56ab-4ce5-ad38-34bd1488bfad" Title="Engine Class" Url="html/0e15bd98-92f3-3c6a-fbf9-4c7a257cc362.htm">
-      <HelpTOCNode Title="Engine Constructor " Url="html/fd1dadf8-d1a3-a306-7505-5463ef4aaa0e.htm" />
-      <HelpTOCNode Id="df3edd65-bb23-4ad7-9a9f-3af5cc7a5699" Title="Engine Fields" Url="html/137ed978-393c-8e9c-9069-f5c615a34808.htm">
+    <HelpTOCNode Id="24e8c497-94b4-410a-af9a-3dd0ffd75a40" Title="Engine Class" Url="html/0e15bd98-92f3-3c6a-fbf9-4c7a257cc362.htm">
+      <HelpTOCNode Title="Engine Constructor " Url="html/d3e232d8-24ea-e304-5585-3b989e16cdff.htm" />
+      <HelpTOCNode Id="7db95eda-04e9-415b-9105-07af256147f4" Title="Engine Fields" Url="html/137ed978-393c-8e9c-9069-f5c615a34808.htm">
         <HelpTOCNode Title="bombsCount Field" Url="html/a44453d5-e7e4-e3a0-09c0-7f6f412b7f7f.htm" />
         <HelpTOCNode Title="bombsFrequency Field" Url="html/b0dcd223-3632-e7f9-9691-d0f25f7e4949.htm" />
         <HelpTOCNode Title="cols Field" Url="html/65b914e6-51fd-193e-417a-557e68a7f108.htm" />
@@ -39,7 +41,7 @@
         <HelpTOCNode Title="rows Field" Url="html/df7153bb-b28a-93a7-9308-46b26f93b751.htm" />
         <HelpTOCNode Title="turnsCount Field" Url="html/19983158-1dea-4320-17f2-4b63d1d65dbe.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="c2cf89d5-3b24-4c30-b354-58d8e476d3b2" Title="Engine Methods" Url="html/4e20eb04-68f9-2b8d-f816-8d25ba65a28b.htm">
+      <HelpTOCNode Id="6c7815a0-fdc4-4824-80bf-24fb4b6277f3" Title="Engine Methods" Url="html/4e20eb04-68f9-2b8d-f816-8d25ba65a28b.htm">
         <HelpTOCNode Title="DetonateNearbyFields Method " Url="html/1c1760a7-5a09-8626-9479-7b88ceb4f73a.htm" />
         <HelpTOCNode Title="InitializeExplosionRanges Method " Url="html/ef7f3009-a216-6bac-a467-10260c096e92.htm" />
         <HelpTOCNode Title="InitializeGameField Method " Url="html/d596c06b-42c9-2bff-4e0a-722d9b9e653d.htm" />
@@ -49,134 +51,142 @@
         <HelpTOCNode Title="StartGame Method " Url="html/562ab4c4-5f64-552f-2f4d-46ab2e7e87b6.htm" />
         <HelpTOCNode Title="TryGetCoords Method " Url="html/be209923-c0eb-e954-f419-de119eaa3e7b.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="c851f314-772e-45e3-8518-40fe3640047b" Title="Engine Properties" Url="html/a3843164-be49-f6cd-d83f-0eed2b84bfd5.htm">
+      <HelpTOCNode Id="10c3d792-bd9e-4872-b498-f24cec68fbc6" Title="Engine Properties" Url="html/a3843164-be49-f6cd-d83f-0eed2b84bfd5.htm">
         <HelpTOCNode Title="BombsCount Property " Url="html/4fee0105-008a-ac6d-df76-37322ca92687.htm" />
+        <HelpTOCNode Title="Logger Property " Url="html/a608b532-c53d-6724-f9a9-6fea9c8b0210.htm" />
         <HelpTOCNode Title="TurnsCount Property " Url="html/ed8afd1a-ea5a-a8d5-9d4c-2e23c25aad60.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="41e2d1e8-2b4a-45be-bfd6-3b94aa62491f" Title="Field Class" Url="html/7f918b16-9076-e9ef-ceb0-aaf9f2f18d8e.htm">
+    <HelpTOCNode Id="65eeb089-c898-4090-a917-8cd6e9f9ab9f" Title="Field Class" Url="html/7f918b16-9076-e9ef-ceb0-aaf9f2f18d8e.htm">
       <HelpTOCNode Title="Field Constructor " Url="html/2de09488-5962-23bc-c8ff-a7b92e758ec3.htm" />
-      <HelpTOCNode Id="f73ff4d6-d3c5-45f8-9605-e5b04329ebe9" Title="Field Fields" Url="html/30b6210b-75a6-76fb-f2f0-d371ff10b51d.htm">
+      <HelpTOCNode Id="91115061-11e1-4189-99fc-a1781ed2bb82" Title="Field Fields" Url="html/30b6210b-75a6-76fb-f2f0-d371ff10b51d.htm">
         <HelpTOCNode Title="condition Field" Url="html/9e9a19cb-5b97-8f3a-a337-f18cbf1698fb.htm" />
         <HelpTOCNode Title="explosivePower Field" Url="html/ff3af98b-88e4-85f7-598f-9254c9075ade.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="e03bb2fc-3d2d-492d-976e-8bf178d4f8a4" Title="Field Methods" Url="html/65b37871-c84f-a0e9-44fa-a9e6d79a1955.htm">
+      <HelpTOCNode Id="ec9367d1-3806-4730-aba4-f888681a4a25" Title="Field Methods" Url="html/65b37871-c84f-a0e9-44fa-a9e6d79a1955.htm">
         <HelpTOCNode Title="DetonateByChainReaction Method " Url="html/ceeee4a5-2ad3-b03b-107b-8acea8323f5c.htm" />
         <HelpTOCNode Title="IntentionalDetonate Method " Url="html/07e390c0-bc43-222a-8039-cab0ebdd70dd.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="63dc060b-d8f5-4593-ba92-c8b223a0cca7" Title="Field Properties" Url="html/7d7901ff-0bdf-15dd-c8f4-c4130fc5c89a.htm">
+      <HelpTOCNode Id="20c65996-bd2c-48a2-b887-97fa72b82d3a" Title="Field Properties" Url="html/7d7901ff-0bdf-15dd-c8f4-c4130fc5c89a.htm">
         <HelpTOCNode Title="Condition Property " Url="html/b1b4d1b8-0150-6128-781e-a201264cfec8.htm" />
         <HelpTOCNode Title="ExplosivePower Property " Url="html/d285ecae-96d7-5d95-b4f5-25b0a3808671.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="f0e83f8f-6621-4b12-abd5-82d7c4270b0b" Title="IDrawer Interface" Url="html/d5b5d6b8-307b-9ca5-3517-9c2a5c055733.htm">
-      <HelpTOCNode Id="1f49e956-2d70-4856-afc5-70ce2c7e9683" Title="IDrawer Methods" Url="html/fac74d2f-511e-a3d0-98e5-de15dd106716.htm">
-        <HelpTOCNode Title="AskForPositionInput Method " Url="html/96815895-3fc5-e15f-7c51-5ad03159df4c.htm" />
-        <HelpTOCNode Title="AskForSizeInput Method " Url="html/37b7f795-ad8d-d5b9-7187-678929e60211.htm" />
-        <HelpTOCNode Title="DrawGame Method " Url="html/ff9ec282-a718-b925-859a-27f88de351a7.htm" />
-        <HelpTOCNode Title="ShowAskInput Method " Url="html/a4e7b74b-5146-bf5a-d0f2-fd2f75d72a34.htm" />
-        <HelpTOCNode Title="ShowBombsCount Method " Url="html/4e970942-1c68-7032-ddee-0f5ae0c3ab84.htm" />
-        <HelpTOCNode Title="ShowCongratulations Method " Url="html/bb8ab64e-075e-4cf0-66e1-906b2d08e4a5.htm" />
-        <HelpTOCNode Title="ShowGameOver Method " Url="html/2f768512-ae6a-c790-c3aa-866cfbd9cdf9.htm" />
-        <HelpTOCNode Title="ShowMessage Method " Url="html/be06ef28-e191-d491-7865-800f27a260fb.htm" />
-        <HelpTOCNode Title="ShowNote Method " Url="html/f40814e0-4c60-72bd-4741-7e8f6e961f75.htm" />
-        <HelpTOCNode Title="ShowTurnsCount Method " Url="html/1d21af52-97f2-70cd-0adc-07a36f76def2.htm" />
+    <HelpTOCNode Id="38aa985c-4e61-4488-96f1-345958585933" Title="ILogger Interface" Url="html/9f7d821a-c601-a0c9-9b25-dcba552ea7f1.htm">
+      <HelpTOCNode Id="9146f762-1c7d-4848-ba02-a420715507b1" Title="ILogger Methods" Url="html/47478849-22ef-0b24-77c6-d197b5883cd2.htm">
+        <HelpTOCNode Title="Log Method " Url="html/6116021b-4b49-9ceb-4e89-debd0997bc3f.htm" />
+        <HelpTOCNode Title="LogError Method " Url="html/22ee698e-08c6-f0bc-6ab5-2663440754bc.htm" />
+        <HelpTOCNode Title="LogEvent Method " Url="html/aa8cac88-eff6-006d-f286-c22debe75b39.htm" />
+        <HelpTOCNode Title="LogStartUp Method " Url="html/037b334e-088b-3972-9bcd-0804e11be621.htm" />
+        <HelpTOCNode Title="LogWarning Method " Url="html/1d2a4cda-55b7-3e42-eb30-b5fa7d768ebc.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="345dbb12-568d-4293-8e17-72c05bc62cb3" Title="Logger Class" Url="html/9314c5fe-3799-4f57-e506-6e2b04b0cd7b.htm">
-      <HelpTOCNode Title="Logger Constructor " Url="html/18389325-8da4-8db0-5d84-bf12c6728e3d.htm" />
-      <HelpTOCNode Id="72464eb9-5ec4-4a4d-b497-78b874724c9d" Title="Logger Fields" Url="html/7c380b3c-d301-12b4-299c-1f8fb6ce61aa.htm">
+    <HelpTOCNode Id="9bda67dd-3825-49c8-b39f-b87713dfcd95" Title="IUserInterface Interface" Url="html/666953b7-431b-ceb2-5662-ad1af606fdc6.htm">
+      <HelpTOCNode Id="53e6f343-489c-43be-8e1d-c195a4021f3e" Title="IUserInterface Methods" Url="html/edab1a17-c337-b918-8e41-1817a46716aa.htm">
+        <HelpTOCNode Title="AskForPositionInput Method " Url="html/84c78109-d6ef-ce13-f71a-4c3456e47119.htm" />
+        <HelpTOCNode Title="AskForSizeInput Method " Url="html/945793ed-ebdb-3ec5-cfcf-2b75b5a7fd1e.htm" />
+        <HelpTOCNode Title="DrawGame Method " Url="html/3a650d1b-dcd5-2366-d27b-65edbd82fea3.htm" />
+        <HelpTOCNode Title="ShowBombsCount Method " Url="html/2090cd37-a964-cbca-e046-bdb44e74dddf.htm" />
+        <HelpTOCNode Title="ShowCongratulations Method " Url="html/4db400c9-b132-2878-ad2d-d77729b4c448.htm" />
+        <HelpTOCNode Title="ShowGameOver Method " Url="html/2748c0ca-420d-506c-f980-d1fe2dc97d10.htm" />
+        <HelpTOCNode Title="ShowMessage Method " Url="html/6ef21364-b46b-8da8-017e-1f3d3811a672.htm" />
+        <HelpTOCNode Title="ShowNote Method " Url="html/684f2096-ca1f-048b-196b-e304c1f76fe7.htm" />
+        <HelpTOCNode Title="ShowTurnsCount Method " Url="html/bea8429e-9825-b6a3-1896-4fe9ef0459f1.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="83f083ae-4a84-4269-8d42-034fa2b5ad74" Title="Logger Class" Url="html/9314c5fe-3799-4f57-e506-6e2b04b0cd7b.htm">
+      <HelpTOCNode Title="Logger Constructor " Url="html/670aa48f-7c03-b6c7-ed41-7c7d8231968f.htm" />
+      <HelpTOCNode Id="8136eb25-daad-4397-a0f1-6896b6cad2cd" Title="Logger Fields" Url="html/7c380b3c-d301-12b4-299c-1f8fb6ce61aa.htm">
         <HelpTOCNode Title="filePath Field" Url="html/b83a199b-e1bf-49e8-7cc3-54f9f99369a4.htm" />
         <HelpTOCNode Title="restrictionLevel Field" Url="html/08fe76ec-9506-ff04-6736-4058ccb5ae3c.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="9566b2b2-9829-43c8-bde2-2bf175b89858" Title="Logger Methods" Url="html/93f77e4b-c428-907e-83af-cb1416c4280e.htm">
+      <HelpTOCNode Id="b0670ad8-1433-40ff-a7a3-92ae65601e6f" Title="Logger Methods" Url="html/93f77e4b-c428-907e-83af-cb1416c4280e.htm">
         <HelpTOCNode Title="Log Method " Url="html/430e09b0-f3ef-3d0e-cd4b-e615d05db2ce.htm" />
         <HelpTOCNode Title="LogError Method " Url="html/d06a00cb-a72f-99a7-e93f-da2d5a91c55e.htm" />
         <HelpTOCNode Title="LogEvent Method " Url="html/86b0d8f0-6050-b9b3-1880-41cd7f46932f.htm" />
         <HelpTOCNode Title="LogStartUp Method " Url="html/43338126-9846-901d-b555-a2807ae2ed35.htm" />
         <HelpTOCNode Title="LogWarning Method " Url="html/6ba12a3e-e4f8-c578-6ee4-1453c535ed75.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="2c67b54e-43b3-4a30-9a6a-170fb4b19045" Title="Logger Properties" Url="html/16004585-8561-cc32-3def-473000c85d89.htm">
+      <HelpTOCNode Id="84420add-e43b-4c62-8826-cea7477d22f9" Title="Logger Properties" Url="html/16004585-8561-cc32-3def-473000c85d89.htm">
         <HelpTOCNode Title="FilePath Property " Url="html/27ed8c91-52e3-e0ed-b3ff-21ffd3ad039f.htm" />
         <HelpTOCNode Title="RestrictionLevel Property " Url="html/8b36085d-c4f5-655f-1afe-5228d49162a8.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="LoggingRestrictionLevels Enumeration" Url="html/16ded4ee-9b6f-b285-49d8-b3a4ff328dd4.htm" />
-    <HelpTOCNode Id="a9d2ce72-818c-4320-97b3-72568295d192" Title="PopupSizeInput Class" Url="html/ab37afd7-2e78-9baa-6ce7-1d5928824427.htm">
+    <HelpTOCNode Id="869fe2d5-7d10-42c1-9a97-5b67d63f5dfc" Title="PopupSizeInput Class" Url="html/ab37afd7-2e78-9baa-6ce7-1d5928824427.htm">
       <HelpTOCNode Title="PopupSizeInput Constructor " Url="html/f681b0d8-4230-90e8-4590-7e74b3e81196.htm" />
-      <HelpTOCNode Id="22770db6-e5f0-4ca7-b2b5-5edd79c54e63" Title="PopupSizeInput Fields" Url="html/5825abae-3164-ec75-fd9f-f68185d47ded.htm">
+      <HelpTOCNode Id="2181340a-c6e0-4eaa-b832-11027921a585" Title="PopupSizeInput Fields" Url="html/5825abae-3164-ec75-fd9f-f68185d47ded.htm">
         <HelpTOCNode Title="button1 Field" Url="html/790d1516-f0c5-cb91-39c9-171dd3dc3284.htm" />
         <HelpTOCNode Title="components Field" Url="html/c9ca245c-5f7f-794c-1431-d78f662b0091.htm" />
         <HelpTOCNode Title="label1 Field" Url="html/b85bb9c6-ca6b-65bc-1886-b858cf965fc6.htm" />
         <HelpTOCNode Title="textBox Field" Url="html/6b7c3335-3d95-4f46-50ce-d7817ed20db6.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="32660796-143e-4009-8794-10cb6566e92a" Title="PopupSizeInput Methods" Url="html/37a74a34-c8bc-5e02-9108-9bc33059f92b.htm">
-        <HelpTOCNode Id="06fa07be-0e28-4a33-ac6b-e07281be1188" Title="Dispose Method " Url="html/6f3e5a4b-df30-8cdf-176f-973a36f3d723.htm">
+      <HelpTOCNode Id="aca1830e-5fb9-4899-861d-47864ae88b8c" Title="PopupSizeInput Methods" Url="html/37a74a34-c8bc-5e02-9108-9bc33059f92b.htm">
+        <HelpTOCNode Id="0fcb50f6-e052-422e-bc40-fafc4645fc42" Title="Dispose Method " Url="html/6f3e5a4b-df30-8cdf-176f-973a36f3d723.htm">
           <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/a71c6864-dd88-d7d0-b95e-ef15831aebb4.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="InitializeComponent Method " Url="html/ed21b17b-bf86-3293-af9d-1cb70ad22175.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="8c42069c-d743-403b-b165-371af1b8896c" Title="PopupSizeInput Properties" Url="html/2f41a984-3821-4cff-9c4e-a2413757ac6b.htm">
+      <HelpTOCNode Id="1c6a73ec-8ad7-4c92-b8aa-f936e455a62b" Title="PopupSizeInput Properties" Url="html/2f41a984-3821-4cff-9c4e-a2413757ac6b.htm">
         <HelpTOCNode Title="Input Property " Url="html/a8545c57-991c-d6de-67cd-73a946b45be4.htm" />
       </HelpTOCNode>
       <HelpTOCNode Title="PopupSizeInput Events" Url="html/ea000ef5-7725-a403-6d77-221dadd771cb.htm" />
     </HelpTOCNode>
-    <HelpTOCNode Id="8aa0d243-09db-4f03-b066-43f5bbc1912b" Title="WinFormsDrawer Class" Url="html/4f3cc66b-5d07-5c38-9ead-20da3a827cd1.htm">
-      <HelpTOCNode Title="WinFormsDrawer Constructor " Url="html/65e2be6c-5f9c-fffe-5863-c86a1d4f4175.htm" />
-      <HelpTOCNode Id="04fdcded-057e-4d4b-b3a5-7bb20d58fa71" Title="WinFormsDrawer Fields" Url="html/68f31557-2c16-fbb5-9fb3-71fb2038fa69.htm">
-        <HelpTOCNode Title="awaitingGameFieldCellSelection Field" Url="html/1c97e62e-bb2a-2b57-0529-8e5dca975c92.htm" />
-        <HelpTOCNode Title="bombsCountLabel Field" Url="html/f6c75385-c7e3-5b6b-68f6-9f3d91672930.htm" />
-        <HelpTOCNode Title="bombsLabel Field" Url="html/535e5a3f-9175-b8c2-571b-ca090f6450a3.htm" />
-        <HelpTOCNode Title="col1 Field" Url="html/c15f502f-794d-57aa-8c7c-26f147bf489d.htm" />
-        <HelpTOCNode Title="components Field" Url="html/c63c047e-8de7-34ff-cc9e-e74acde95d97.htm" />
-        <HelpTOCNode Title="gameFieldCellIsSelected Field" Url="html/60c5490d-1d5c-1378-de05-bbaab55b5b9a.htm" />
-        <HelpTOCNode Title="gameFieldGridView Field" Url="html/38cccf4a-ac69-d4b0-16e9-d275e4ea39e9.htm" />
-        <HelpTOCNode Title="gameFieldIsInitialized Field" Url="html/8edf3d3f-761b-53db-fe27-b92034a4f366.htm" />
-        <HelpTOCNode Title="messagesListView Field" Url="html/a39fe80f-1e71-c0d1-e152-31c50f7eb4e0.htm" />
-        <HelpTOCNode Title="sizeInputWindow Field" Url="html/a78c47cb-5bc7-d2db-0f80-5047dffa6467.htm" />
-        <HelpTOCNode Title="turnsCountLabel Field" Url="html/25a02533-cb26-f7f9-2e4f-fcc15c254800.htm" />
-        <HelpTOCNode Title="turnsLabel Field" Url="html/5609d067-38dc-f9f2-3bfa-4e72087a7720.htm" />
+    <HelpTOCNode Id="dc8b08cc-0d37-4bd3-b53a-ba8be94eaec6" Title="WinFormsUI Class" Url="html/75697cd8-0581-43f5-742a-f763f32d0b97.htm">
+      <HelpTOCNode Title="WinFormsUI Constructor " Url="html/034525b0-d5e8-5258-fa49-46b720ed2f4a.htm" />
+      <HelpTOCNode Id="ad6d58b1-7ff1-4082-a28e-1d972123c01f" Title="WinFormsUI Fields" Url="html/302aac3f-fc56-54af-e333-42710eb30afe.htm">
+        <HelpTOCNode Title="awaitingGameFieldCellSelection Field" Url="html/a91745db-4921-ff6d-ea87-c18388340217.htm" />
+        <HelpTOCNode Title="bombsCountLabel Field" Url="html/37cf9c32-0f3b-7f3c-3404-f94d241c02bb.htm" />
+        <HelpTOCNode Title="bombsLabel Field" Url="html/93f79665-1ab8-f177-e6b3-5df6e305e05e.htm" />
+        <HelpTOCNode Title="col1 Field" Url="html/910fc6d8-1572-d7b1-46ea-0c458ec2bf7d.htm" />
+        <HelpTOCNode Title="components Field" Url="html/c4564a1c-2ac4-a4f6-448b-e073d60d83fa.htm" />
+        <HelpTOCNode Title="gameFieldCellIsSelected Field" Url="html/088761c1-f8db-495e-7475-d6127e4e5acd.htm" />
+        <HelpTOCNode Title="gameFieldGridView Field" Url="html/86c22da0-027a-c0e8-2aab-e054224a4780.htm" />
+        <HelpTOCNode Title="gameFieldIsInitialized Field" Url="html/0f83d808-f3fe-bc63-54ce-5fa52e48532c.htm" />
+        <HelpTOCNode Title="messagesListView Field" Url="html/b9cc6c72-9c24-a7fd-b47f-a7f197ebd095.htm" />
+        <HelpTOCNode Title="sizeInputWindow Field" Url="html/1d4169d9-4bec-feab-3c11-d67cbba1d5af.htm" />
+        <HelpTOCNode Title="turnsCountLabel Field" Url="html/1b4713f2-c8a4-db44-58b0-54f6c5725c42.htm" />
+        <HelpTOCNode Title="turnsLabel Field" Url="html/376cd285-9148-8084-b792-400be803df5c.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="c31bd443-a440-468d-8290-5374f1f33982" Title="WinFormsDrawer Methods" Url="html/6db2c119-1874-2304-9a1d-520cd6e7cc6b.htm">
-        <HelpTOCNode Title="AskForPositionInput Method " Url="html/9ad5f3d5-b1ee-c1a1-b53f-af3277c16254.htm" />
-        <HelpTOCNode Title="AskForSizeInput Method " Url="html/eb6aee82-ec5f-bf07-d3b6-cc0c3f447c77.htm" />
-        <HelpTOCNode Id="12fe1e90-2740-497d-8720-6bb106149b64" Title="Dispose Method " Url="html/0f934600-c204-397d-7611-b560b46af4f1.htm">
-          <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/f4e56db8-6401-f357-88df-ba8e9a4e3ede.htm" />
+      <HelpTOCNode Id="26738585-475a-447d-a307-889ddfd5b925" Title="WinFormsUI Methods" Url="html/498e549a-bd69-7881-96ea-152c46cb90a2.htm">
+        <HelpTOCNode Title="AskForPositionInput Method " Url="html/03aa1375-ee7b-3ae0-bfb5-0e8cf7790704.htm" />
+        <HelpTOCNode Title="AskForSizeInput Method " Url="html/12424183-285f-d8f2-5654-47edaa67b02e.htm" />
+        <HelpTOCNode Id="cc1a7ff9-6c85-4339-9e42-a98d090b19e3" Title="Dispose Method " Url="html/2e0fc1eb-3d48-a9b9-34ba-f17ad62a8141.htm">
+          <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/dc239b6e-86cc-11fd-37c9-fe011c7c9f8a.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Title="DrawGame Method " Url="html/5172c49a-52fd-4bfe-5e3c-cc8e4b736ccc.htm" />
-        <HelpTOCNode Title="gameFieldGridView_CellMouseClick Method " Url="html/7daf8ac6-a9fb-7b39-60d7-893dac0db42e.htm" />
-        <HelpTOCNode Title="InitializeComponent Method " Url="html/60be8c70-12be-58e1-32ce-5a762b9534e5.htm" />
-        <HelpTOCNode Title="SetFieldValue Method " Url="html/cd64e212-2ece-3511-714c-8ba16d2b9a84.htm" />
-        <HelpTOCNode Title="SetGameFieldSize Method " Url="html/aa8b8d57-9f39-c6e8-59ce-7527971c24d9.htm" />
-        <HelpTOCNode Title="ShowAskInput Method " Url="html/9363da76-3206-bbae-1d72-addee702d98c.htm" />
-        <HelpTOCNode Title="ShowBombsCount Method " Url="html/73120388-9643-055c-e6a0-9f2eaff0d51e.htm" />
-        <HelpTOCNode Title="ShowCongratulations Method " Url="html/12cac09a-32c6-86b4-1014-449988668056.htm" />
-        <HelpTOCNode Title="ShowGameOver Method " Url="html/e1ad823e-1271-a822-16b9-6c78befd90b1.htm" />
-        <HelpTOCNode Title="ShowMessage Method " Url="html/af0748ec-1837-705b-7b57-cafb409011c2.htm" />
-        <HelpTOCNode Title="ShowNote Method " Url="html/d85dfe79-735a-1485-b3e2-90d70708149c.htm" />
-        <HelpTOCNode Title="ShowTurnsCount Method " Url="html/ca8c15b5-7d75-3436-a134-96b4f5e414e0.htm" />
-        <HelpTOCNode Title="WinFormsDrawer_FormClosing Method " Url="html/9e4a38e9-6165-9095-32f8-ed123bdc585b.htm" />
+        <HelpTOCNode Title="DrawGame Method " Url="html/743ce5e3-644e-2be9-1fb5-4c5329f8c584.htm" />
+        <HelpTOCNode Title="gameFieldGridView_CellMouseClick Method " Url="html/0bc90312-2fa4-50e9-a512-4743764e5469.htm" />
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/4bf66aed-487f-4989-51ea-37f1f0d69d2e.htm" />
+        <HelpTOCNode Title="SetFieldValue Method " Url="html/b79be800-0da9-51e2-baa3-41962aaddc90.htm" />
+        <HelpTOCNode Title="SetGameFieldSize Method " Url="html/cba6bf4a-cb7b-7527-eb65-8552e1a0889c.htm" />
+        <HelpTOCNode Title="ShowBombsCount Method " Url="html/acc264c4-3b42-f38e-a3c6-a921cb431dcb.htm" />
+        <HelpTOCNode Title="ShowCongratulations Method " Url="html/d10991a8-3fdb-62fc-5c94-05fd243f8d07.htm" />
+        <HelpTOCNode Title="ShowGameOver Method " Url="html/e2768ebd-104d-b1a4-0fa6-c7304a774007.htm" />
+        <HelpTOCNode Title="ShowMessage Method " Url="html/4413fbf9-329c-fc7f-1e12-331f184826be.htm" />
+        <HelpTOCNode Title="ShowNote Method " Url="html/3e5ec6be-a886-765d-28d5-c284c4c7ad6e.htm" />
+        <HelpTOCNode Title="ShowTurnsCount Method " Url="html/a2e1a10a-0623-347b-9f8a-a3ae9ca90ae5.htm" />
+        <HelpTOCNode Title="WinFormsDrawer_FormClosing Method " Url="html/9f7f5b10-37e7-0805-0bcf-edfd44cb15ce.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Title="WinFormsDrawer Properties" Url="html/0bfedba2-9b4a-cc85-e959-9c7614d870d2.htm" />
-      <HelpTOCNode Title="WinFormsDrawer Events" Url="html/d7128145-226c-7a1d-63a8-170ac0ffa23f.htm" />
+      <HelpTOCNode Title="WinFormsUI Properties" Url="html/c0c596fe-2007-2d19-5522-68d133f1b01d.htm" />
+      <HelpTOCNode Title="WinFormsUI Events" Url="html/3a44ddee-ceec-1f01-e1f4-63f09ef69697.htm" />
     </HelpTOCNode>
-    <HelpTOCNode Title="WinFormsDrawer.GetInputCallBack Delegate" Url="html/fea7360b-9c3e-cb1a-2c7f-b34a0bb8eb5e.htm" />
-    <HelpTOCNode Title="WinFormsDrawer.SetFieldValueCallBack Delegate" Url="html/28ec2203-6576-f60a-5889-1cb14de5757a.htm" />
-    <HelpTOCNode Title="WinFormsDrawer.SetGameFieldSizeCallback Delegate" Url="html/086292e9-51e4-735b-ed49-9c85051adb8d.htm" />
-    <HelpTOCNode Title="WinFormsDrawer.ShowCountCallBack Delegate" Url="html/21da26d7-15b3-d115-8e9c-b1b24ea6a8ac.htm" />
-    <HelpTOCNode Title="WinFormsDrawer.ShowMessageCallBack Delegate" Url="html/9c25f5f7-7021-e24d-8644-987e059e116a.htm" />
+    <HelpTOCNode Title="WinFormsUI.GetInputCallBack Delegate" Url="html/80c78c90-19a2-6eef-3cd1-1b47cde1f222.htm" />
+    <HelpTOCNode Title="WinFormsUI.SetFieldValueCallBack Delegate" Url="html/69cb46a6-1b33-aab1-8924-b3f0af4a8525.htm" />
+    <HelpTOCNode Title="WinFormsUI.SetGameFieldSizeCallback Delegate" Url="html/283f22a2-b5a0-f6ed-aace-1fa0cc87ef17.htm" />
+    <HelpTOCNode Title="WinFormsUI.ShowCountCallBack Delegate" Url="html/43f0d4e5-25af-d606-f451-0bce4b3c26b7.htm" />
+    <HelpTOCNode Title="WinFormsUI.ShowMessageCallBack Delegate" Url="html/ca7d0220-2e89-66f7-76dd-0a8356bf7ea8.htm" />
   </HelpTOCNode>
-  <HelpTOCNode Id="544a49c7-102a-43c9-8cdb-b5ddc9f26d64" Title="BattleField7Namespace.InitialGameClass" Url="html/e7ce15e5-8be6-8d81-99c3-af5a7159e9b3.htm">
-    <HelpTOCNode Id="fe0312fc-5b1d-476a-961a-502e74fd43a9" Title="BattleGame Class" Url="html/60fee19f-75bf-50c7-eff3-912bc4a9725e.htm">
+  <HelpTOCNode Id="bc60c52d-9758-4512-b6d5-f45d98577e65" Title="BattleField7Namespace.InitialGameClass" Url="html/e7ce15e5-8be6-8d81-99c3-af5a7159e9b3.htm">
+    <HelpTOCNode Id="10c2b5db-6d16-42fe-bd2c-d8167aecc5e9" Title="BattleGame Class" Url="html/60fee19f-75bf-50c7-eff3-912bc4a9725e.htm">
       <HelpTOCNode Title="BattleGame Constructor " Url="html/a0e78f49-fa8a-fc59-3f0e-a8724c075ea6.htm" />
-      <HelpTOCNode Id="74be8cd4-06c6-4ce1-90d8-d29258b03165" Title="BattleGame Fields" Url="html/bff39046-1912-16c9-6570-9c40f254ad9a.htm">
+      <HelpTOCNode Id="b12104bf-aaad-407c-b948-a7ba2259c77f" Title="BattleGame Fields" Url="html/bff39046-1912-16c9-6570-9c40f254ad9a.htm">
         <HelpTOCNode Title="field Field" Url="html/9b5c419d-7d5b-0112-2100-70cb9a58a343.htm" />
         <HelpTOCNode Title="fieldSize Field" Url="html/5bad68a1-65f7-2c76-02fa-f504f8c8798d.htm" />
         <HelpTOCNode Title="minesCleared Field" Url="html/02aef46f-966b-788f-799b-58555dbcee01.htm" />
         <HelpTOCNode Title="minesDeployed Field" Url="html/4feffd8e-b726-60a0-ec14-53062f2d5a8c.htm" />
         <HelpTOCNode Title="minesExploded Field" Url="html/a0e52541-8e2b-8238-f7df-de12ed66f33b.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="626c54cf-9206-4077-b19c-9a1d25d4da5b" Title="BattleGame Methods" Url="html/0bd34f39-10b4-b068-3278-371df6ed4f5f.htm">
+      <HelpTOCNode Id="a51a74df-e8fa-4042-af3e-da281094ea0e" Title="BattleGame Methods" Url="html/0bd34f39-10b4-b068-3278-371df6ed4f5f.htm">
         <HelpTOCNode Title="AllMinesCleared Method " Url="html/1ffab0d3-fd25-99bf-d350-93046b936abb.htm" />
         <HelpTOCNode Title="BombFive Method " Url="html/e690ef12-62f8-d17d-fd0a-4f5813eb4763.htm" />
         <HelpTOCNode Title="BombFour Method " Url="html/9eac8b3f-b37d-9e00-2cef-5f766ef45fd5.htm" />

@@ -22,3 +22,9 @@
 [07.13.14 14:32:05] [Error] System.Exception: Testing
    at BattleField7Namespace.BattleFieldGame.Main() in d:\git\misterious-game\BattleFieldGame.cs:line 24
 [07.13.14 14:32:19] [Program Started]
+[07.13.14 14:44:21] [Program Started]
+[07.13.14 14:46:00] [Program Started]
+[07.13.14 14:46:17] [Program Started]
+[07.13.14 14:46:40] [Program Started]
+[07.13.14 14:49:35] [Program Started]
+[07.13.14 14:51:31] [Program Started]

@@ -132,132 +132,120 @@
             When a Field has been blown up by a bomb.
             </summary>
         </member>
-        <member name="T:BattleField7Namespace.ConsoleDrawer">
+        <member name="T:BattleField7Namespace.ConsoleUI">
             <summary>
             Draws the game in the console.
             </summary>
         </member>
-        <member name="T:BattleField7Namespace.IDrawer">
+        <member name="T:BattleField7Namespace.IUserInterface">
             <summary>
             Basic functionality to display Battle Field 7 game.
             </summary>
         </member>
-        <member name="M:BattleField7Namespace.IDrawer.DrawGame(BattleField7Namespace.Field[0:,0:])">
+        <member name="M:BattleField7Namespace.IUserInterface.DrawGame(BattleField7Namespace.Field[0:,0:])">
             <summary>
             Draws the game.
             </summary>
             <param name="gameField">The game field.</param>
         </member>
-        <member name="M:BattleField7Namespace.IDrawer.AskForSizeInput">
+        <member name="M:BattleField7Namespace.IUserInterface.AskForSizeInput(System.String)">
             <summary>
             Asks for size input.
             </summary>
             <returns></returns>
         </member>
-        <member name="M:BattleField7Namespace.IDrawer.AskForPositionInput">
+        <member name="M:BattleField7Namespace.IUserInterface.AskForPositionInput(System.String)">
             <summary>
             Asks for position input.
             </summary>
             <returns></returns>
         </member>
-        <member name="M:BattleField7Namespace.IDrawer.ShowMessage(System.String)">
+        <member name="M:BattleField7Namespace.IUserInterface.ShowMessage(System.String)">
             <summary>
             Shows the message.
             </summary>
             <param name="message">The message.</param>
         </member>
-        <member name="M:BattleField7Namespace.IDrawer.ShowCongratulations(System.String)">
+        <member name="M:BattleField7Namespace.IUserInterface.ShowCongratulations(System.String)">
             <summary>
             Shows the congratulations message.
             </summary>
             <param name="message">The message.</param>
         </member>
-        <member name="M:BattleField7Namespace.IDrawer.ShowGameOver(System.String)">
+        <member name="M:BattleField7Namespace.IUserInterface.ShowGameOver(System.String)">
             <summary>
             Shows the game over message.
             </summary>
             <param name="message">The message.</param>
         </member>
-        <member name="M:BattleField7Namespace.IDrawer.ShowNote(System.String)">
+        <member name="M:BattleField7Namespace.IUserInterface.ShowNote(System.String)">
             <summary>
             Shows a note message.
             </summary>
             <param name="message">The message.</param>
         </member>
-        <member name="M:BattleField7Namespace.IDrawer.ShowAskInput(System.String)">
-            <summary>
-            Shows a request for input message.
-            </summary>
-            <param name="message">The message.</param>
-        </member>
-        <member name="M:BattleField7Namespace.IDrawer.ShowBombsCount(System.Int32)">
+        <member name="M:BattleField7Namespace.IUserInterface.ShowBombsCount(System.Int32)">
             <summary>
             Shows the bombs count.
             </summary>
             <param name="count">The count.</param>
         </member>
-        <member name="M:BattleField7Namespace.IDrawer.ShowTurnsCount(System.Int32)">
+        <member name="M:BattleField7Namespace.IUserInterface.ShowTurnsCount(System.Int32)">
             <summary>
             Shows the turns count.
             </summary>
             <param name="count">The count.</param>
         </member>
-        <member name="M:BattleField7Namespace.ConsoleDrawer.DrawGame(BattleField7Namespace.Field[0:,0:])">
+        <member name="M:BattleField7Namespace.ConsoleUI.DrawGame(BattleField7Namespace.Field[0:,0:])">
             <summary>
             Draws the game in the console.
             </summary>
             <param name="gameField">The game field.</param>
             <exception cref="T:System.NotImplementedException">ConsoleDrawer.DrawGame() is not implemented</exception>
         </member>
-        <member name="M:BattleField7Namespace.ConsoleDrawer.AskForSizeInput">
+        <member name="M:BattleField7Namespace.ConsoleUI.AskForSizeInput(System.String)">
             <summary>
             Asks for size input.
             </summary>
             <returns></returns>
         </member>
-        <member name="M:BattleField7Namespace.ConsoleDrawer.AskForPositionInput">
+        <member name="M:BattleField7Namespace.ConsoleUI.AskForPositionInput(System.String)">
             <summary>
             Asks for position input.
             </summary>
             <returns></returns>
         </member>
-        <member name="M:BattleField7Namespace.ConsoleDrawer.ShowMessage(System.String)">
+        <member name="M:BattleField7Namespace.ConsoleUI.ShowMessage(System.String)">
             <summary>
             Shows the message.
             </summary>
             <param name="message">The message.</param>
         </member>
-        <member name="M:BattleField7Namespace.ConsoleDrawer.ShowCongratulations(System.String)">
+        <member name="M:BattleField7Namespace.ConsoleUI.ShowCongratulations(System.String)">
             <summary>
             Shows the congratulations message.
             </summary>
             <param name="message">The message.</param>
         </member>
-        <member name="M:BattleField7Namespace.ConsoleDrawer.ShowGameOver(System.String)">
+        <member name="M:BattleField7Namespace.ConsoleUI.ShowGameOver(System.String)">
             <summary>
             Shows the game over message.
             </summary>
             <param name="message">The message.</param>
         </member>
-        <member name="M:BattleField7Namespace.ConsoleDrawer.ShowNote(System.String)">
+        <member name="M:BattleField7Namespace.ConsoleUI.ShowNote(System.String)">
             <summary>
             Shows a note message.
             </summary>
             <param name="message">The message.</param>
         </member>
-        <member name="M:BattleField7Namespace.ConsoleDrawer.ShowAskInput(System.String)">
-            <summary>
-            Shows a request for input message.
-            </summary>
-            <param name="message">The message.</param>
-        </member>
-        <member name="M:BattleField7Namespace.ConsoleDrawer.ShowBombsCount(System.Int32)">
+        <member name="M:BattleField7Namespace.ConsoleUI.ShowBombsCount(System.Int32)">
             <summary>
             Shows the bombs count.
             </summary>
             <param name="count">The count.</param>
         </member>
-        <member name="M:BattleField7Namespace.ConsoleDrawer.ShowTurnsCount(System.Int32)">
+        <member name="M:BattleField7Namespace.ConsoleUI.ShowTurnsCount(System.Int32)">
             <summary>
             Shows the turns count.
             </summary>
@@ -312,7 +300,7 @@
             witch are to be added to the detonation position in order to get the coordinates of the specified position.
             </summary>
         </member>
-        <member name="M:BattleField7Namespace.Engine.#ctor(BattleField7Namespace.IDrawer)">
+        <member name="M:BattleField7Namespace.Engine.#ctor(BattleField7Namespace.IUserInterface)">
             <summary>
             Initializes a new instance of the <see cref="T:BattleField7Namespace.Engine"/> class.
             </summary>
@@ -586,170 +574,164 @@
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
-        <member name="T:BattleField7Namespace.WinFormsDrawer">
+        <member name="T:BattleField7Namespace.WinFormsUI">
             <summary>
             A Windows Forms game interface
             </summary>
         </member>
-        <member name="F:BattleField7Namespace.WinFormsDrawer.sizeInputWindow">
+        <member name="F:BattleField7Namespace.WinFormsUI.sizeInputWindow">
             <summary>
             The size input window
             </summary>
         </member>
-        <member name="F:BattleField7Namespace.WinFormsDrawer.gameFieldIsInitialized">
+        <member name="F:BattleField7Namespace.WinFormsUI.gameFieldIsInitialized">
             <summary>
             Needed for a check before drawing the game field,
             becouse the thread of the form might still not be ready with setting up the game grid's size,
             when the Drawer.DrawGame() method is called.
             </summary>
         </member>
-        <member name="F:BattleField7Namespace.WinFormsDrawer.gameFieldCellIsSelected">
+        <member name="F:BattleField7Namespace.WinFormsUI.gameFieldCellIsSelected">
             <summary>
             Needed for the active waiting for cell position input.
             It is false when input is not needed, or when a cell isn't yet clicked.
             It becomes true only for a moment, when a cell is selected during an active waiting.
             </summary>
         </member>
-        <member name="F:BattleField7Namespace.WinFormsDrawer.awaitingGameFieldCellSelection">
+        <member name="F:BattleField7Namespace.WinFormsUI.awaitingGameFieldCellSelection">
             <summary>
             Needed for for a check on game grid cell selection.
             If there is an active waiting for input, the method will set gameFieldCellIsSelected to true.
             Otherwise it will ignore the input.
             </summary>
         </member>
-        <member name="M:BattleField7Namespace.WinFormsDrawer.#ctor">
+        <member name="M:BattleField7Namespace.WinFormsUI.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:BattleField7Namespace.WinFormsDrawer"/> class.
+            Initializes a new instance of the <see cref="T:BattleField7Namespace.WinFormsUI"/> class.
             </summary>
         </member>
-        <member name="M:BattleField7Namespace.WinFormsDrawer.DrawGame(BattleField7Namespace.Field[0:,0:])">
+        <member name="M:BattleField7Namespace.WinFormsUI.DrawGame(BattleField7Namespace.Field[0:,0:])">
             <summary>
             Draws the game.
             </summary>
             <param name="gameField">The game field.</param>
         </member>
-        <member name="M:BattleField7Namespace.WinFormsDrawer.AskForSizeInput">
+        <member name="M:BattleField7Namespace.WinFormsUI.AskForSizeInput(System.String)">
             <summary>
             Asks for size input.
             </summary>
             <returns>size input</returns>
         </member>
-        <member name="M:BattleField7Namespace.WinFormsDrawer.AskForPositionInput">
+        <member name="M:BattleField7Namespace.WinFormsUI.AskForPositionInput(System.String)">
             <summary>
             Asks for position input.
             </summary>
             <returns>position input</returns>
         </member>
-        <member name="M:BattleField7Namespace.WinFormsDrawer.ShowMessage(System.String)">
+        <member name="M:BattleField7Namespace.WinFormsUI.ShowMessage(System.String)">
             <summary>
             Shows the message.
             </summary>
             <param name="message">The message.</param>
         </member>
-        <member name="M:BattleField7Namespace.WinFormsDrawer.ShowCongratulations(System.String)">
+        <member name="M:BattleField7Namespace.WinFormsUI.ShowCongratulations(System.String)">
             <summary>
             Shows the congratulations message.
             </summary>
             <param name="message">The message.</param>
         </member>
-        <member name="M:BattleField7Namespace.WinFormsDrawer.ShowGameOver(System.String)">
+        <member name="M:BattleField7Namespace.WinFormsUI.ShowGameOver(System.String)">
             <summary>
             Shows the game over message.
             </summary>
             <param name="message">The message.</param>
         </member>
-        <member name="M:BattleField7Namespace.WinFormsDrawer.ShowNote(System.String)">
+        <member name="M:BattleField7Namespace.WinFormsUI.ShowNote(System.String)">
             <summary>
             Shows a note message.
             </summary>
             <param name="message">The message.</param>
         </member>
-        <member name="M:BattleField7Namespace.WinFormsDrawer.ShowAskInput(System.String)">
-            <summary>
-            Shows a request for input message.
-            </summary>
-            <param name="message">The message.</param>
-        </member>
-        <member name="M:BattleField7Namespace.WinFormsDrawer.ShowBombsCount(System.Int32)">
+        <member name="M:BattleField7Namespace.WinFormsUI.ShowBombsCount(System.Int32)">
             <summary>
             Shows the bombs count.
             </summary>
             <param name="count">The count.</param>
         </member>
-        <member name="M:BattleField7Namespace.WinFormsDrawer.ShowTurnsCount(System.Int32)">
+        <member name="M:BattleField7Namespace.WinFormsUI.ShowTurnsCount(System.Int32)">
             <summary>
             Shows the turns count.
             </summary>
             <param name="count">The count.</param>
         </member>
-        <member name="M:BattleField7Namespace.WinFormsDrawer.SetGameFieldSize(System.Int32)">
+        <member name="M:BattleField7Namespace.WinFormsUI.SetGameFieldSize(System.Int32)">
             <summary>
             Sets the size of the game field.
             </summary>
             <param name="size">The size.</param>
         </member>
-        <member name="M:BattleField7Namespace.WinFormsDrawer.SetFieldValue(System.String[])">
+        <member name="M:BattleField7Namespace.WinFormsUI.SetFieldValue(System.String[])">
             <summary>
             Sets the field value.
             </summary>
             <param name="paramsOfField">The parameters of field.</param>
         </member>
-        <member name="M:BattleField7Namespace.WinFormsDrawer.WinFormsDrawer_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
+        <member name="M:BattleField7Namespace.WinFormsUI.WinFormsDrawer_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
             <summary>
             Handles the FormClosing event of the WinFormsDrawer control.
             </summary>
             <param name="sender">The source of the event.</param>
             <param name="e">The <see cref="T:System.Windows.Forms.FormClosingEventArgs"/> instance containing the event data.</param>
         </member>
-        <member name="M:BattleField7Namespace.WinFormsDrawer.gameFieldGridView_CellMouseClick(System.Object,System.Windows.Forms.DataGridViewCellMouseEventArgs)">
+        <member name="M:BattleField7Namespace.WinFormsUI.gameFieldGridView_CellMouseClick(System.Object,System.Windows.Forms.DataGridViewCellMouseEventArgs)">
             <summary>
             Handles the CellMouseClick event of the gameFieldGridView control.
             </summary>
             <param name="sender">The source of the event.</param>
             <param name="e">The <see cref="T:System.Windows.Forms.DataGridViewCellMouseEventArgs"/> instance containing the event data.</param>
         </member>
-        <member name="F:BattleField7Namespace.WinFormsDrawer.components">
+        <member name="F:BattleField7Namespace.WinFormsUI.components">
             <summary>
             Required designer variable.
             </summary>
         </member>
-        <member name="M:BattleField7Namespace.WinFormsDrawer.Dispose(System.Boolean)">
+        <member name="M:BattleField7Namespace.WinFormsUI.Dispose(System.Boolean)">
             <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
-        <member name="M:BattleField7Namespace.WinFormsDrawer.InitializeComponent">
+        <member name="M:BattleField7Namespace.WinFormsUI.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="T:BattleField7Namespace.WinFormsDrawer.ShowCountCallBack">
+        <member name="T:BattleField7Namespace.WinFormsUI.ShowCountCallBack">
             <summary>
             Delegate used to safely access a count label (bombs or turns) from the thread of the game.
             </summary>
             <param name="count">The count to be displayed.</param>
         </member>
-        <member name="T:BattleField7Namespace.WinFormsDrawer.SetGameFieldSizeCallback">
+        <member name="T:BattleField7Namespace.WinFormsUI.SetGameFieldSizeCallback">
             <summary>
             Delegate used to safely access the grid controle from the thread of the game, in order to set its sizes.
             </summary>
             <param name="size">The size.</param>
         </member>
-        <member name="T:BattleField7Namespace.WinFormsDrawer.SetFieldValueCallBack">
+        <member name="T:BattleField7Namespace.WinFormsUI.SetFieldValueCallBack">
             <summary>
             Delegate used to safely access a grid cell's value from the thread of the game.
             </summary>
             <param name="paramsOfField">The parameters of field.</param>
         </member>
-        <member name="T:BattleField7Namespace.WinFormsDrawer.GetInputCallBack">
+        <member name="T:BattleField7Namespace.WinFormsUI.GetInputCallBack">
             <summary>
             Delegate used to safely access the AskForSizeInput() method from the thread of the game.
             </summary>
             <returns></returns>
         </member>
-        <member name="T:BattleField7Namespace.WinFormsDrawer.ShowMessageCallBack">
+        <member name="T:BattleField7Namespace.WinFormsUI.ShowMessageCallBack">
             <summary>
             Delegate used to safely access the message area of the form, from the thread of the game.
             </summary>

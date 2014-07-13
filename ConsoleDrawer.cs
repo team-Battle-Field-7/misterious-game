@@ -8,7 +8,7 @@ namespace BattleField7Namespace
     /// <summary>
     /// Draws the game in the console.
     /// </summary>
-    class ConsoleDrawer : IDrawer
+    class ConsoleUI : IUserInterface
     {
         /// <summary>
         /// Draws the game in the console.
@@ -53,8 +53,9 @@ namespace BattleField7Namespace
         /// Asks for size input.
         /// </summary>
         /// <returns></returns>
-        public string AskForSizeInput()
+        public string AskForSizeInput(string message)
         {
+            ShowMessage(message);
             return Console.ReadLine();
         }
 
@@ -62,8 +63,9 @@ namespace BattleField7Namespace
         /// Asks for position input.
         /// </summary>
         /// <returns></returns>
-        public string AskForPositionInput()
+        public string AskForPositionInput(string message)
         {
+            ShowMessage(message);
             return Console.ReadLine();
         }
 
@@ -99,15 +101,6 @@ namespace BattleField7Namespace
         /// </summary>
         /// <param name="message">The message.</param>
         public void ShowNote(string message)
-        {
-            ShowMessage(message);
-        }
-
-        /// <summary>
-        /// Shows a request for input message.
-        /// </summary>
-        /// <param name="message">The message.</param>
-        public void ShowAskInput(string message)
         {
             ShowMessage(message);
         }

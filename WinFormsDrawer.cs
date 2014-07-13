@@ -13,7 +13,7 @@ namespace BattleField7Namespace
     /// <summary>
     /// A Windows Forms game interface
     /// </summary>
-    public partial class WinFormsDrawer : Form, IDrawer
+    public partial class WinFormsUI : Form, IUserInterface
     {
         /// <summary>
         /// Delegate used to safely access a count label (bombs or turns) from the thread of the game.
@@ -37,7 +37,7 @@ namespace BattleField7Namespace
         /// Delegate used to safely access the AskForSizeInput() method from the thread of the game.
         /// </summary>
         /// <returns></returns>
-        private delegate string GetInputCallBack();
+        private delegate string GetInputCallBack(string message);
 
         /// <summary>
         /// Delegate used to safely access the message area of the form, from the thread of the game.
@@ -73,9 +73,9 @@ namespace BattleField7Namespace
 
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WinFormsDrawer"/> class.
+        /// Initializes a new instance of the <see cref="WinFormsUI"/> class.
         /// </summary>
-        public WinFormsDrawer()
+        public WinFormsUI()
         {
             InitializeComponent();
             this.messagesListView.Columns[0].Width = this.messagesListView.Width-25;
@@ -126,13 +126,13 @@ namespace BattleField7Namespace
         /// Asks for size input.
         /// </summary>
         /// <returns>size input</returns>
-        public string AskForSizeInput()
+        public string AskForSizeInput(string message)
         {
             if (this.gameFieldGridView.InvokeRequired)
             {
                 GetInputCallBack deleg
                     = new GetInputCallBack(AskForSizeInput);
-                return (string)this.Invoke(deleg);
+                return (string)this.Invoke(deleg, new object[] { message });
             }
             else
             {
@@ -144,7 +144,7 @@ namespace BattleField7Namespace
                 }
                 else
                 {
-                    result = AskForSizeInput();
+                    result = AskForSizeInput(message);
                 }
                 return result;
             }
@@ -154,7 +154,7 @@ namespace BattleField7Namespace
         /// Asks for position input.
         /// </summary>
         /// <returns>position input</returns>
-        public string AskForPositionInput()
+        public string AskForPositionInput(string message)
         {
             string resultPosition = "";
             awaitingGameFieldCellSelection = true;
@@ -223,15 +223,6 @@ namespace BattleField7Namespace
         public void ShowNote(string message)
         {
             ShowMessage(message);
-        }
-
-        /// <summary>
-        /// Shows a request for input message.
-        /// </summary>
-        /// <param name="message">The message.</param>
-        public void ShowAskInput(string message)
-        {
-            // Do nothing
         }
 
         /// <summary>

@@ -3,41 +3,44 @@
   <HelpKINode Title="All enumeration member" Url="html/16ded4ee-9b6f-b285-49d8-b3a4ff328dd4.htm" />
   <HelpKINode Title="AllMinesCleared method" Url="html/1ffab0d3-fd25-99bf-d350-93046b936abb.htm" />
   <HelpKINode Title="AskForPositionInput method">
-    <HelpKINode Title="ConsoleDrawer.AskForPositionInput Method " Url="html/e3d4c5e4-5cf7-acf6-89f7-372334f15f85.htm" />
-    <HelpKINode Title="IDrawer.AskForPositionInput Method " Url="html/96815895-3fc5-e15f-7c51-5ad03159df4c.htm" />
-    <HelpKINode Title="WinFormsDrawer.AskForPositionInput Method " Url="html/9ad5f3d5-b1ee-c1a1-b53f-af3277c16254.htm" />
+    <HelpKINode Title="ConsoleUI.AskForPositionInput Method " Url="html/7bf304a4-8973-7149-df8b-232e3d9fd738.htm" />
+    <HelpKINode Title="IUserInterface.AskForPositionInput Method " Url="html/84c78109-d6ef-ce13-f71a-4c3456e47119.htm" />
+    <HelpKINode Title="WinFormsUI.AskForPositionInput Method " Url="html/03aa1375-ee7b-3ae0-bfb5-0e8cf7790704.htm" />
   </HelpKINode>
   <HelpKINode Title="AskForSizeInput method">
-    <HelpKINode Title="ConsoleDrawer.AskForSizeInput Method " Url="html/354fcdfd-9cf5-a0cd-6ef1-991c33a5d1d0.htm" />
-    <HelpKINode Title="IDrawer.AskForSizeInput Method " Url="html/37b7f795-ad8d-d5b9-7187-678929e60211.htm" />
-    <HelpKINode Title="WinFormsDrawer.AskForSizeInput Method " Url="html/eb6aee82-ec5f-bf07-d3b6-cc0c3f447c77.htm" />
+    <HelpKINode Title="ConsoleUI.AskForSizeInput Method " Url="html/75adacb4-f8e7-e28d-e025-54806f278bf6.htm" />
+    <HelpKINode Title="IUserInterface.AskForSizeInput Method " Url="html/945793ed-ebdb-3ec5-cfcf-2b75b5a7fd1e.htm" />
+    <HelpKINode Title="WinFormsUI.AskForSizeInput Method " Url="html/12424183-285f-d8f2-5654-47edaa67b02e.htm" />
   </HelpKINode>
-  <HelpKINode Title="awaitingGameFieldCellSelection field" Url="html/1c97e62e-bb2a-2b57-0529-8e5dca975c92.htm" />
+  <HelpKINode Title="awaitingGameFieldCellSelection field" Url="html/a91745db-4921-ff6d-ea87-c18388340217.htm" />
   <HelpKINode Title="BattleField7Namespace namespace" Url="html/ec833ad7-63ab-793f-80ee-6c6e7d00bd83.htm" />
   <HelpKINode Title="BattleField7Namespace.BattleFieldGame class" Url="html/daf069b4-67e4-24e5-8539-c8016d6ecc64.htm" />
   <HelpKINode Title="BattleField7Namespace.Condition enumeration" Url="html/4c3b0f2f-ffab-a99e-7482-1b52820bc5e9.htm" />
-  <HelpKINode Title="BattleField7Namespace.ConsoleDrawer class" Url="html/b7458339-e4fb-26bb-2354-3b7bb387caae.htm" />
+  <HelpKINode Title="BattleField7Namespace.ConsoleUI class" Url="html/82c54ea2-5170-d9e0-3c7f-1379db6e9aa8.htm" />
   <HelpKINode Title="BattleField7Namespace.Engine class" Url="html/0e15bd98-92f3-3c6a-fbf9-4c7a257cc362.htm" />
   <HelpKINode Title="BattleField7Namespace.Field class" Url="html/7f918b16-9076-e9ef-ceb0-aaf9f2f18d8e.htm" />
-  <HelpKINode Title="BattleField7Namespace.IDrawer interface" Url="html/d5b5d6b8-307b-9ca5-3517-9c2a5c055733.htm" />
+  <HelpKINode Title="BattleField7Namespace.ILogger interface" Url="html/9f7d821a-c601-a0c9-9b25-dcba552ea7f1.htm" />
   <HelpKINode Title="BattleField7Namespace.InitialGameClass namespace" Url="html/e7ce15e5-8be6-8d81-99c3-af5a7159e9b3.htm" />
   <HelpKINode Title="BattleField7Namespace.InitialGameClass.BattleGame class" Url="html/60fee19f-75bf-50c7-eff3-912bc4a9725e.htm" />
+  <HelpKINode Title="BattleField7Namespace.IUserInterface interface" Url="html/666953b7-431b-ceb2-5662-ad1af606fdc6.htm" />
   <HelpKINode Title="BattleField7Namespace.Logger class" Url="html/9314c5fe-3799-4f57-e506-6e2b04b0cd7b.htm" />
   <HelpKINode Title="BattleField7Namespace.LoggingRestrictionLevels enumeration" Url="html/16ded4ee-9b6f-b285-49d8-b3a4ff328dd4.htm" />
   <HelpKINode Title="BattleField7Namespace.PopupSizeInput class" Url="html/ab37afd7-2e78-9baa-6ce7-1d5928824427.htm" />
-  <HelpKINode Title="BattleField7Namespace.WinFormsDrawer class" Url="html/4f3cc66b-5d07-5c38-9ead-20da3a827cd1.htm" />
-  <HelpKINode Title="BattleField7Namespace.WinFormsDrawer.GetInputCallBack delegate" Url="html/fea7360b-9c3e-cb1a-2c7f-b34a0bb8eb5e.htm" />
-  <HelpKINode Title="BattleField7Namespace.WinFormsDrawer.SetFieldValueCallBack delegate" Url="html/28ec2203-6576-f60a-5889-1cb14de5757a.htm" />
-  <HelpKINode Title="BattleField7Namespace.WinFormsDrawer.SetGameFieldSizeCallback delegate" Url="html/086292e9-51e4-735b-ed49-9c85051adb8d.htm" />
-  <HelpKINode Title="BattleField7Namespace.WinFormsDrawer.ShowCountCallBack delegate" Url="html/21da26d7-15b3-d115-8e9c-b1b24ea6a8ac.htm" />
-  <HelpKINode Title="BattleField7Namespace.WinFormsDrawer.ShowMessageCallBack delegate" Url="html/9c25f5f7-7021-e24d-8644-987e059e116a.htm" />
+  <HelpKINode Title="BattleField7Namespace.WinFormsUI class" Url="html/75697cd8-0581-43f5-742a-f763f32d0b97.htm" />
+  <HelpKINode Title="BattleField7Namespace.WinFormsUI.GetInputCallBack delegate" Url="html/80c78c90-19a2-6eef-3cd1-1b47cde1f222.htm" />
+  <HelpKINode Title="BattleField7Namespace.WinFormsUI.SetFieldValueCallBack delegate" Url="html/69cb46a6-1b33-aab1-8924-b3f0af4a8525.htm" />
+  <HelpKINode Title="BattleField7Namespace.WinFormsUI.SetGameFieldSizeCallback delegate" Url="html/283f22a2-b5a0-f6ed-aace-1fa0cc87ef17.htm" />
+  <HelpKINode Title="BattleField7Namespace.WinFormsUI.ShowCountCallBack delegate" Url="html/43f0d4e5-25af-d606-f451-0bce4b3c26b7.htm" />
+  <HelpKINode Title="BattleField7Namespace.WinFormsUI.ShowMessageCallBack delegate" Url="html/ca7d0220-2e89-66f7-76dd-0a8356bf7ea8.htm" />
   <HelpKINode Title="BattleFieldGame class">
     <HelpKINode Title="BattleFieldGame Class" Url="html/daf069b4-67e4-24e5-8539-c8016d6ecc64.htm" />
     <HelpKINode Title="about BattleFieldGame class" Url="html/daf069b4-67e4-24e5-8539-c8016d6ecc64.htm" />
     <HelpKINode Title="constructor" Url="html/cbdcb89f-ac49-b2cd-7392-15aa761cc36e.htm" />
+    <HelpKINode Title="fields" Url="html/0eb0e824-f39f-85b5-9bda-1849c48cd67b.htm" />
     <HelpKINode Title="methods" Url="html/03ce6b65-1794-99d1-e5eb-454b89865812.htm" />
   </HelpKINode>
   <HelpKINode Title="BattleFieldGame.BattleFieldGame constructor" Url="html/cbdcb89f-ac49-b2cd-7392-15aa761cc36e.htm" />
+  <HelpKINode Title="BattleFieldGame.logger field" Url="html/95b7c91d-6eed-4893-01fe-d0069e7aa078.htm" />
   <HelpKINode Title="BattleFieldGame.Main method" Url="html/027a2984-6996-0b9f-8168-8aa858e8c287.htm" />
   <HelpKINode Title="BattleFieldGame.RunNewConsoleVersion method" Url="html/4389515d-213a-7335-0ea8-6a2ca86adc17.htm" />
   <HelpKINode Title="BattleFieldGame.RunNewWinFormsVersion method" Url="html/a214e8c3-91d0-57ba-6a3e-310edf11d8a4.htm" />
@@ -78,58 +81,57 @@
   <HelpKINode Title="BombOne method" Url="html/69f5455f-b064-b14c-bdcd-3d392e8dfd77.htm" />
   <HelpKINode Title="bombsCount field" Url="html/a44453d5-e7e4-e3a0-09c0-7f6f412b7f7f.htm" />
   <HelpKINode Title="BombsCount property" Url="html/4fee0105-008a-ac6d-df76-37322ca92687.htm" />
-  <HelpKINode Title="bombsCountLabel field" Url="html/f6c75385-c7e3-5b6b-68f6-9f3d91672930.htm" />
+  <HelpKINode Title="bombsCountLabel field" Url="html/37cf9c32-0f3b-7f3c-3404-f94d241c02bb.htm" />
   <HelpKINode Title="bombsFrequency field" Url="html/b0dcd223-3632-e7f9-9691-d0f25f7e4949.htm" />
-  <HelpKINode Title="bombsLabel field" Url="html/535e5a3f-9175-b8c2-571b-ca090f6450a3.htm" />
+  <HelpKINode Title="bombsLabel field" Url="html/93f79665-1ab8-f177-e6b3-5df6e305e05e.htm" />
   <HelpKINode Title="BombThree method" Url="html/44925328-09a5-7e53-d6c7-f9fbd186cc46.htm" />
   <HelpKINode Title="BombTwo method" Url="html/08e41b46-4fea-80b5-8881-5f3150e2d66b.htm" />
   <HelpKINode Title="button1 field" Url="html/790d1516-f0c5-cb91-39c9-171dd3dc3284.htm" />
-  <HelpKINode Title="col1 field" Url="html/c15f502f-794d-57aa-8c7c-26f147bf489d.htm" />
+  <HelpKINode Title="col1 field" Url="html/910fc6d8-1572-d7b1-46ea-0c458ec2bf7d.htm" />
   <HelpKINode Title="cols field" Url="html/65b914e6-51fd-193e-417a-557e68a7f108.htm" />
   <HelpKINode Title="components field">
     <HelpKINode Title="PopupSizeInput.components Field" Url="html/c9ca245c-5f7f-794c-1431-d78f662b0091.htm" />
-    <HelpKINode Title="WinFormsDrawer.components Field" Url="html/c63c047e-8de7-34ff-cc9e-e74acde95d97.htm" />
+    <HelpKINode Title="WinFormsUI.components Field" Url="html/c4564a1c-2ac4-a4f6-448b-e073d60d83fa.htm" />
   </HelpKINode>
   <HelpKINode Title="Condition enumeration" Url="html/4c3b0f2f-ffab-a99e-7482-1b52820bc5e9.htm" />
   <HelpKINode Title="condition field" Url="html/9e9a19cb-5b97-8f3a-a337-f18cbf1698fb.htm" />
   <HelpKINode Title="Condition property" Url="html/b1b4d1b8-0150-6128-781e-a201264cfec8.htm" />
-  <HelpKINode Title="ConsoleDrawer class">
-    <HelpKINode Title="ConsoleDrawer Class" Url="html/b7458339-e4fb-26bb-2354-3b7bb387caae.htm" />
-    <HelpKINode Title="about ConsoleDrawer class" Url="html/b7458339-e4fb-26bb-2354-3b7bb387caae.htm" />
-    <HelpKINode Title="constructor" Url="html/3aec75c9-cbfc-3db4-7830-f4f9a2fe0503.htm" />
-    <HelpKINode Title="methods" Url="html/80d5e37c-51d1-f72c-43e1-746484bea492.htm" />
+  <HelpKINode Title="ConsoleUI class">
+    <HelpKINode Title="ConsoleUI Class" Url="html/82c54ea2-5170-d9e0-3c7f-1379db6e9aa8.htm" />
+    <HelpKINode Title="about ConsoleUI class" Url="html/82c54ea2-5170-d9e0-3c7f-1379db6e9aa8.htm" />
+    <HelpKINode Title="constructor" Url="html/bc1f908a-eb8a-cd3c-affa-3cac959d7611.htm" />
+    <HelpKINode Title="methods" Url="html/bf4c3ffa-fbed-00c8-0287-221576ba8c6b.htm" />
   </HelpKINode>
-  <HelpKINode Title="ConsoleDrawer.AskForPositionInput method" Url="html/e3d4c5e4-5cf7-acf6-89f7-372334f15f85.htm" />
-  <HelpKINode Title="ConsoleDrawer.AskForSizeInput method" Url="html/354fcdfd-9cf5-a0cd-6ef1-991c33a5d1d0.htm" />
-  <HelpKINode Title="ConsoleDrawer.ConsoleDrawer constructor" Url="html/3aec75c9-cbfc-3db4-7830-f4f9a2fe0503.htm" />
-  <HelpKINode Title="ConsoleDrawer.DrawGame method" Url="html/f09e1359-f893-5950-fd39-5e854b1bfdb5.htm" />
-  <HelpKINode Title="ConsoleDrawer.ShowAskInput method" Url="html/b54d2edf-1ff7-57f6-9b35-4a81a8abb3a8.htm" />
-  <HelpKINode Title="ConsoleDrawer.ShowBombsCount method" Url="html/a24c1073-faf6-1565-0152-4fb3e9a6ba42.htm" />
-  <HelpKINode Title="ConsoleDrawer.ShowCongratulations method" Url="html/ce3185e1-b321-36d1-d2aa-2b0c841364e9.htm" />
-  <HelpKINode Title="ConsoleDrawer.ShowGameOver method" Url="html/9aabe0eb-a695-18d3-7b1b-a80f5e7887fe.htm" />
-  <HelpKINode Title="ConsoleDrawer.ShowMessage method" Url="html/dbf3ce1f-242b-056a-059d-77997a235b69.htm" />
-  <HelpKINode Title="ConsoleDrawer.ShowNote method" Url="html/496d75c6-7cb9-e879-64bc-8ee272e7f91b.htm" />
-  <HelpKINode Title="ConsoleDrawer.ShowTurnsCount method" Url="html/0da389ce-ec33-8721-490b-4605990434d5.htm" />
+  <HelpKINode Title="ConsoleUI.AskForPositionInput method" Url="html/7bf304a4-8973-7149-df8b-232e3d9fd738.htm" />
+  <HelpKINode Title="ConsoleUI.AskForSizeInput method" Url="html/75adacb4-f8e7-e28d-e025-54806f278bf6.htm" />
+  <HelpKINode Title="ConsoleUI.ConsoleUI constructor" Url="html/bc1f908a-eb8a-cd3c-affa-3cac959d7611.htm" />
+  <HelpKINode Title="ConsoleUI.DrawGame method" Url="html/98abc8bb-3913-a3e2-4cbe-489a7fcba063.htm" />
+  <HelpKINode Title="ConsoleUI.ShowBombsCount method" Url="html/bea3ef6e-68c0-5333-0787-7de4c872bc20.htm" />
+  <HelpKINode Title="ConsoleUI.ShowCongratulations method" Url="html/5479f1b1-898d-6ce1-e7b9-0ae6421c19d5.htm" />
+  <HelpKINode Title="ConsoleUI.ShowGameOver method" Url="html/8427a68b-12de-cfff-9fd8-75a37f2e7288.htm" />
+  <HelpKINode Title="ConsoleUI.ShowMessage method" Url="html/7877ef43-d0a9-fee0-1d81-3d5ee2a3f2bd.htm" />
+  <HelpKINode Title="ConsoleUI.ShowNote method" Url="html/949ebc53-b4af-6d83-9cb8-a080fda8c782.htm" />
+  <HelpKINode Title="ConsoleUI.ShowTurnsCount method" Url="html/b8317290-4cc3-b735-6d6e-5edf9c170bf7.htm" />
   <HelpKINode Title="DetonateByChainReaction method" Url="html/ceeee4a5-2ad3-b03b-107b-8acea8323f5c.htm" />
   <HelpKINode Title="DetonateMine method" Url="html/2e0706df-d9c0-55c5-e231-bbc8b845f0e2.htm" />
   <HelpKINode Title="DetonateNearbyFields method" Url="html/1c1760a7-5a09-8626-9479-7b88ceb4f73a.htm" />
   <HelpKINode Title="DiagonalSplash method" Url="html/cc16233c-cdb2-6904-7b4f-e5276768f2a9.htm" />
   <HelpKINode Title="Dispose method">
     <HelpKINode Title="PopupSizeInput.Dispose Method " Url="html/6f3e5a4b-df30-8cdf-176f-973a36f3d723.htm" />
-    <HelpKINode Title="WinFormsDrawer.Dispose Method " Url="html/0f934600-c204-397d-7611-b560b46af4f1.htm" />
+    <HelpKINode Title="WinFormsUI.Dispose Method " Url="html/2e0fc1eb-3d48-a9b9-34ba-f17ad62a8141.htm" />
   </HelpKINode>
   <HelpKINode Title="drawer field" Url="html/cd4f4634-b811-96e6-fed5-50bb24bb51b8.htm" />
   <HelpKINode Title="DrawField method" Url="html/cf6f882e-b3b4-844b-5f7b-f3a08e00870d.htm" />
   <HelpKINode Title="DrawGame method">
-    <HelpKINode Title="ConsoleDrawer.DrawGame Method " Url="html/f09e1359-f893-5950-fd39-5e854b1bfdb5.htm" />
-    <HelpKINode Title="IDrawer.DrawGame Method " Url="html/ff9ec282-a718-b925-859a-27f88de351a7.htm" />
-    <HelpKINode Title="WinFormsDrawer.DrawGame Method " Url="html/5172c49a-52fd-4bfe-5e3c-cc8e4b736ccc.htm" />
+    <HelpKINode Title="ConsoleUI.DrawGame Method " Url="html/98abc8bb-3913-a3e2-4cbe-489a7fcba063.htm" />
+    <HelpKINode Title="IUserInterface.DrawGame Method " Url="html/3a650d1b-dcd5-2366-d27b-65edbd82fea3.htm" />
+    <HelpKINode Title="WinFormsUI.DrawGame Method " Url="html/743ce5e3-644e-2be9-1fb5-4c5329f8c584.htm" />
   </HelpKINode>
   <HelpKINode Title="Empty enumeration member" Url="html/4c3b0f2f-ffab-a99e-7482-1b52820bc5e9.htm" />
   <HelpKINode Title="Engine class">
     <HelpKINode Title="Engine Class" Url="html/0e15bd98-92f3-3c6a-fbf9-4c7a257cc362.htm" />
     <HelpKINode Title="about Engine class" Url="html/0e15bd98-92f3-3c6a-fbf9-4c7a257cc362.htm" />
-    <HelpKINode Title="constructor" Url="html/fd1dadf8-d1a3-a306-7505-5463ef4aaa0e.htm" />
+    <HelpKINode Title="constructor" Url="html/d3e232d8-24ea-e304-5585-3b989e16cdff.htm" />
     <HelpKINode Title="fields" Url="html/137ed978-393c-8e9c-9069-f5c615a34808.htm" />
     <HelpKINode Title="methods" Url="html/4e20eb04-68f9-2b8d-f816-8d25ba65a28b.htm" />
     <HelpKINode Title="properties" Url="html/a3843164-be49-f6cd-d83f-0eed2b84bfd5.htm" />
@@ -140,11 +142,12 @@
   <HelpKINode Title="Engine.cols field" Url="html/65b914e6-51fd-193e-417a-557e68a7f108.htm" />
   <HelpKINode Title="Engine.DetonateNearbyFields method" Url="html/1c1760a7-5a09-8626-9479-7b88ceb4f73a.htm" />
   <HelpKINode Title="Engine.drawer field" Url="html/cd4f4634-b811-96e6-fed5-50bb24bb51b8.htm" />
-  <HelpKINode Title="Engine.Engine constructor" Url="html/fd1dadf8-d1a3-a306-7505-5463ef4aaa0e.htm" />
+  <HelpKINode Title="Engine.Engine constructor" Url="html/d3e232d8-24ea-e304-5585-3b989e16cdff.htm" />
   <HelpKINode Title="Engine.explosionRangePositionsGroupedByPower field" Url="html/7d6435f9-104b-d382-7bc9-1ff5d921a76c.htm" />
   <HelpKINode Title="Engine.gameField field" Url="html/7d9058cf-f902-a83d-d88c-08b7126719bf.htm" />
   <HelpKINode Title="Engine.InitializeExplosionRanges method" Url="html/ef7f3009-a216-6bac-a467-10260c096e92.htm" />
   <HelpKINode Title="Engine.InitializeGameField method" Url="html/d596c06b-42c9-2bff-4e0a-722d9b9e653d.htm" />
+  <HelpKINode Title="Engine.Logger property" Url="html/a608b532-c53d-6724-f9a9-6fea9c8b0210.htm" />
   <HelpKINode Title="Engine.OnBombBlownUpEvent method" Url="html/4a4b4077-be79-d734-36da-269955fc175e.htm" />
   <HelpKINode Title="Engine.rows field" Url="html/df7153bb-b28a-93a7-9308-46b26f93b751.htm" />
   <HelpKINode Title="Engine.RunGame method" Url="html/933eb539-bfdb-b817-75b3-0b5d4f3032c0.htm" />
@@ -177,61 +180,87 @@
   <HelpKINode Title="filePath field" Url="html/b83a199b-e1bf-49e8-7cc3-54f9f99369a4.htm" />
   <HelpKINode Title="FilePath property" Url="html/27ed8c91-52e3-e0ed-b3ff-21ffd3ad039f.htm" />
   <HelpKINode Title="gameField field" Url="html/7d9058cf-f902-a83d-d88c-08b7126719bf.htm" />
-  <HelpKINode Title="gameFieldCellIsSelected field" Url="html/60c5490d-1d5c-1378-de05-bbaab55b5b9a.htm" />
-  <HelpKINode Title="gameFieldGridView field" Url="html/38cccf4a-ac69-d4b0-16e9-d275e4ea39e9.htm" />
-  <HelpKINode Title="gameFieldGridView_CellMouseClick method" Url="html/7daf8ac6-a9fb-7b39-60d7-893dac0db42e.htm" />
-  <HelpKINode Title="gameFieldIsInitialized field" Url="html/8edf3d3f-761b-53db-fe27-b92034a4f366.htm" />
-  <HelpKINode Title="IDrawer interface">
-    <HelpKINode Title="IDrawer Interface" Url="html/d5b5d6b8-307b-9ca5-3517-9c2a5c055733.htm" />
-    <HelpKINode Title="about IDrawer interface" Url="html/d5b5d6b8-307b-9ca5-3517-9c2a5c055733.htm" />
-    <HelpKINode Title="methods" Url="html/fac74d2f-511e-a3d0-98e5-de15dd106716.htm" />
+  <HelpKINode Title="gameFieldCellIsSelected field" Url="html/088761c1-f8db-495e-7475-d6127e4e5acd.htm" />
+  <HelpKINode Title="gameFieldGridView field" Url="html/86c22da0-027a-c0e8-2aab-e054224a4780.htm" />
+  <HelpKINode Title="gameFieldGridView_CellMouseClick method" Url="html/0bc90312-2fa4-50e9-a512-4743764e5469.htm" />
+  <HelpKINode Title="gameFieldIsInitialized field" Url="html/0f83d808-f3fe-bc63-54ce-5fa52e48532c.htm" />
+  <HelpKINode Title="ILogger interface">
+    <HelpKINode Title="ILogger Interface" Url="html/9f7d821a-c601-a0c9-9b25-dcba552ea7f1.htm" />
+    <HelpKINode Title="about ILogger interface" Url="html/9f7d821a-c601-a0c9-9b25-dcba552ea7f1.htm" />
+    <HelpKINode Title="methods" Url="html/47478849-22ef-0b24-77c6-d197b5883cd2.htm" />
   </HelpKINode>
-  <HelpKINode Title="IDrawer.AskForPositionInput method" Url="html/96815895-3fc5-e15f-7c51-5ad03159df4c.htm" />
-  <HelpKINode Title="IDrawer.AskForSizeInput method" Url="html/37b7f795-ad8d-d5b9-7187-678929e60211.htm" />
-  <HelpKINode Title="IDrawer.DrawGame method" Url="html/ff9ec282-a718-b925-859a-27f88de351a7.htm" />
-  <HelpKINode Title="IDrawer.ShowAskInput method" Url="html/a4e7b74b-5146-bf5a-d0f2-fd2f75d72a34.htm" />
-  <HelpKINode Title="IDrawer.ShowBombsCount method" Url="html/4e970942-1c68-7032-ddee-0f5ae0c3ab84.htm" />
-  <HelpKINode Title="IDrawer.ShowCongratulations method" Url="html/bb8ab64e-075e-4cf0-66e1-906b2d08e4a5.htm" />
-  <HelpKINode Title="IDrawer.ShowGameOver method" Url="html/2f768512-ae6a-c790-c3aa-866cfbd9cdf9.htm" />
-  <HelpKINode Title="IDrawer.ShowMessage method" Url="html/be06ef28-e191-d491-7865-800f27a260fb.htm" />
-  <HelpKINode Title="IDrawer.ShowNote method" Url="html/f40814e0-4c60-72bd-4741-7e8f6e961f75.htm" />
-  <HelpKINode Title="IDrawer.ShowTurnsCount method" Url="html/1d21af52-97f2-70cd-0adc-07a36f76def2.htm" />
+  <HelpKINode Title="ILogger.Log method" Url="html/6116021b-4b49-9ceb-4e89-debd0997bc3f.htm" />
+  <HelpKINode Title="ILogger.LogError method" Url="html/22ee698e-08c6-f0bc-6ab5-2663440754bc.htm" />
+  <HelpKINode Title="ILogger.LogEvent method" Url="html/aa8cac88-eff6-006d-f286-c22debe75b39.htm" />
+  <HelpKINode Title="ILogger.LogStartUp method" Url="html/037b334e-088b-3972-9bcd-0804e11be621.htm" />
+  <HelpKINode Title="ILogger.LogWarning method" Url="html/1d2a4cda-55b7-3e42-eb30-b5fa7d768ebc.htm" />
   <HelpKINode Title="InitializeComponent method">
     <HelpKINode Title="PopupSizeInput.InitializeComponent Method " Url="html/ed21b17b-bf86-3293-af9d-1cb70ad22175.htm" />
-    <HelpKINode Title="WinFormsDrawer.InitializeComponent Method " Url="html/60be8c70-12be-58e1-32ce-5a762b9534e5.htm" />
+    <HelpKINode Title="WinFormsUI.InitializeComponent Method " Url="html/4bf66aed-487f-4989-51ea-37f1f0d69d2e.htm" />
   </HelpKINode>
   <HelpKINode Title="InitializeExplosionRanges method" Url="html/ef7f3009-a216-6bac-a467-10260c096e92.htm" />
   <HelpKINode Title="InitializeGameField method" Url="html/d596c06b-42c9-2bff-4e0a-722d9b9e653d.htm" />
   <HelpKINode Title="Input property" Url="html/a8545c57-991c-d6de-67cd-73a946b45be4.htm" />
   <HelpKINode Title="IntentionalDetonate method" Url="html/07e390c0-bc43-222a-8039-cab0ebdd70dd.htm" />
   <HelpKINode Title="IsBomb method" Url="html/aa27c3e8-ad22-45b0-5d15-a5a7b143961c.htm" />
+  <HelpKINode Title="IUserInterface interface">
+    <HelpKINode Title="IUserInterface Interface" Url="html/666953b7-431b-ceb2-5662-ad1af606fdc6.htm" />
+    <HelpKINode Title="about IUserInterface interface" Url="html/666953b7-431b-ceb2-5662-ad1af606fdc6.htm" />
+    <HelpKINode Title="methods" Url="html/edab1a17-c337-b918-8e41-1817a46716aa.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IUserInterface.AskForPositionInput method" Url="html/84c78109-d6ef-ce13-f71a-4c3456e47119.htm" />
+  <HelpKINode Title="IUserInterface.AskForSizeInput method" Url="html/945793ed-ebdb-3ec5-cfcf-2b75b5a7fd1e.htm" />
+  <HelpKINode Title="IUserInterface.DrawGame method" Url="html/3a650d1b-dcd5-2366-d27b-65edbd82fea3.htm" />
+  <HelpKINode Title="IUserInterface.ShowBombsCount method" Url="html/2090cd37-a964-cbca-e046-bdb44e74dddf.htm" />
+  <HelpKINode Title="IUserInterface.ShowCongratulations method" Url="html/4db400c9-b132-2878-ad2d-d77729b4c448.htm" />
+  <HelpKINode Title="IUserInterface.ShowGameOver method" Url="html/2748c0ca-420d-506c-f980-d1fe2dc97d10.htm" />
+  <HelpKINode Title="IUserInterface.ShowMessage method" Url="html/6ef21364-b46b-8da8-017e-1f3d3811a672.htm" />
+  <HelpKINode Title="IUserInterface.ShowNote method" Url="html/684f2096-ca1f-048b-196b-e304c1f76fe7.htm" />
+  <HelpKINode Title="IUserInterface.ShowTurnsCount method" Url="html/bea8429e-9825-b6a3-1896-4fe9ef0459f1.htm" />
   <HelpKINode Title="label1 field" Url="html/b85bb9c6-ca6b-65bc-1886-b858cf965fc6.htm" />
-  <HelpKINode Title="Log method" Url="html/430e09b0-f3ef-3d0e-cd4b-e615d05db2ce.htm" />
-  <HelpKINode Title="LogError method" Url="html/d06a00cb-a72f-99a7-e93f-da2d5a91c55e.htm" />
-  <HelpKINode Title="LogEvent method" Url="html/86b0d8f0-6050-b9b3-1880-41cd7f46932f.htm" />
+  <HelpKINode Title="Log method">
+    <HelpKINode Title="ILogger.Log Method " Url="html/6116021b-4b49-9ceb-4e89-debd0997bc3f.htm" />
+    <HelpKINode Title="Logger.Log Method " Url="html/430e09b0-f3ef-3d0e-cd4b-e615d05db2ce.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LogError method">
+    <HelpKINode Title="ILogger.LogError Method " Url="html/22ee698e-08c6-f0bc-6ab5-2663440754bc.htm" />
+    <HelpKINode Title="Logger.LogError Method " Url="html/d06a00cb-a72f-99a7-e93f-da2d5a91c55e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LogEvent method">
+    <HelpKINode Title="ILogger.LogEvent Method " Url="html/aa8cac88-eff6-006d-f286-c22debe75b39.htm" />
+    <HelpKINode Title="Logger.LogEvent Method " Url="html/86b0d8f0-6050-b9b3-1880-41cd7f46932f.htm" />
+  </HelpKINode>
   <HelpKINode Title="Logger class">
     <HelpKINode Title="Logger Class" Url="html/9314c5fe-3799-4f57-e506-6e2b04b0cd7b.htm" />
     <HelpKINode Title="about Logger class" Url="html/9314c5fe-3799-4f57-e506-6e2b04b0cd7b.htm" />
-    <HelpKINode Title="constructor" Url="html/18389325-8da4-8db0-5d84-bf12c6728e3d.htm" />
+    <HelpKINode Title="constructor" Url="html/670aa48f-7c03-b6c7-ed41-7c7d8231968f.htm" />
     <HelpKINode Title="fields" Url="html/7c380b3c-d301-12b4-299c-1f8fb6ce61aa.htm" />
     <HelpKINode Title="methods" Url="html/93f77e4b-c428-907e-83af-cb1416c4280e.htm" />
     <HelpKINode Title="properties" Url="html/16004585-8561-cc32-3def-473000c85d89.htm" />
   </HelpKINode>
+  <HelpKINode Title="logger field" Url="html/95b7c91d-6eed-4893-01fe-d0069e7aa078.htm" />
+  <HelpKINode Title="Logger property" Url="html/a608b532-c53d-6724-f9a9-6fea9c8b0210.htm" />
   <HelpKINode Title="Logger.filePath field" Url="html/b83a199b-e1bf-49e8-7cc3-54f9f99369a4.htm" />
   <HelpKINode Title="Logger.FilePath property" Url="html/27ed8c91-52e3-e0ed-b3ff-21ffd3ad039f.htm" />
   <HelpKINode Title="Logger.Log method" Url="html/430e09b0-f3ef-3d0e-cd4b-e615d05db2ce.htm" />
   <HelpKINode Title="Logger.LogError method" Url="html/d06a00cb-a72f-99a7-e93f-da2d5a91c55e.htm" />
   <HelpKINode Title="Logger.LogEvent method" Url="html/86b0d8f0-6050-b9b3-1880-41cd7f46932f.htm" />
-  <HelpKINode Title="Logger.Logger constructor" Url="html/18389325-8da4-8db0-5d84-bf12c6728e3d.htm" />
+  <HelpKINode Title="Logger.Logger constructor" Url="html/670aa48f-7c03-b6c7-ed41-7c7d8231968f.htm" />
   <HelpKINode Title="Logger.LogStartUp method" Url="html/43338126-9846-901d-b555-a2807ae2ed35.htm" />
   <HelpKINode Title="Logger.LogWarning method" Url="html/6ba12a3e-e4f8-c578-6ee4-1453c535ed75.htm" />
   <HelpKINode Title="Logger.restrictionLevel field" Url="html/08fe76ec-9506-ff04-6736-4058ccb5ae3c.htm" />
   <HelpKINode Title="Logger.RestrictionLevel property" Url="html/8b36085d-c4f5-655f-1afe-5228d49162a8.htm" />
   <HelpKINode Title="LoggingRestrictionLevels enumeration" Url="html/16ded4ee-9b6f-b285-49d8-b3a4ff328dd4.htm" />
-  <HelpKINode Title="LogStartUp method" Url="html/43338126-9846-901d-b555-a2807ae2ed35.htm" />
-  <HelpKINode Title="LogWarning method" Url="html/6ba12a3e-e4f8-c578-6ee4-1453c535ed75.htm" />
+  <HelpKINode Title="LogStartUp method">
+    <HelpKINode Title="ILogger.LogStartUp Method " Url="html/037b334e-088b-3972-9bcd-0804e11be621.htm" />
+    <HelpKINode Title="Logger.LogStartUp Method " Url="html/43338126-9846-901d-b555-a2807ae2ed35.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LogWarning method">
+    <HelpKINode Title="ILogger.LogWarning Method " Url="html/1d2a4cda-55b7-3e42-eb30-b5fa7d768ebc.htm" />
+    <HelpKINode Title="Logger.LogWarning Method " Url="html/6ba12a3e-e4f8-c578-6ee4-1453c535ed75.htm" />
+  </HelpKINode>
   <HelpKINode Title="Main method" Url="html/027a2984-6996-0b9f-8168-8aa858e8c287.htm" />
-  <HelpKINode Title="messagesListView field" Url="html/a39fe80f-1e71-c0d1-e152-31c50f7eb4e0.htm" />
+  <HelpKINode Title="messagesListView field" Url="html/b9cc6c72-9c24-a7fd-b47f-a7f197ebd095.htm" />
   <HelpKINode Title="minesCleared field" Url="html/02aef46f-966b-788f-799b-58555dbcee01.htm" />
   <HelpKINode Title="minesDeployed field" Url="html/4feffd8e-b726-60a0-ec14-53062f2d5a8c.htm" />
   <HelpKINode Title="minesExploded field" Url="html/a0e52541-8e2b-8238-f7df-de12ed66f33b.htm" />
@@ -263,45 +292,40 @@
   <HelpKINode Title="RunNewConsoleVersion method" Url="html/4389515d-213a-7335-0ea8-6a2ca86adc17.htm" />
   <HelpKINode Title="RunNewWinFormsVersion method" Url="html/a214e8c3-91d0-57ba-6a3e-310edf11d8a4.htm" />
   <HelpKINode Title="RunOldVersion method" Url="html/cf6ad8f8-4ad8-e50a-5acb-552adc7e61dd.htm" />
-  <HelpKINode Title="SetFieldValue method" Url="html/cd64e212-2ece-3511-714c-8ba16d2b9a84.htm" />
-  <HelpKINode Title="SetGameFieldSize method" Url="html/aa8b8d57-9f39-c6e8-59ce-7527971c24d9.htm" />
+  <HelpKINode Title="SetFieldValue method" Url="html/b79be800-0da9-51e2-baa3-41962aaddc90.htm" />
+  <HelpKINode Title="SetGameFieldSize method" Url="html/cba6bf4a-cb7b-7527-eb65-8552e1a0889c.htm" />
   <HelpKINode Title="SetSizeOfGameField method" Url="html/13c863a2-cd07-b9d3-29b8-ec83fe1c47d7.htm" />
-  <HelpKINode Title="ShowAskInput method">
-    <HelpKINode Title="ConsoleDrawer.ShowAskInput Method " Url="html/b54d2edf-1ff7-57f6-9b35-4a81a8abb3a8.htm" />
-    <HelpKINode Title="IDrawer.ShowAskInput Method " Url="html/a4e7b74b-5146-bf5a-d0f2-fd2f75d72a34.htm" />
-    <HelpKINode Title="WinFormsDrawer.ShowAskInput Method " Url="html/9363da76-3206-bbae-1d72-addee702d98c.htm" />
-  </HelpKINode>
   <HelpKINode Title="ShowBombsCount method">
-    <HelpKINode Title="ConsoleDrawer.ShowBombsCount Method " Url="html/a24c1073-faf6-1565-0152-4fb3e9a6ba42.htm" />
-    <HelpKINode Title="IDrawer.ShowBombsCount Method " Url="html/4e970942-1c68-7032-ddee-0f5ae0c3ab84.htm" />
-    <HelpKINode Title="WinFormsDrawer.ShowBombsCount Method " Url="html/73120388-9643-055c-e6a0-9f2eaff0d51e.htm" />
+    <HelpKINode Title="ConsoleUI.ShowBombsCount Method " Url="html/bea3ef6e-68c0-5333-0787-7de4c872bc20.htm" />
+    <HelpKINode Title="IUserInterface.ShowBombsCount Method " Url="html/2090cd37-a964-cbca-e046-bdb44e74dddf.htm" />
+    <HelpKINode Title="WinFormsUI.ShowBombsCount Method " Url="html/acc264c4-3b42-f38e-a3c6-a921cb431dcb.htm" />
   </HelpKINode>
   <HelpKINode Title="ShowCongratulations method">
-    <HelpKINode Title="ConsoleDrawer.ShowCongratulations Method " Url="html/ce3185e1-b321-36d1-d2aa-2b0c841364e9.htm" />
-    <HelpKINode Title="IDrawer.ShowCongratulations Method " Url="html/bb8ab64e-075e-4cf0-66e1-906b2d08e4a5.htm" />
-    <HelpKINode Title="WinFormsDrawer.ShowCongratulations Method " Url="html/12cac09a-32c6-86b4-1014-449988668056.htm" />
+    <HelpKINode Title="ConsoleUI.ShowCongratulations Method " Url="html/5479f1b1-898d-6ce1-e7b9-0ae6421c19d5.htm" />
+    <HelpKINode Title="IUserInterface.ShowCongratulations Method " Url="html/4db400c9-b132-2878-ad2d-d77729b4c448.htm" />
+    <HelpKINode Title="WinFormsUI.ShowCongratulations Method " Url="html/d10991a8-3fdb-62fc-5c94-05fd243f8d07.htm" />
   </HelpKINode>
   <HelpKINode Title="ShowGameOver method">
-    <HelpKINode Title="ConsoleDrawer.ShowGameOver Method " Url="html/9aabe0eb-a695-18d3-7b1b-a80f5e7887fe.htm" />
-    <HelpKINode Title="IDrawer.ShowGameOver Method " Url="html/2f768512-ae6a-c790-c3aa-866cfbd9cdf9.htm" />
-    <HelpKINode Title="WinFormsDrawer.ShowGameOver Method " Url="html/e1ad823e-1271-a822-16b9-6c78befd90b1.htm" />
+    <HelpKINode Title="ConsoleUI.ShowGameOver Method " Url="html/8427a68b-12de-cfff-9fd8-75a37f2e7288.htm" />
+    <HelpKINode Title="IUserInterface.ShowGameOver Method " Url="html/2748c0ca-420d-506c-f980-d1fe2dc97d10.htm" />
+    <HelpKINode Title="WinFormsUI.ShowGameOver Method " Url="html/e2768ebd-104d-b1a4-0fa6-c7304a774007.htm" />
   </HelpKINode>
   <HelpKINode Title="ShowMessage method">
-    <HelpKINode Title="ConsoleDrawer.ShowMessage Method " Url="html/dbf3ce1f-242b-056a-059d-77997a235b69.htm" />
-    <HelpKINode Title="IDrawer.ShowMessage Method " Url="html/be06ef28-e191-d491-7865-800f27a260fb.htm" />
-    <HelpKINode Title="WinFormsDrawer.ShowMessage Method " Url="html/af0748ec-1837-705b-7b57-cafb409011c2.htm" />
+    <HelpKINode Title="ConsoleUI.ShowMessage Method " Url="html/7877ef43-d0a9-fee0-1d81-3d5ee2a3f2bd.htm" />
+    <HelpKINode Title="IUserInterface.ShowMessage Method " Url="html/6ef21364-b46b-8da8-017e-1f3d3811a672.htm" />
+    <HelpKINode Title="WinFormsUI.ShowMessage Method " Url="html/4413fbf9-329c-fc7f-1e12-331f184826be.htm" />
   </HelpKINode>
   <HelpKINode Title="ShowNote method">
-    <HelpKINode Title="ConsoleDrawer.ShowNote Method " Url="html/496d75c6-7cb9-e879-64bc-8ee272e7f91b.htm" />
-    <HelpKINode Title="IDrawer.ShowNote Method " Url="html/f40814e0-4c60-72bd-4741-7e8f6e961f75.htm" />
-    <HelpKINode Title="WinFormsDrawer.ShowNote Method " Url="html/d85dfe79-735a-1485-b3e2-90d70708149c.htm" />
+    <HelpKINode Title="ConsoleUI.ShowNote Method " Url="html/949ebc53-b4af-6d83-9cb8-a080fda8c782.htm" />
+    <HelpKINode Title="IUserInterface.ShowNote Method " Url="html/684f2096-ca1f-048b-196b-e304c1f76fe7.htm" />
+    <HelpKINode Title="WinFormsUI.ShowNote Method " Url="html/3e5ec6be-a886-765d-28d5-c284c4c7ad6e.htm" />
   </HelpKINode>
   <HelpKINode Title="ShowTurnsCount method">
-    <HelpKINode Title="ConsoleDrawer.ShowTurnsCount Method " Url="html/0da389ce-ec33-8721-490b-4605990434d5.htm" />
-    <HelpKINode Title="IDrawer.ShowTurnsCount Method " Url="html/1d21af52-97f2-70cd-0adc-07a36f76def2.htm" />
-    <HelpKINode Title="WinFormsDrawer.ShowTurnsCount Method " Url="html/ca8c15b5-7d75-3436-a134-96b4f5e414e0.htm" />
+    <HelpKINode Title="ConsoleUI.ShowTurnsCount Method " Url="html/b8317290-4cc3-b735-6d6e-5edf9c170bf7.htm" />
+    <HelpKINode Title="IUserInterface.ShowTurnsCount Method " Url="html/bea8429e-9825-b6a3-1896-4fe9ef0459f1.htm" />
+    <HelpKINode Title="WinFormsUI.ShowTurnsCount Method " Url="html/a2e1a10a-0623-347b-9f8a-a3ae9ca90ae5.htm" />
   </HelpKINode>
-  <HelpKINode Title="sizeInputWindow field" Url="html/a78c47cb-5bc7-d2db-0f80-5047dffa6467.htm" />
+  <HelpKINode Title="sizeInputWindow field" Url="html/1d4169d9-4bec-feab-3c11-d67cbba1d5af.htm" />
   <HelpKINode Title="Start method" Url="html/cade0212-33d5-bc01-9129-c7d7bcbaf9e7.htm" />
   <HelpKINode Title="StartGame method" Url="html/562ab4c4-5f64-552f-2f4d-46ab2e7e87b6.htm" />
   <HelpKINode Title="StartUps enumeration member" Url="html/16ded4ee-9b6f-b285-49d8-b3a4ff328dd4.htm" />
@@ -310,52 +334,51 @@
   <HelpKINode Title="TryGetCoords method" Url="html/be209923-c0eb-e954-f419-de119eaa3e7b.htm" />
   <HelpKINode Title="turnsCount field" Url="html/19983158-1dea-4320-17f2-4b63d1d65dbe.htm" />
   <HelpKINode Title="TurnsCount property" Url="html/ed8afd1a-ea5a-a8d5-9d4c-2e23c25aad60.htm" />
-  <HelpKINode Title="turnsCountLabel field" Url="html/25a02533-cb26-f7f9-2e4f-fcc15c254800.htm" />
-  <HelpKINode Title="turnsLabel field" Url="html/5609d067-38dc-f9f2-3bfa-4e72087a7720.htm" />
+  <HelpKINode Title="turnsCountLabel field" Url="html/1b4713f2-c8a4-db44-58b0-54f6c5725c42.htm" />
+  <HelpKINode Title="turnsLabel field" Url="html/376cd285-9148-8084-b792-400be803df5c.htm" />
   <HelpKINode Title="ValidCoordinates method" Url="html/e1572288-bca3-4763-5fca-7b3d7d08eff6.htm" />
   <HelpKINode Title="Warnings enumeration member" Url="html/16ded4ee-9b6f-b285-49d8-b3a4ff328dd4.htm" />
-  <HelpKINode Title="WinFormsDrawer class">
-    <HelpKINode Title="WinFormsDrawer Class" Url="html/4f3cc66b-5d07-5c38-9ead-20da3a827cd1.htm" />
-    <HelpKINode Title="about WinFormsDrawer class" Url="html/4f3cc66b-5d07-5c38-9ead-20da3a827cd1.htm" />
-    <HelpKINode Title="constructor" Url="html/65e2be6c-5f9c-fffe-5863-c86a1d4f4175.htm" />
-    <HelpKINode Title="events" Url="html/d7128145-226c-7a1d-63a8-170ac0ffa23f.htm" />
-    <HelpKINode Title="fields" Url="html/68f31557-2c16-fbb5-9fb3-71fb2038fa69.htm" />
-    <HelpKINode Title="methods" Url="html/6db2c119-1874-2304-9a1d-520cd6e7cc6b.htm" />
-    <HelpKINode Title="properties" Url="html/0bfedba2-9b4a-cc85-e959-9c7614d870d2.htm" />
+  <HelpKINode Title="WinFormsDrawer_FormClosing method" Url="html/9f7f5b10-37e7-0805-0bcf-edfd44cb15ce.htm" />
+  <HelpKINode Title="WinFormsUI class">
+    <HelpKINode Title="WinFormsUI Class" Url="html/75697cd8-0581-43f5-742a-f763f32d0b97.htm" />
+    <HelpKINode Title="about WinFormsUI class" Url="html/75697cd8-0581-43f5-742a-f763f32d0b97.htm" />
+    <HelpKINode Title="constructor" Url="html/034525b0-d5e8-5258-fa49-46b720ed2f4a.htm" />
+    <HelpKINode Title="events" Url="html/3a44ddee-ceec-1f01-e1f4-63f09ef69697.htm" />
+    <HelpKINode Title="fields" Url="html/302aac3f-fc56-54af-e333-42710eb30afe.htm" />
+    <HelpKINode Title="methods" Url="html/498e549a-bd69-7881-96ea-152c46cb90a2.htm" />
+    <HelpKINode Title="properties" Url="html/c0c596fe-2007-2d19-5522-68d133f1b01d.htm" />
   </HelpKINode>
-  <HelpKINode Title="WinFormsDrawer.AskForPositionInput method" Url="html/9ad5f3d5-b1ee-c1a1-b53f-af3277c16254.htm" />
-  <HelpKINode Title="WinFormsDrawer.AskForSizeInput method" Url="html/eb6aee82-ec5f-bf07-d3b6-cc0c3f447c77.htm" />
-  <HelpKINode Title="WinFormsDrawer.awaitingGameFieldCellSelection field" Url="html/1c97e62e-bb2a-2b57-0529-8e5dca975c92.htm" />
-  <HelpKINode Title="WinFormsDrawer.bombsCountLabel field" Url="html/f6c75385-c7e3-5b6b-68f6-9f3d91672930.htm" />
-  <HelpKINode Title="WinFormsDrawer.bombsLabel field" Url="html/535e5a3f-9175-b8c2-571b-ca090f6450a3.htm" />
-  <HelpKINode Title="WinFormsDrawer.col1 field" Url="html/c15f502f-794d-57aa-8c7c-26f147bf489d.htm" />
-  <HelpKINode Title="WinFormsDrawer.components field" Url="html/c63c047e-8de7-34ff-cc9e-e74acde95d97.htm" />
-  <HelpKINode Title="WinFormsDrawer.Dispose method" Url="html/0f934600-c204-397d-7611-b560b46af4f1.htm" />
-  <HelpKINode Title="WinFormsDrawer.DrawGame method" Url="html/5172c49a-52fd-4bfe-5e3c-cc8e4b736ccc.htm" />
-  <HelpKINode Title="WinFormsDrawer.gameFieldCellIsSelected field" Url="html/60c5490d-1d5c-1378-de05-bbaab55b5b9a.htm" />
-  <HelpKINode Title="WinFormsDrawer.gameFieldGridView field" Url="html/38cccf4a-ac69-d4b0-16e9-d275e4ea39e9.htm" />
-  <HelpKINode Title="WinFormsDrawer.gameFieldGridView_CellMouseClick method" Url="html/7daf8ac6-a9fb-7b39-60d7-893dac0db42e.htm" />
-  <HelpKINode Title="WinFormsDrawer.gameFieldIsInitialized field" Url="html/8edf3d3f-761b-53db-fe27-b92034a4f366.htm" />
-  <HelpKINode Title="WinFormsDrawer.GetInputCallBack delegate" Url="html/fea7360b-9c3e-cb1a-2c7f-b34a0bb8eb5e.htm" />
-  <HelpKINode Title="WinFormsDrawer.InitializeComponent method" Url="html/60be8c70-12be-58e1-32ce-5a762b9534e5.htm" />
-  <HelpKINode Title="WinFormsDrawer.messagesListView field" Url="html/a39fe80f-1e71-c0d1-e152-31c50f7eb4e0.htm" />
-  <HelpKINode Title="WinFormsDrawer.SetFieldValue method" Url="html/cd64e212-2ece-3511-714c-8ba16d2b9a84.htm" />
-  <HelpKINode Title="WinFormsDrawer.SetFieldValueCallBack delegate" Url="html/28ec2203-6576-f60a-5889-1cb14de5757a.htm" />
-  <HelpKINode Title="WinFormsDrawer.SetGameFieldSize method" Url="html/aa8b8d57-9f39-c6e8-59ce-7527971c24d9.htm" />
-  <HelpKINode Title="WinFormsDrawer.SetGameFieldSizeCallback delegate" Url="html/086292e9-51e4-735b-ed49-9c85051adb8d.htm" />
-  <HelpKINode Title="WinFormsDrawer.ShowAskInput method" Url="html/9363da76-3206-bbae-1d72-addee702d98c.htm" />
-  <HelpKINode Title="WinFormsDrawer.ShowBombsCount method" Url="html/73120388-9643-055c-e6a0-9f2eaff0d51e.htm" />
-  <HelpKINode Title="WinFormsDrawer.ShowCongratulations method" Url="html/12cac09a-32c6-86b4-1014-449988668056.htm" />
-  <HelpKINode Title="WinFormsDrawer.ShowCountCallBack delegate" Url="html/21da26d7-15b3-d115-8e9c-b1b24ea6a8ac.htm" />
-  <HelpKINode Title="WinFormsDrawer.ShowGameOver method" Url="html/e1ad823e-1271-a822-16b9-6c78befd90b1.htm" />
-  <HelpKINode Title="WinFormsDrawer.ShowMessage method" Url="html/af0748ec-1837-705b-7b57-cafb409011c2.htm" />
-  <HelpKINode Title="WinFormsDrawer.ShowMessageCallBack delegate" Url="html/9c25f5f7-7021-e24d-8644-987e059e116a.htm" />
-  <HelpKINode Title="WinFormsDrawer.ShowNote method" Url="html/d85dfe79-735a-1485-b3e2-90d70708149c.htm" />
-  <HelpKINode Title="WinFormsDrawer.ShowTurnsCount method" Url="html/ca8c15b5-7d75-3436-a134-96b4f5e414e0.htm" />
-  <HelpKINode Title="WinFormsDrawer.sizeInputWindow field" Url="html/a78c47cb-5bc7-d2db-0f80-5047dffa6467.htm" />
-  <HelpKINode Title="WinFormsDrawer.turnsCountLabel field" Url="html/25a02533-cb26-f7f9-2e4f-fcc15c254800.htm" />
-  <HelpKINode Title="WinFormsDrawer.turnsLabel field" Url="html/5609d067-38dc-f9f2-3bfa-4e72087a7720.htm" />
-  <HelpKINode Title="WinFormsDrawer.WinFormsDrawer constructor" Url="html/65e2be6c-5f9c-fffe-5863-c86a1d4f4175.htm" />
-  <HelpKINode Title="WinFormsDrawer.WinFormsDrawer_FormClosing method" Url="html/9e4a38e9-6165-9095-32f8-ed123bdc585b.htm" />
-  <HelpKINode Title="WinFormsDrawer_FormClosing method" Url="html/9e4a38e9-6165-9095-32f8-ed123bdc585b.htm" />
+  <HelpKINode Title="WinFormsUI.AskForPositionInput method" Url="html/03aa1375-ee7b-3ae0-bfb5-0e8cf7790704.htm" />
+  <HelpKINode Title="WinFormsUI.AskForSizeInput method" Url="html/12424183-285f-d8f2-5654-47edaa67b02e.htm" />
+  <HelpKINode Title="WinFormsUI.awaitingGameFieldCellSelection field" Url="html/a91745db-4921-ff6d-ea87-c18388340217.htm" />
+  <HelpKINode Title="WinFormsUI.bombsCountLabel field" Url="html/37cf9c32-0f3b-7f3c-3404-f94d241c02bb.htm" />
+  <HelpKINode Title="WinFormsUI.bombsLabel field" Url="html/93f79665-1ab8-f177-e6b3-5df6e305e05e.htm" />
+  <HelpKINode Title="WinFormsUI.col1 field" Url="html/910fc6d8-1572-d7b1-46ea-0c458ec2bf7d.htm" />
+  <HelpKINode Title="WinFormsUI.components field" Url="html/c4564a1c-2ac4-a4f6-448b-e073d60d83fa.htm" />
+  <HelpKINode Title="WinFormsUI.Dispose method" Url="html/2e0fc1eb-3d48-a9b9-34ba-f17ad62a8141.htm" />
+  <HelpKINode Title="WinFormsUI.DrawGame method" Url="html/743ce5e3-644e-2be9-1fb5-4c5329f8c584.htm" />
+  <HelpKINode Title="WinFormsUI.gameFieldCellIsSelected field" Url="html/088761c1-f8db-495e-7475-d6127e4e5acd.htm" />
+  <HelpKINode Title="WinFormsUI.gameFieldGridView field" Url="html/86c22da0-027a-c0e8-2aab-e054224a4780.htm" />
+  <HelpKINode Title="WinFormsUI.gameFieldGridView_CellMouseClick method" Url="html/0bc90312-2fa4-50e9-a512-4743764e5469.htm" />
+  <HelpKINode Title="WinFormsUI.gameFieldIsInitialized field" Url="html/0f83d808-f3fe-bc63-54ce-5fa52e48532c.htm" />
+  <HelpKINode Title="WinFormsUI.GetInputCallBack delegate" Url="html/80c78c90-19a2-6eef-3cd1-1b47cde1f222.htm" />
+  <HelpKINode Title="WinFormsUI.InitializeComponent method" Url="html/4bf66aed-487f-4989-51ea-37f1f0d69d2e.htm" />
+  <HelpKINode Title="WinFormsUI.messagesListView field" Url="html/b9cc6c72-9c24-a7fd-b47f-a7f197ebd095.htm" />
+  <HelpKINode Title="WinFormsUI.SetFieldValue method" Url="html/b79be800-0da9-51e2-baa3-41962aaddc90.htm" />
+  <HelpKINode Title="WinFormsUI.SetFieldValueCallBack delegate" Url="html/69cb46a6-1b33-aab1-8924-b3f0af4a8525.htm" />
+  <HelpKINode Title="WinFormsUI.SetGameFieldSize method" Url="html/cba6bf4a-cb7b-7527-eb65-8552e1a0889c.htm" />
+  <HelpKINode Title="WinFormsUI.SetGameFieldSizeCallback delegate" Url="html/283f22a2-b5a0-f6ed-aace-1fa0cc87ef17.htm" />
+  <HelpKINode Title="WinFormsUI.ShowBombsCount method" Url="html/acc264c4-3b42-f38e-a3c6-a921cb431dcb.htm" />
+  <HelpKINode Title="WinFormsUI.ShowCongratulations method" Url="html/d10991a8-3fdb-62fc-5c94-05fd243f8d07.htm" />
+  <HelpKINode Title="WinFormsUI.ShowCountCallBack delegate" Url="html/43f0d4e5-25af-d606-f451-0bce4b3c26b7.htm" />
+  <HelpKINode Title="WinFormsUI.ShowGameOver method" Url="html/e2768ebd-104d-b1a4-0fa6-c7304a774007.htm" />
+  <HelpKINode Title="WinFormsUI.ShowMessage method" Url="html/4413fbf9-329c-fc7f-1e12-331f184826be.htm" />
+  <HelpKINode Title="WinFormsUI.ShowMessageCallBack delegate" Url="html/ca7d0220-2e89-66f7-76dd-0a8356bf7ea8.htm" />
+  <HelpKINode Title="WinFormsUI.ShowNote method" Url="html/3e5ec6be-a886-765d-28d5-c284c4c7ad6e.htm" />
+  <HelpKINode Title="WinFormsUI.ShowTurnsCount method" Url="html/a2e1a10a-0623-347b-9f8a-a3ae9ca90ae5.htm" />
+  <HelpKINode Title="WinFormsUI.sizeInputWindow field" Url="html/1d4169d9-4bec-feab-3c11-d67cbba1d5af.htm" />
+  <HelpKINode Title="WinFormsUI.turnsCountLabel field" Url="html/1b4713f2-c8a4-db44-58b0-54f6c5725c42.htm" />
+  <HelpKINode Title="WinFormsUI.turnsLabel field" Url="html/376cd285-9148-8084-b792-400be803df5c.htm" />
+  <HelpKINode Title="WinFormsUI.WinFormsDrawer_FormClosing method" Url="html/9f7f5b10-37e7-0805-0bcf-edfd44cb15ce.htm" />
+  <HelpKINode Title="WinFormsUI.WinFormsUI constructor" Url="html/034525b0-d5e8-5258-fa49-46b720ed2f4a.htm" />
 </HelpKI>

@@ -38,7 +38,7 @@ namespace BattleField7Namespace
         /// <summary>
         /// The drawer witch displays the game.
         /// </summary>
-        private IDrawer drawer;
+        private IUserInterface drawer;
 
         /// <summary>
         /// The game field.
@@ -58,7 +58,7 @@ namespace BattleField7Namespace
         /// Initializes a new instance of the <see cref="Engine"/> class.
         /// </summary>
         /// <param name="drawer">The drawer.</param>
-        public Engine(IDrawer drawer)
+        public Engine(IUserInterface drawer)
         {
             this.drawer = drawer;
         }
@@ -134,8 +134,7 @@ namespace BattleField7Namespace
             while (BombsCount > 0)
             {
                 // TODO - write a propper message for that case
-                drawer.ShowAskInput("Give me INPUT!!! ( in format 'row col' ): ");
-                string input = drawer.AskForPositionInput();
+                string input = drawer.AskForPositionInput("Give me INPUT!!! ( in format 'row col' ): ");
 
                 int row;
                 int col;
@@ -303,9 +302,8 @@ namespace BattleField7Namespace
         /// </summary>
         private void SetSizeOfGameField()
         {
-            drawer.ShowAskInput("Input game field size (1-10): ");
             int size;
-            bool stringInputIsInt = int.TryParse(drawer.AskForSizeInput(), out size);
+            bool stringInputIsInt = int.TryParse(drawer.AskForSizeInput("Input game field size (1-10): "), out size);
             while (true)
             {
                 if (!stringInputIsInt
@@ -314,8 +312,7 @@ namespace BattleField7Namespace
                 {
                     this.Logger.LogEvent("Invalid size input attempt");
                     drawer.ShowNote("Bad input - try again.");
-                    drawer.ShowAskInput("Input game field size (1-10): ");
-                    stringInputIsInt = int.TryParse(drawer.AskForSizeInput(), out size);
+                    stringInputIsInt = int.TryParse(drawer.AskForSizeInput("Input game field size (1-10): "), out size);
                     continue;
                 }
                 break;

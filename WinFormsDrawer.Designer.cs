@@ -1,6 +1,6 @@
 ﻿namespace BattleField7Namespace
 {
-    partial class WinFormsDrawer
+    partial class WinFormsUI
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WinFormsDrawer));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WinFormsUI));
             this.turnsCountLabel = new System.Windows.Forms.Label();
             this.gameFieldGridView = new System.Windows.Forms.DataGridView();
             this.bombsCountLabel = new System.Windows.Forms.Label();

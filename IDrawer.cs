@@ -8,7 +8,7 @@ namespace BattleField7Namespace
     /// <summary>
     /// Basic functionality to display Battle Field 7 game.
     /// </summary>
-    interface IDrawer
+    interface IUserInterface
     {
         /// <summary>
         /// Draws the game.
@@ -20,13 +20,13 @@ namespace BattleField7Namespace
         /// Asks for size input.
         /// </summary>
         /// <returns></returns>
-        string AskForSizeInput();
+        string AskForSizeInput(string message);
 
         /// <summary>
         /// Asks for position input.
         /// </summary>
         /// <returns></returns>
-        string AskForPositionInput();
+        string AskForPositionInput(string message);
 
         /// <summary>
         /// Shows the message.
@@ -51,12 +51,6 @@ namespace BattleField7Namespace
         /// </summary>
         /// <param name="message">The message.</param>
         void ShowNote(string message);
-
-        /// <summary>
-        /// Shows a request for input message.
-        /// </summary>
-        /// <param name="message">The message.</param>
-        void ShowAskInput(string message);
 
         /// <summary>
         /// Shows the bombs count.

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shfbBuild product="Sandcastle Help File Builder" version="2014.5.31.0" projectFile="D:\git\misterious-game\documentation\Battle Field 7 Help.shfbproj" started="13.7.2014 г. 00:01:14 ч.">
+<shfbBuild product="Sandcastle Help File Builder" version="2014.5.31.0" projectFile="D:\git\misterious-game\documentation\Battle Field 7 Help.shfbproj" started="13.7.2014 г. 14:52:16 ч.">
 <buildStep step="Initializing">
 Finding tools...
 The Sandcastle tools are located in &#39;D:\Program Files\EWSoftware\Sandcastle Help File Builder\&#39;
@@ -13,9 +13,6 @@ Lightweight Website Style Version 2014.5.31.0
 Copyright &#169; 2006-2014, Eric Woodruff, All Rights Reserved
 Portions Copyright &#169; 2014, Sam Harwell, All Rights Reserved
 </buildStep>
-<buildStep step="ClearWorkFolder">
-Clearing working folder...
-</buildStep>
 <buildStep step="ValidatingDocumentationSources">
 Validating and copying documentation source information
 Source: D:\git\misterious-game\bin\Debug\BattleField7.exe
@@ -28,16 +25,16 @@ Copying XML comments files
 <buildStep step="GenerateSharedContent">
 Generating shared content files (en-US, English (United States))...
 <plugIn name="Lightweight Website Style" behavior="After" priority="1000">
-</plugIn>    Last step completed in 00:00:00.0078
+</plugIn>    Last step completed in 00:00:00.1152
 </buildStep>
 <buildStep step="GenerateApiFilter">
 Generating API filter for MRefBuilder...
-    Last step completed in 00:00:00.0049
+    Last step completed in 00:00:00.0205
 </buildStep>
 <buildStep step="GenerateReflectionInfo">
 Generating reflection information...
 [C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe]
-Build started 13.7.2014 Ј. 00:01:15 з..
+Build started 13.7.2014 Ј. 14:52:18 з..
 Project &quot;D:\git\misterious-game\documentation\Help\Working\GenerateRefInfo.proj&quot; on node 1 (default targets).
 PrepareForBuild:
   Creating directory &quot;obj\Debug\&quot;.
@@ -46,7 +43,7 @@ GenerateRefInfo:
   Copyright c 2006-2014, Microsoft Corporation, All Rights Reserved.
   Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
   Loaded 1 assemblies for reflection and 1 dependency assemblies.
-  Wrote information on 2 namespaces, 16 types, and 128 members
+  Wrote information on 2 namespaces, 17 types, and 132 members
   Copying file from &quot;reflection.org&quot; to &quot;reflection.all&quot;.
   XslTransform (v2014.5.31.0)
   Copyright c 2006-2014, Microsoft Corporation, All Rights Reserved.
@@ -56,13 +53,13 @@ Done Building Project &quot;D:\git\misterious-game\documentation\Help\Working\Ge
 
 Build succeeded.
 
-Time Elapsed 00:00:01.24
-    Last step completed in 00:00:01.3779
+Time Elapsed 00:00:01.51
+    Last step completed in 00:00:01.6768
 </buildStep>
 <buildStep step="TransformReflectionInfo">
 Transforming reflection output...
 [C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe]
-Build started 13.7.2014 Ј. 00:01:17 з..
+Build started 13.7.2014 Ј. 14:52:20 з..
 Project &quot;D:\git\misterious-game\documentation\Help\Working\TransformManifest.proj&quot; on node 1 (default targets).
 TransformManifest:
   XslTransform (v2014.5.31.0)
@@ -82,26 +79,26 @@ Done Building Project &quot;D:\git\misterious-game\documentation\Help\Working\Tr
 
 Build succeeded.
 
-Time Elapsed 00:00:02.36
-    Last step completed in 00:00:02.5605
+Time Elapsed 00:00:02.96
+    Last step completed in 00:00:03.2021
 </buildStep>
 <buildStep step="GenerateNamespaceSummaries">
 Generating namespace summary information...
-    Last step completed in 00:00:00.0781
+    Last step completed in 00:00:00.1182
 </buildStep>
 <buildStep step="CopyAdditionalContent">
 Copying additional content files...
 No additional content to copy
-    Last step completed in 00:00:00.0049
+    Last step completed in 00:00:00.0088
 </buildStep>
 <buildStep step="MergeTablesOfContents">
 Merging conceptual and additional tables of contents...
-    Last step completed in 00:00:00.0029
+    Last step completed in 00:00:00.0039
 </buildStep>
 <buildStep step="GenerateIntermediateTableOfContents">
 Generating intermediate table of contents file...
 [C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe]
-Build started 13.7.2014 Ј. 00:01:19 з..
+Build started 13.7.2014 Ј. 14:52:23 з..
 Project &quot;D:\git\misterious-game\documentation\Help\Working\GenerateIntermediateTOC.proj&quot; on node 1 (default targets).
 GenerateIntermediateTOC:
   XslTransform (v2014.5.31.0)
@@ -112,41 +109,44 @@ Done Building Project &quot;D:\git\misterious-game\documentation\Help\Working\Ge
 
 Build succeeded.
 
-Time Elapsed 00:00:00.28
+Time Elapsed 00:00:00.37
 Generating conceptual content intermediate TOC file...
-    Last step completed in 00:00:00.3896
+    Last step completed in 00:00:00.5313
 </buildStep>
 <buildStep step="CreateBuildAssemblerConfigs">
 Creating Sandcastle configuration files...
     sandcastle.config
-    Last step completed in 00:00:00.7891
+    Last step completed in 00:00:01.2314
 </buildStep>
 <buildStep step="MergeCustomConfigs">
 Merging custom build component configurations
 D:\git\misterious-game\documentation\Help\Working\sandcastle.config
-    Last step completed in 00:00:00.1094
+    Last step completed in 00:00:00.1455
 </buildStep>
 <buildStep step="BuildReferenceTopics">
 Building reference help topics...
 [C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe]
-Build started 13.7.2014 Ј. 00:01:21 з..
+Build started 13.7.2014 Ј. 14:52:25 з..
 Project &quot;D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj&quot; on node 1 (default targets).
 BuildReferenceTopics:
   BuildAssembler (v2014.5.31.0)
   Copyright c 2006-2014, Microsoft Corporation, All Rights Reserved.
   Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
   Loading configuration...
-  ResolveReferenceLinksComponent: The MSDN content ID cache &#39;C:\Users\User\AppData\Local\EWSoftware\Sandcastle Help File Builder\Cache\MsdnContentId.cache&#39; does not exist yet.  All IDs will be looked up in this build which will slow it down.
   Processing topics...
 BuildAssembler : warning : ShowMissingComponent: [N:BattleField7Namespace] Missing &lt;summary&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ShowMissingComponent: [T:BattleField7Namespace.BattleFieldGame] Missing &lt;summary&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [T:BattleField7Namespace.ConsoleDrawer] Missing &lt;summary&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [M:BattleField7Namespace.ConsoleDrawer.AskForPositionInput] Missing &lt;returns&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [M:BattleField7Namespace.ConsoleDrawer.AskForSizeInput] Missing &lt;returns&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:BattleField7Namespace.BattleFieldGame.logger] Missing &lt;summary&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleField7Namespace.ConsoleUI.AskForPositionInput(System.String)] Missing &lt;returns&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleField7Namespace.ConsoleUI.AskForPositionInput(System.String)] Missing &lt;param name=&quot;message&quot;/&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleField7Namespace.ConsoleUI.AskForSizeInput(System.String)] Missing &lt;returns&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleField7Namespace.ConsoleUI.AskForSizeInput(System.String)] Missing &lt;param name=&quot;message&quot;/&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ShowMissingComponent: [M:BattleField7Namespace.Engine.InitializeGameField(System.Int32,System.Int32)] Missing &lt;returns&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ShowMissingComponent: [M:BattleField7Namespace.Engine.TryGetCoords(System.String,System.Int32,System.Int32,System.Int32@,System.Int32@)] Missing &lt;returns&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [M:BattleField7Namespace.IDrawer.AskForPositionInput] Missing &lt;returns&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [M:BattleField7Namespace.IDrawer.AskForSizeInput] Missing &lt;returns&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleField7Namespace.IUserInterface.AskForPositionInput(System.String)] Missing &lt;returns&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleField7Namespace.IUserInterface.AskForPositionInput(System.String)] Missing &lt;param name=&quot;message&quot;/&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleField7Namespace.IUserInterface.AskForSizeInput(System.String)] Missing &lt;returns&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleField7Namespace.IUserInterface.AskForSizeInput(System.String)] Missing &lt;param name=&quot;message&quot;/&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [T:BattleField7Namespace.PopupSizeInput] MSDN URL not found for target &#39;P:System.Windows.Forms.ScrollableControl.System#Windows#Forms#Layout#IArrangedElement#DisplayRectangle&#39;. [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [T:BattleField7Namespace.PopupSizeInput] MSDN URL not found for target &#39;P:System.Windows.Forms.ScrollableControl.System#Windows#Forms#Layout#IArrangedElement#DisplayRectangle&#39;. [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:BattleField7Namespace.PopupSizeInput] MSDN URL not found for target &#39;P:System.Windows.Forms.ScrollableControl.System#Windows#Forms#Layout#IArrangedElement#DisplayRectangle&#39;. [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
@@ -154,17 +154,19 @@ BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:BattleF
 BuildAssembler : warning : ShowMissingComponent: [F:BattleField7Namespace.PopupSizeInput.button1] Missing &lt;summary&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ShowMissingComponent: [F:BattleField7Namespace.PopupSizeInput.label1] Missing &lt;summary&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ShowMissingComponent: [F:BattleField7Namespace.PopupSizeInput.textBox] Missing &lt;summary&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:BattleField7Namespace.WinFormsDrawer] MSDN URL not found for target &#39;P:System.Windows.Forms.ScrollableControl.System#Windows#Forms#Layout#IArrangedElement#DisplayRectangle&#39;. [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:BattleField7Namespace.WinFormsDrawer] MSDN URL not found for target &#39;P:System.Windows.Forms.ScrollableControl.System#Windows#Forms#Layout#IArrangedElement#DisplayRectangle&#39;. [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:BattleField7Namespace.WinFormsDrawer] MSDN URL not found for target &#39;P:System.Windows.Forms.ScrollableControl.System#Windows#Forms#Layout#IArrangedElement#DisplayRectangle&#39;. [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:BattleField7Namespace.WinFormsDrawer] MSDN URL not found for target &#39;P:System.Windows.Forms.ScrollableControl.System#Windows#Forms#Layout#IArrangedElement#DisplayRectangle&#39;. [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [F:BattleField7Namespace.WinFormsDrawer.bombsCountLabel] Missing &lt;summary&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [F:BattleField7Namespace.WinFormsDrawer.bombsLabel] Missing &lt;summary&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [F:BattleField7Namespace.WinFormsDrawer.col1] Missing &lt;summary&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [F:BattleField7Namespace.WinFormsDrawer.gameFieldGridView] Missing &lt;summary&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [F:BattleField7Namespace.WinFormsDrawer.messagesListView] Missing &lt;summary&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [F:BattleField7Namespace.WinFormsDrawer.turnsCountLabel] Missing &lt;summary&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [F:BattleField7Namespace.WinFormsDrawer.turnsLabel] Missing &lt;summary&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [T:BattleField7Namespace.WinFormsUI] MSDN URL not found for target &#39;P:System.Windows.Forms.ScrollableControl.System#Windows#Forms#Layout#IArrangedElement#DisplayRectangle&#39;. [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [T:BattleField7Namespace.WinFormsUI] MSDN URL not found for target &#39;P:System.Windows.Forms.ScrollableControl.System#Windows#Forms#Layout#IArrangedElement#DisplayRectangle&#39;. [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:BattleField7Namespace.WinFormsUI] MSDN URL not found for target &#39;P:System.Windows.Forms.ScrollableControl.System#Windows#Forms#Layout#IArrangedElement#DisplayRectangle&#39;. [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:BattleField7Namespace.WinFormsUI] MSDN URL not found for target &#39;P:System.Windows.Forms.ScrollableControl.System#Windows#Forms#Layout#IArrangedElement#DisplayRectangle&#39;. [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleField7Namespace.WinFormsUI.AskForPositionInput(System.String)] Missing &lt;param name=&quot;message&quot;/&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleField7Namespace.WinFormsUI.AskForSizeInput(System.String)] Missing &lt;param name=&quot;message&quot;/&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:BattleField7Namespace.WinFormsUI.bombsCountLabel] Missing &lt;summary&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:BattleField7Namespace.WinFormsUI.bombsLabel] Missing &lt;summary&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:BattleField7Namespace.WinFormsUI.col1] Missing &lt;summary&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:BattleField7Namespace.WinFormsUI.gameFieldGridView] Missing &lt;summary&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:BattleField7Namespace.WinFormsUI.messagesListView] Missing &lt;summary&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:BattleField7Namespace.WinFormsUI.turnsCountLabel] Missing &lt;summary&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:BattleField7Namespace.WinFormsUI.turnsLabel] Missing &lt;summary&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ShowMissingComponent: [N:BattleField7Namespace.InitialGameClass] Missing &lt;summary&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ShowMissingComponent: [M:BattleField7Namespace.InitialGameClass.BattleGame.AllMinesCleared] Missing &lt;summary&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ShowMissingComponent: [M:BattleField7Namespace.InitialGameClass.BattleGame.AllMinesCleared] Missing &lt;returns&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
@@ -207,23 +209,22 @@ BuildAssembler : warning : ShowMissingComponent: [M:BattleField7Namespace.Initia
 BuildAssembler : warning : ShowMissingComponent: [M:BattleField7Namespace.InitialGameClass.BattleGame.ValidCoordinates(System.Int32,System.Int32)] Missing &lt;returns&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ShowMissingComponent: [M:BattleField7Namespace.InitialGameClass.BattleGame.ValidCoordinates(System.Int32,System.Int32)] Missing &lt;param name=&quot;row&quot;/&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ShowMissingComponent: [M:BattleField7Namespace.InitialGameClass.BattleGame.ValidCoordinates(System.Int32,System.Int32)] Missing &lt;param name=&quot;column&quot;/&gt; documentation [D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj]
-  Processed 163 topic(s)
-  69 warning(s)
+  Processed 170 topic(s)
+  75 warning(s)
   CopyFromIndexComponent: &quot;reflection&quot; in-memory cache entries used: 5 of 15.
   CopyFromIndexComponent: &quot;comments&quot; in-memory cache entries used: 4 of 30.
-  ResolveReferenceLinksComponent: New MSDN content ID cache size: 557 entries
 Done Building Project &quot;D:\git\misterious-game\documentation\Help\Working\BuildReferenceTopics.proj&quot; (default targets).
 
 Build succeeded.
 
-Time Elapsed 00:06:06.86
-    Last step completed in 00:06:07.0459
+Time Elapsed 00:00:47.46
+    Last step completed in 00:00:47.7061
 </buildStep>
 <buildStep step="CombiningIntermediateTocFiles">
 Combining conceptual and API intermediate TOC files...
 
 Clearing any prior web output
-    Last step completed in 00:00:00.0566
+    Last step completed in 00:00:00.1406
 </buildStep>
 <buildStep step="ExtractingHtmlInfo">
 Extracting HTML info for HTML Help 1 and/or website...
@@ -235,17 +236,17 @@ E-Mail: Eric@EWoodruff.us
 Using LCID &#39;1033&#39;, code page &#39;65001&#39;, encoding charset &#39;UTF-8&#39;.
 
 Processing Help 1 files in D:\git\misterious-game\documentation\Help\Working\Output\HtmlHelp1
-Processed 163 HTML files
+Processed 170 HTML files
 Sorting keywords and generating See Also indices
 Saving HTML Help 1 keyword index to D:\git\misterious-game\documentation\Help\Working\Documentation.hhk
 Saving HTML Help 1 table of contents to D:\git\misterious-game\documentation\Help\Working\Documentation.hhc
 
 Processing website files in D:\git\misterious-game\documentation\Help\Working\Output\Website
-Processed 163 HTML files
+Processed 170 HTML files
 Sorting keywords and generating See Also indices
 Saving website keyword index to D:\git\misterious-game\documentation\Help\Working\WebKI.xml
 Saving website table of contents to D:\git\misterious-game\documentation\Help\Working\WebTOC.xml
-    Last step completed in 00:00:02.1104
+    Last step completed in 00:00:01.0068
 </buildStep>
 <buildStep step="CopyStandardHelpContent">
 Copying standard help content...
@@ -388,19 +389,19 @@ D:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS20
 D:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\icons\TocOpen.gif -&gt; D:\git\misterious-game\documentation\Help\Working\Output\Website\icons\TocOpen.gif
 D:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\scripts\branding-Website.js -&gt; D:\git\misterious-game\documentation\Help\Working\Output\Website\scripts\branding-Website.js
 D:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\scripts\jquery-1.11.0.min.js -&gt; D:\git\misterious-game\documentation\Help\Working\Output\Website\scripts\jquery-1.11.0.min.js
-    Last step completed in 00:00:01.9150
+    Last step completed in 00:00:01.5439
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContents">
 Generating HTML Help 1 table of contents file...
-    Last step completed in 00:00:00.0098
+    Last step completed in 00:00:00.0039
 </buildStep>
 <buildStep step="GenerateHelpFileIndex">
 Generating HTML Help 1 index file...
-    Last step completed in 00:00:00.0049
+    Last step completed in 00:00:00.0039
 </buildStep>
 <buildStep step="GenerateHelpProject">
 Generating HTML Help 1 project file...
-    Last step completed in 00:00:00.0234
+    Last step completed in 00:00:00.0117
 </buildStep>
 <buildStep step="CompilingHelpFile">
 Compiling HTML Help 1 file...
@@ -415,13 +416,13 @@ Compiling HTML Help 1 file...
   
   
   
-  Compile time: 0 minutes, 6 seconds
+  Compile time: 0 minutes, 5 seconds
   
-  165	Topics
+  172	Topics
   
-  1,709	Local links
+  1,783	Local links
   
-  5,119	Internet links
+  5,159	Internet links
   
   0	Graphics
   
@@ -429,22 +430,22 @@ Compiling HTML Help 1 file...
   
   
   
-  Created d:\git\misterious-game\documentation\Help\Working\Output\HtmlHelp1\Documentation.chm, 346,393 bytes
+  Created d:\git\misterious-game\documentation\Help\Working\Output\HtmlHelp1\Documentation.chm, 351,529 bytes
   
-  Compression decreased file by 1,946,116 bytes.
+  Compression decreased file by 1,995,792 bytes.
   
-    Last step completed in 00:00:07.8877
+    Last step completed in 00:00:06.7734
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContents">
 Generating website table of contents file...
-    Last step completed in 00:00:00.0156
+    Last step completed in 00:00:00.0059
 </buildStep>
 <buildStep step="GenerateFullTextIndex">
 Generating full-text index for the website...
 
 <plugIn name="Lightweight Website Style" behavior="After" priority="1000">
 Adding lightweight search and TOC elements to each topic...
-</plugIn>    Last step completed in 00:00:03.5029
+</plugIn>    Last step completed in 00:00:02.4990
 </buildStep>
 <buildStep step="CopyingWebsiteFiles">
 Copying website files to output folder...
@@ -452,16 +453,16 @@ Copying website files to output folder...
 Copied 100 files
 Copied 200 files
 Copied 300 files
-Copied 312 files for the website content
-    Last step completed in 00:00:01.1416
+Copied 322 files for the website content
+    Last step completed in 00:00:00.4668
 </buildStep>
 <buildStep step="CleanIntermediates">
 Removing intermediate files...
-    Last step completed in 00:00:00.2949
+    Last step completed in 00:00:00.2412
 </buildStep>
 <buildStep step="Completed">
 
-Build completed successfully at 07.13.2014 12:07 .  Total time: 00:06:30,5215
+Build completed successfully at 07.13.2014 02:53 .  Total time: 00:01:09,3955
 
 </buildStep>
 </shfbBuild>

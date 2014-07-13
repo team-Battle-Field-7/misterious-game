@@ -46,7 +46,7 @@ namespace BattleField7Namespace
         /// </summary>
         public void RunNewConsoleVersion()
         {
-            ConsoleDrawer consoleDrawer = new ConsoleDrawer();
+            ConsoleUI consoleDrawer = new ConsoleUI();
             Engine engine = new Engine(consoleDrawer);
             engine.Logger = this.logger;
             engine.RunGame();
@@ -59,7 +59,7 @@ namespace BattleField7Namespace
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            WinFormsDrawer form = new WinFormsDrawer();
+            WinFormsUI form = new WinFormsUI();
             Thread formThread = new Thread(
                 delegate()
                 {
