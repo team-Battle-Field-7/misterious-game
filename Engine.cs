@@ -100,10 +100,18 @@ namespace BattleField7Namespace
                 drawer.ShowBombsCount(this.BombsCount);
             }
         }
+
+        /// <summary>
+        /// Gets or sets the logger.
+        /// </summary>
+        /// <value>
+        /// The logger.
+        /// </value>
+        public ILogger Logger { get; set; }
+
         /// <summary>
         /// Runs the game.
         /// </summary>
-        /// <param name="drawer">The drawer.</param>
         /// <exception cref="System.ArgumentException">Size input must be a number between 1 and 10;size</exception>
         public void RunGame()
         {
@@ -135,7 +143,7 @@ namespace BattleField7Namespace
 
                 if (!inputValid)
                 {
-                    Logger.LogEvent("Invalid cell input attempt");
+                    this.Logger.LogEvent("Invalid cell input attempt");
                     // TODO - write a propper message for that case
                     drawer.ShowNote("The input sucks! Give me another!!!");
                     continue;
@@ -249,7 +257,6 @@ namespace BattleField7Namespace
         /// <summary>
         /// Initializes the game field.
         /// </summary>
-        /// <param name="bombsCount">The bombs count.</param>
         /// <param name="col">The size x.</param>
         /// <param name="row">The size y.</param>
         /// <returns></returns>
@@ -305,7 +312,7 @@ namespace BattleField7Namespace
                 || size < 0
                 || size > 10)
                 {
-                    Logger.LogEvent("Invalid size input attempt");
+                    this.Logger.LogEvent("Invalid size input attempt");
                     drawer.ShowNote("Bad input - try again.");
                     drawer.ShowAskInput("Input game field size (1-10): ");
                     stringInputIsInt = int.TryParse(drawer.AskForSizeInput(), out size);

@@ -24,6 +24,40 @@
             Runs the new windows forms version of the game.
             </summary>
         </member>
+        <member name="T:BattleField7Namespace.ILogger">
+            <summary>
+            Interface used for logging.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.ILogger.Log(System.String)">
+            <summary>
+            Logs the specified message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:BattleField7Namespace.ILogger.LogError(System.String)">
+            <summary>
+            Logs the error.
+            </summary>
+            <param name="error">The error.</param>
+        </member>
+        <member name="M:BattleField7Namespace.ILogger.LogWarning(System.String)">
+            <summary>
+            Logs the warning.
+            </summary>
+            <param name="warning">The warning.</param>
+        </member>
+        <member name="M:BattleField7Namespace.ILogger.LogStartUp">
+            <summary>
+            Logs the start up event.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.ILogger.LogEvent(System.String)">
+            <summary>
+            Logs the event.
+            </summary>
+            <param name="eventMsg">The event message.</param>
+        </member>
         <member name="T:BattleField7Namespace.InitialGameClass.BattleGame">
             <summary>
             Това е по - лесен за четене вариант на основния клас. Единствените промени до момента са в именуването и подреждането,
@@ -96,6 +130,11 @@
         <member name="F:BattleField7Namespace.Condition.BlownUp">
             <summary>
             When a Field has been blown up by a bomb.
+            </summary>
+        </member>
+        <member name="T:BattleField7Namespace.ConsoleDrawer">
+            <summary>
+            Draws the game in the console.
             </summary>
         </member>
         <member name="T:BattleField7Namespace.IDrawer">
@@ -283,7 +322,6 @@
             <summary>
             Runs the game.
             </summary>
-            <param name="drawer">The drawer.</param>
             <exception cref="T:System.ArgumentException">Size input must be a number between 1 and 10;size</exception>
         </member>
         <member name="M:BattleField7Namespace.Engine.StartGame">
@@ -320,7 +358,6 @@
             <summary>
             Initializes the game field.
             </summary>
-            <param name="bombsCount">The bombs count.</param>
             <param name="col">The size x.</param>
             <param name="row">The size y.</param>
             <returns></returns>
@@ -350,6 +387,14 @@
             </summary>
             <value>
             The bombs count.
+            </value>
+        </member>
+        <member name="P:BattleField7Namespace.Engine.Logger">
+            <summary>
+            Gets or sets the logger.
+            </summary>
+            <value>
+            The logger.
             </value>
         </member>
         <member name="T:BattleField7Namespace.Field">
@@ -406,7 +451,7 @@
         </member>
         <member name="T:BattleField7Namespace.Logger">
             <summary>
-            Static class used for logging to a text file.
+            Class used for logging to a text file.
             </summary>
         </member>
         <member name="F:BattleField7Namespace.Logger.restrictionLevel">

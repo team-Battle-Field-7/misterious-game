@@ -7,19 +7,19 @@ using System.IO;
 namespace BattleField7Namespace
 {
     /// <summary>
-    /// Static class used for logging to a text file.
+    /// Class used for logging to a text file.
     /// </summary>
-    internal static class Logger
+    public class Logger : ILogger
     {
         /// <summary>
         /// The restriction level of the logger.
         /// </summary>
-        private static LoggingRestrictionLevels restrictionLevel = LoggingRestrictionLevels.All;
+        private LoggingRestrictionLevels restrictionLevel = LoggingRestrictionLevels.All;
 
         /// <summary>
         /// The file path of the logger. Only *.txt paths are acceptable.
         /// </summary>
-        private static string filePath = "loggs.txt";
+        private string filePath = "loggs.txt";
 
         /// <summary>
         /// Gets or sets the restriction level.
@@ -27,15 +27,15 @@ namespace BattleField7Namespace
         /// <value>
         /// The restriction level.
         /// </value>
-        internal static LoggingRestrictionLevels RestrictionLevel
+        public LoggingRestrictionLevels RestrictionLevel
         {
             get 
             {
-                return Logger.restrictionLevel;
+                return this.restrictionLevel;
             }
             set 
             {
-                Logger.restrictionLevel = value;
+                this.restrictionLevel = value;
             }
         }
 
@@ -46,11 +46,11 @@ namespace BattleField7Namespace
         /// The file path.
         /// </value>
         /// <exception cref="System.ArgumentException">Logger.FilePath must be a path to a .txt file.  + value + is not a valid FilePath.</exception>
-        internal static string FilePath
+        public string FilePath
         {
             get
             {
-                return Logger.filePath;
+                return this.filePath;
             }
             set
             {
@@ -62,7 +62,7 @@ namespace BattleField7Namespace
                 {
                     File.Create(value);
                 }
-                Logger.filePath = value;
+                this.filePath = value;
             }
         }
 
@@ -71,9 +71,9 @@ namespace BattleField7Namespace
         /// Logs the specified message.
         /// </summary>
         /// <param name="message">The message.</param>
-        internal static void Log(string message)
+        public void Log(string message)
         {
-            using (FileStream fs = new FileStream(Logger.FilePath, FileMode.Append, FileAccess.Write))
+            using (FileStream fs = new FileStream(this.FilePath, FileMode.Append, FileAccess.Write))
             using (StreamWriter sw = new StreamWriter(fs))
             {
                 string logTime = "[" + DateTime.Now.ToString("MM/dd/yy HH:mm:ss") + "]";
@@ -85,11 +85,11 @@ namespace BattleField7Namespace
         /// Logs the error.
         /// </summary>
         /// <param name="error">The error.</param>
-        internal static void LogError(string error)
+        public void LogError(string error)
         {
             if (RestrictionLevel <= LoggingRestrictionLevels.Errors)
             {
-                Logger.Log("[Error] " + error);
+                this.Log("[Error] " + error);
             }
         }
 
@@ -97,22 +97,22 @@ namespace BattleField7Namespace
         /// Logs the warning.
         /// </summary>
         /// <param name="warning">The warning.</param>
-        internal static void LogWarning(string warning)
+        public void LogWarning(string warning)
         {
             if (RestrictionLevel <= LoggingRestrictionLevels.Warnings)
             {
-                Logger.Log("[Warning] " + warning);
+                this.Log("[Warning] " + warning);
             }
         }
 
         /// <summary>
         /// Logs the start up event.
         /// </summary>
-        internal static void LogStartUp()
+        public void LogStartUp()
         {
             if (RestrictionLevel <= LoggingRestrictionLevels.StartUps)
             {
-                Logger.Log("[Program Started]");
+                this.Log("[Program Started]");
             }
         }
 
@@ -120,11 +120,11 @@ namespace BattleField7Namespace
         /// Logs the event.
         /// </summary>
         /// <param name="eventMsg">The event message.</param>
-        internal static void LogEvent(string eventMsg)
+        public void LogEvent(string eventMsg)
         {
             if (RestrictionLevel <= LoggingRestrictionLevels.All)
             {
-                Logger.Log("[Event] " + eventMsg);
+                this.Log("[Event] " + eventMsg);
             }
         }
     }

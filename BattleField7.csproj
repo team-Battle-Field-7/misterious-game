@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BattleFieldGame.cs" />
+    <Compile Include="ILogger.cs" />
     <Compile Include="InitialGameClass\BattleGame.cs" />
     <Compile Include="Condition.cs" />
     <Compile Include="ConsoleDrawer.cs" />

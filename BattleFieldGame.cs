@@ -8,14 +8,16 @@ namespace BattleField7Namespace
 {
     class BattleFieldGame
     {
+        private ILogger logger;
+
         /// <summary>
         /// Simply calls the engine and runs it.
         /// </summary>
         static void Main()
         {
-            Logger.LogStartUp();
-
             BattleFieldGame game = new BattleFieldGame();
+            game.logger = new Logger();
+            game.logger.LogStartUp();
 
             try
             {
@@ -25,7 +27,7 @@ namespace BattleField7Namespace
             }
             catch (Exception ex)
             {
-                Logger.LogError(ex.ToString());
+                game.logger.LogError(ex.ToString());
                 throw ex;
             }
         }
@@ -46,6 +48,7 @@ namespace BattleField7Namespace
         {
             ConsoleDrawer consoleDrawer = new ConsoleDrawer();
             Engine engine = new Engine(consoleDrawer);
+            engine.Logger = this.logger;
             engine.RunGame();
         }
 
@@ -61,6 +64,7 @@ namespace BattleField7Namespace
                 delegate()
                 {
                     Engine engine = new Engine(form);
+                    engine.Logger = this.logger;
                     engine.RunGame();
                 }
             );

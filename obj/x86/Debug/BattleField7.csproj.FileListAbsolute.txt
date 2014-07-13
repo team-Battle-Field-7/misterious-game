@@ -25,7 +25,6 @@ D:\git\misterious-game\obj\x86\Debug\BattleField7.exe
 D:\git\misterious-game\obj\x86\Debug\BattleField7.pdb
 D:\git\misterious-game\bin\Debug\BattleField7.exe
 D:\git\misterious-game\bin\Debug\BattleField7.pdb
-D:\git\misterious-game\obj\x86\Debug\BattleField7.csprojResolveAssemblyReference.cache
 D:\git\misterious-game\obj\x86\Debug\BattleField7Namespace.PopupSizeInput.resources
 D:\git\misterious-game\obj\x86\Debug\BattleField7Namespace.Properties.Resources.resources
 D:\git\misterious-game\obj\x86\Debug\BattleField7Namespace.WinFormsDrawer.resources

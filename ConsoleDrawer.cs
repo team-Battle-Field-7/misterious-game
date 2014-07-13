@@ -5,6 +5,9 @@ using System.Text;
 
 namespace BattleField7Namespace
 {
+    /// <summary>
+    /// Draws the game in the console.
+    /// </summary>
     class ConsoleDrawer : IDrawer
     {
         /// <summary>

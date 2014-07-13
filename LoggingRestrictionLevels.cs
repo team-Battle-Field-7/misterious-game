@@ -8,7 +8,7 @@ namespace BattleField7Namespace
     /// <summary>
     /// Enumeration of the possible restriction levels for the Logger.
     /// </summary>
-    internal enum LoggingRestrictionLevels
+    public enum LoggingRestrictionLevels
     {
         /// <summary>
         /// The lowest restriction level - everything is to be logged.
