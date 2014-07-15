@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using BattleField7Namespace.NewGameDesign.Interfaces;
+
 namespace BattleField7Namespace
 {
     /// <summary>
@@ -36,9 +38,9 @@ namespace BattleField7Namespace
         private int rows;
 
         /// <summary>
-        /// The drawer witch displays the game.
+        /// The userInterface witch displays the game.
         /// </summary>
-        private IUserInterface drawer;
+        private IUserInterface userInterface;
 
         /// <summary>
         /// The game field.
@@ -60,7 +62,7 @@ namespace BattleField7Namespace
         /// <param name="drawer">The drawer.</param>
         public Engine(IUserInterface drawer)
         {
-            this.drawer = drawer;
+            this.userInterface = drawer;
         }
 
         /// <summary>
@@ -78,7 +80,7 @@ namespace BattleField7Namespace
             set 
             {
                 this.turnsCount = value;
-                drawer.ShowTurnsCount(this.turnsCount);
+                userInterface.ShowTurnsCount(this.turnsCount);
             }
         }
 
@@ -97,7 +99,7 @@ namespace BattleField7Namespace
             set
             {
                 this.bombsCount = value;
-                drawer.ShowBombsCount(this.BombsCount);
+                userInterface.ShowBombsCount(this.BombsCount);
             }
         }
 
@@ -126,7 +128,7 @@ namespace BattleField7Namespace
             StartGame();
 
             // TODO - write a propper message for that case //This seems proper enough.
-            drawer.ShowCongratulations("You beat the game in " + turnsCount + " turns. Congrats!");
+            userInterface.ShowCongratulations("You beat the game in " + turnsCount + " turns. Congrats!");
         }
 
         /// <summary>
@@ -134,12 +136,12 @@ namespace BattleField7Namespace
         /// </summary>
         private void StartGame()
         {
-            drawer.DrawGame(gameField);
+            userInterface.DrawGame(StringifyGameField());
             TurnsCount = 0;
             while (BombsCount > 0)
             {
                 // TODO - write a propper message for that case //Done
-                string input = drawer.AskForPositionInput("Enter target coordinates <row column>: ");
+                string input = userInterface.AskForPositionInput("Enter target coordinates <row column>: ");
 
                 int row;
                 int col;
@@ -152,7 +154,7 @@ namespace BattleField7Namespace
                         this.Logger.LogEvent("Invalid cell input attempt");
                     }
                     // TODO - write a propper message for that case //Done
-                    drawer.ShowNote("Invalid input. Try again <row column>:");
+                    userInterface.ShowNote("Invalid input. Try again <row column>:");
                     continue;
                 }
 
@@ -165,9 +167,9 @@ namespace BattleField7Namespace
                 {
                     OnBombBlownUpEvent();
                     DetonateNearbyFields(gameField, row, col, explosionPower);
-                    drawer.ShowNote("You hit a bomb with power level of " + explosionPower);
+                    userInterface.ShowNote("You hit a bomb with power level of " + explosionPower);
                 }
-                drawer.DrawGame(gameField);
+                userInterface.DrawGame(StringifyGameField());
             }
         }
 
@@ -199,7 +201,7 @@ namespace BattleField7Namespace
                     Field fieldToDetonate = gameField[row, col];
                     if (fieldToDetonate.Condition == Condition.Bomb)
                     {
-                        drawer.ShowNote("A bomb was detonated by chain reaction.");
+                        userInterface.ShowNote("A bomb was detonated by chain reaction.");
                         OnBombBlownUpEvent();
                     }
                     fieldToDetonate.DetonateByChainReaction();
@@ -249,6 +251,34 @@ namespace BattleField7Namespace
             row = r;
 
             return true;
+        }
+
+        private char[,] StringifyGameField()
+        {
+            int size = this.gameField.GetLength(0);
+            char[,] stringifyedBattleField = new char[size, size];
+            for (int r = 0; r < size; r++)
+            {
+                for (int c = 0; c < size; c++)
+                {
+                    char ch = ' ';
+                    if (this.gameField[r, c].Condition == Condition.Empty)
+	                {
+		                ch = '-';
+	                }
+                    else if (this.gameField[r, c].Condition == Condition.BlownUp)
+	                {
+		                ch = 'X';
+	                }
+                    else
+	                {
+		                ch = this.gameField[r, c].ExplosivePower.ToString()[0];
+	                }
+
+                    stringifyedBattleField[r, c] = ch;
+                }
+            }
+            return stringifyedBattleField;
         }
 
         /// <summary>
@@ -311,7 +341,7 @@ namespace BattleField7Namespace
         private void SetSizeOfGameField()
         {
             int size;
-            bool stringInputIsInt = int.TryParse(drawer.AskForSizeInput("Input game field size (1-10): "), out size);
+            bool stringInputIsInt = int.TryParse(userInterface.AskForSizeInput("Input game field size (1-10): "), out size);
             while (true)
             {
                 if (!stringInputIsInt
@@ -322,8 +352,8 @@ namespace BattleField7Namespace
                     {
                         this.Logger.LogEvent("Invalid size input attempt");
                     }
-                    drawer.ShowNote("Bad input - try again.");
-                    stringInputIsInt = int.TryParse(drawer.AskForSizeInput("Input game field size (1-10): "), out size);
+                    userInterface.ShowNote("Bad input - try again.");
+                    stringInputIsInt = int.TryParse(userInterface.AskForSizeInput("Input game field size (1-10): "), out size);
                     continue;
                 }
                 break;

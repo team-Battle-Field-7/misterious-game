@@ -5,7 +5,10 @@ using System.Text;
 
 namespace BattleField7Namespace.NewGameDesign.Interfaces
 {
-    interface IEngine
+    /// <summary>
+    /// The engine runs the main thread of the game;
+    /// </summary>
+    public interface IEngine
     {
         /// <summary>
         /// Runs the game.

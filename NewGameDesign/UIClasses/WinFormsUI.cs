@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 
+using BattleField7Namespace.NewGameDesign.Interfaces;
+
 namespace BattleField7Namespace
 {
     /// <summary>
@@ -85,33 +87,18 @@ namespace BattleField7Namespace
         /// Draws the game.
         /// </summary>
         /// <param name="gameField">The game field.</param>
-        public void DrawGame(Field[,] gameField)
+        public void DrawGame(char[,] gameField)
         {
             if (gameFieldIsInitialized)
             {
                 int rows = gameField.GetLength(0);
                 int cols = gameField.GetLength(1);
 
-                for (int r = 0; r < rows; r++)
+                for (int row = 0; row < rows; row++)
                 {
-                    for (int c = 0; c < cols; c++)
+                    for (int col = 0; col < cols; col++)
                     {
-                        string valueOfCell = "";
-                        switch (gameField[r, c].Condition)
-                        {
-                            case Condition.Empty:
-                                valueOfCell = "-";
-                                break;
-                            case Condition.Bomb:
-                                valueOfCell = gameField[r, c].ExplosivePower.ToString();
-                                break;
-                            case Condition.BlownUp:
-                                valueOfCell = "X";
-                                break;
-                            default:
-                                break;
-                        }
-                        SetFieldValue(new string[] {r.ToString(), c.ToString(), valueOfCell});
+                        SetFieldValue(new string[] {row.ToString(), col.ToString(), gameField[row, col].ToString()});
                     }
                 }
             }

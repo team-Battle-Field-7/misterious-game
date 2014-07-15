@@ -2,9 +2,14 @@
 using System.Linq;
 using System.Windows.Forms;
 using System.Threading;
+using BattleField7Namespace.NewGameDesign.Interfaces;
+using BattleField7Namespace.NewGameDesign.GameClasses;
 
 namespace BattleField7Namespace
 {
+    /// <summary>
+    /// Knows how to initialize every version of the BattleField7 Game.
+    /// </summary>
     public class BattleFieldGame
     {
         /// <summary>
@@ -64,6 +69,37 @@ namespace BattleField7Namespace
                     Engine engine = new Engine(form);
                     engine.Logger = this.logger;
                     engine.RunGame();
+                }
+            );
+            formThread.Start();
+            Application.Run(form);
+        }
+
+        /// <summary>
+        /// Runs the new design version of the came in the console.
+        /// </summary>
+        public void RunTheNewDesignVersionInTheConsole()
+        {
+            ConsoleUI consoleUI = new ConsoleUI();
+            SimpleEngine engine = new SimpleEngine();
+            engine.Logger = this.logger;
+            engine.RunGame(consoleUI);
+        }
+
+        /// <summary>
+        /// Runs the new design version of the came in Windows Forms.
+        /// </summary>
+        public void RunTheNewDesignVersionInWinForms()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            WinFormsUI form = new WinFormsUI();
+            Thread formThread = new Thread(
+                delegate()
+                {
+                    SimpleEngine engine = new SimpleEngine();
+                    engine.Logger = this.logger;
+                    engine.RunGame(form);
                 }
             );
             formThread.Start();

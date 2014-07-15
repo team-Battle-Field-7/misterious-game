@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BattleField7Namespace
+namespace BattleField7Namespace.NewGameDesign.Interfaces
 {
     /// <summary>
     /// Basic functionality to display Battle Field 7 game.
@@ -14,7 +14,7 @@ namespace BattleField7Namespace
         /// Draws the game.
         /// </summary>
         /// <param name="gameField">The game field.</param>
-        void DrawGame(Field[,] gameField);
+        void DrawGame(char[,] gameField);
 
         /// <summary>
         /// Asks for size input.

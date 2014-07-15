@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using BattleField7Namespace.NewGameDesign.Interfaces;
 
 namespace BattleField7Namespace
 {

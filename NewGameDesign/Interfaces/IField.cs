@@ -5,7 +5,11 @@ using System.Text;
 
 namespace BattleField7Namespace.NewGameDesign.Interfaces
 {
-    interface IField : ICloneable
+    /// <summary>
+    /// A single field of the Battle Field 7 game.
+    /// Can be either an empty field or a field with a bomb.
+    /// </summary>
+    public interface IField : ICloneable
     {
         /// <summary>
         /// Intentionaly detonates the field
@@ -19,11 +23,32 @@ namespace BattleField7Namespace.NewGameDesign.Interfaces
         void DetonateByChainReaction();
 
         /// <summary>
-        /// Creates a new object that is a copy of the current instance.
+        /// Gets the character representation of the field.
         /// </summary>
-        /// <returns>
-        /// A new object that is a copy of this instance.
-        /// </returns>
-        object Clone();
+        /// <returns></returns>
+        char ToChar();
+
+        
+        /// <summary>
+        /// Gets the condition.
+        /// </summary>
+        /// <returns></returns>
+        Condition GetCondition();
+
+        /// <summary>
+        /// Sets the condition of the field.
+        /// </summary>
+        void SetCondition(Condition condition);
+
+        /// <summary>
+        /// Gets the explosive power.
+        /// </summary>
+        /// <returns></returns>
+        int GetExplosivePower();
+
+        /// <summary>
+        /// Sets the explosive power.
+        /// </summary>
+        void SetExplosivePower(int power);
     }
 }

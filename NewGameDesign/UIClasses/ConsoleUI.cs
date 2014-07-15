@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using BattleField7Namespace.NewGameDesign.Interfaces;
+
 namespace BattleField7Namespace
 {
     /// <summary>
@@ -15,7 +17,7 @@ namespace BattleField7Namespace
         /// </summary>
         /// <param name="gameField">The game field.</param>
         /// <exception cref="System.NotImplementedException">ConsoleDrawer.DrawGame() is not implemented</exception>
-        public void DrawGame(Field[,] gameField)
+        public void DrawGame(char[,] gameField)
         {
             Console.Clear();
 
@@ -31,17 +33,7 @@ namespace BattleField7Namespace
                 Console.Write("{0,-2}   || ", row);
                 for (int col = 0; col < gameField.GetLength(1); col++)
                 {
-                    char symbolToShow = '-';
-                    if (gameField[row, col].ExplosivePower > 0)
-                    {
-                        symbolToShow = gameField[row, col].ExplosivePower.ToString()[0];
-                    } 
-                    if (gameField[row, col].Condition == Condition.BlownUp)
-                    {
-                        symbolToShow = 'X';
-                    }
-
-                    Console.Write("{0,-2}| ", symbolToShow);
+                    Console.Write("{0,-2}| ", gameField[row, col]);
                 }
                 Console.WriteLine();
                 Console.WriteLine(line);
