@@ -29,7 +29,7 @@ namespace BattleField7Namespace
         /// <param name="explosivePower">The explosive power.</param>
         public Field(Condition condition, int explosivePower)
         {
-            this.explosivePower = explosivePower;
+            this.ExplosivePower = explosivePower;
             this.Condition = condition;
         }
 

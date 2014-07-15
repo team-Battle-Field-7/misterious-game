@@ -8,7 +8,7 @@ namespace BattleField7Namespace
     /// <summary>
     /// Basic functionality to display Battle Field 7 game.
     /// </summary>
-    interface IUserInterface
+    public interface IUserInterface
     {
         /// <summary>
         /// Draws the game.

@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-
 using System.Threading;
 
 namespace BattleField7Namespace
 {
-    class BattleFieldGame
+    public class BattleFieldGame
     {
         private ILogger logger;
 
@@ -30,7 +29,7 @@ namespace BattleField7Namespace
                 {
                     game.logger.LogError(ex.ToString());
                 }
-                throw ex;
+                throw;
             }
         }
 

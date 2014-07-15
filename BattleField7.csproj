@@ -77,7 +77,6 @@
       <DependentUpon>WinFormsUI.cs</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="ThePlan.txt" />
   </ItemGroup>

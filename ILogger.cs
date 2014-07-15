@@ -9,7 +9,7 @@ namespace BattleField7Namespace
     /// <summary>
     /// Interface used for logging.
     /// </summary>
-    interface ILogger
+    public interface ILogger
     {
         /// <summary>
         /// Logs the specified message.

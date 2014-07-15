@@ -8,7 +8,7 @@ namespace BattleField7Namespace
     /// <summary>
     /// Engine that runs the Battle Field 7 game
     /// </summary>
-    class Engine
+    internal class Engine
     {
         /// <summary>
         /// The bombs frequency is the percentage of the cells that will become bombs.
@@ -125,7 +125,7 @@ namespace BattleField7Namespace
             gameField = InitializeGameField(cols, rows);
             StartGame();
 
-            // TODO - write a propper message for that case
+            // TODO - write a propper message for that case //This seems proper enough.
             drawer.ShowCongratulations("You beat the game in " + turnsCount + " turns. Congrats!");
         }
 
@@ -138,8 +138,8 @@ namespace BattleField7Namespace
             TurnsCount = 0;
             while (BombsCount > 0)
             {
-                // TODO - write a propper message for that case
-                string input = drawer.AskForPositionInput("Give me INPUT!!! ( in format 'row col' ): ");
+                // TODO - write a propper message for that case //Done
+                string input = drawer.AskForPositionInput("Enter target coordinates <row column>: ");
 
                 int row;
                 int col;
@@ -151,8 +151,8 @@ namespace BattleField7Namespace
                     {
                         this.Logger.LogEvent("Invalid cell input attempt");
                     }
-                    // TODO - write a propper message for that case
-                    drawer.ShowNote("The input sucks! Give me another!!!");
+                    // TODO - write a propper message for that case //Done
+                    drawer.ShowNote("Invalid input. Try again <row column>:");
                     continue;
                 }
 
@@ -266,7 +266,7 @@ namespace BattleField7Namespace
         /// </summary>
         /// <param name="col">The size x.</param>
         /// <param name="row">The size y.</param>
-        /// <returns></returns>
+        /// <returns>The game field</returns>
         private Field[,] InitializeGameField(int col, int row)
         {
             Random rnd = new Random();
@@ -338,7 +338,7 @@ namespace BattleField7Namespace
         /// Initializes the explosion ranges.
         /// ExplosionRanges holds the reletive positions to detonate for each explosion power
         /// </summary>
-        private void InitializeExplosionRanges()// hard coded, but easy to understand and change
+        private void InitializeExplosionRanges() // hard coded, but easy to understand and change
         {
             List<int[]> powerLevelOne = new List<int[]>();
             powerLevelOne.Add(new int[] { 1, 1 });

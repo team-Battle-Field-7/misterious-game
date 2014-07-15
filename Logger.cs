@@ -19,7 +19,7 @@ namespace BattleField7Namespace
         /// <summary>
         /// The file path of the logger. Only *.txt paths are acceptable.
         /// </summary>
-        private string filePath = "loggs.txt";
+        private string filePath = "loggs.txt"; //just "logs.txt" maybe?
 
         /// <summary>
         /// Gets or sets the restriction level.

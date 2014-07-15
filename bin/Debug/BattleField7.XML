@@ -348,7 +348,7 @@
             </summary>
             <param name="col">The size x.</param>
             <param name="row">The size y.</param>
-            <returns></returns>
+            <returns>The game field</returns>
         </member>
         <member name="M:BattleField7Namespace.Engine.SetSizeOfGameField">
             <summary>
