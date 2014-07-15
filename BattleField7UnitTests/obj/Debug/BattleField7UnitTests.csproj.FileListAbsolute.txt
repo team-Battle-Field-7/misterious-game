@@ -1,9 +1,0 @@
-D:\C#\GitReps\BattleField7UnitTests\obj\Debug\BattleField7UnitTests.csprojResolveAssemblyReference.cache
-D:\C#\GitReps\BattleField7UnitTests\bin\Debug\BattleField7UnitTests.dll
-D:\C#\GitReps\BattleField7UnitTests\bin\Debug\BattleField7UnitTests.pdb
-D:\C#\GitReps\BattleField7UnitTests\bin\Debug\BattleField7.exe
-D:\C#\GitReps\BattleField7UnitTests\bin\Debug\BattleField7.pdb
-D:\C#\GitReps\BattleField7UnitTests\bin\Debug\BattleField7.xml
-D:\C#\GitReps\BattleField7UnitTests\obj\Debug\BattleField7UnitTests.dll
-D:\C#\GitReps\BattleField7UnitTests\obj\Debug\BattleField7UnitTests.pdb
-D:\C#\GitReps\BattleField7UnitTests\bin\Debug\BattleField7UnitTests.XML

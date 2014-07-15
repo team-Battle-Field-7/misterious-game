@@ -49,20 +49,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BattleFieldGame.cs" />
-    <Compile Include="ILogger.cs" />
+    <Compile Include="Classes To Be Replaced\BattleFieldGame.cs" />
     <Compile Include="InitialGameClass\BattleGame.cs" />
-    <Compile Include="Condition.cs" />
-    <Compile Include="ConsoleUI.cs" />
-    <Compile Include="IUserInterface.cs" />
-    <Compile Include="Engine.cs" />
-    <Compile Include="Field.cs" />
-    <Compile Include="Logger.cs" />
-    <Compile Include="LoggingRestrictionLevels.cs" />
-    <Compile Include="PopupSizeInput.cs">
+    <Compile Include="NewGameDesign\Enumerations\Condition.cs" />
+    <Compile Include="NewGameDesign\Interfaces\IBattleField.cs" />
+    <Compile Include="NewGameDesign\Interfaces\IEngine.cs" />
+    <Compile Include="NewGameDesign\Interfaces\IExplosionStrategy.cs" />
+    <Compile Include="NewGameDesign\Interfaces\IField.cs" />
+    <Compile Include="NewGameDesign\UI Classes\ConsoleUI.cs" />
+    <Compile Include="NewGameDesign\Interfaces\IUserInterface.cs" />
+    <Compile Include="Classes To Be Replaced\Engine.cs" />
+    <Compile Include="Classes To Be Replaced\Field.cs" />
+    <Compile Include="NewGameDesign\UI Classes\Logger.cs" />
+    <Compile Include="NewGameDesign\Enumerations\LoggingRestrictionLevels.cs" />
+    <Compile Include="Classes To Be Replaced\MainClass.cs" />
+    <Compile Include="NewGameDesign\Interfaces\ILogger.cs" />
+    <Compile Include="NewGameDesign\UI Classes\PopupSizeInput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopupSizeInput.Designer.cs">
+    <Compile Include="NewGameDesign\UI Classes\PopupSizeInput.Designer.cs">
       <DependentUpon>PopupSizeInput.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -70,27 +75,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="WinFormsUI.cs">
+    <Compile Include="NewGameDesign\UI Classes\WinFormsUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WinFormsUI.Designer.cs">
+    <Compile Include="NewGameDesign\UI Classes\WinFormsUI.Designer.cs">
       <DependentUpon>WinFormsUI.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ThePlan.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="PopupSizeInput.resx">
+    <EmbeddedResource Include="NewGameDesign\UI Classes\PopupSizeInput.resx">
       <DependentUpon>PopupSizeInput.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="WinFormsUI.resx">
+    <EmbeddedResource Include="NewGameDesign\UI Classes\WinFormsUI.resx">
       <DependentUpon>WinFormsUI.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewGameDesign\Game Classes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

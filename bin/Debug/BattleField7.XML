@@ -4,9 +4,9 @@
         <name>BattleField7</name>
     </assembly>
     <members>
-        <member name="M:BattleField7Namespace.BattleFieldGame.Main">
+        <member name="F:BattleField7Namespace.BattleFieldGame.logger">
             <summary>
-            Simply calls the engine and runs it.
+            The logger
             </summary>
         </member>
         <member name="M:BattleField7Namespace.BattleFieldGame.RunOldVersion">
@@ -24,39 +24,13 @@
             Runs the new windows forms version of the game.
             </summary>
         </member>
-        <member name="T:BattleField7Namespace.ILogger">
+        <member name="P:BattleField7Namespace.BattleFieldGame.Logger">
             <summary>
-            Interface used for logging.
+            Gets or sets the logger.
             </summary>
-        </member>
-        <member name="M:BattleField7Namespace.ILogger.Log(System.String)">
-            <summary>
-            Logs the specified message.
-            </summary>
-            <param name="message">The message.</param>
-        </member>
-        <member name="M:BattleField7Namespace.ILogger.LogError(System.String)">
-            <summary>
-            Logs the error.
-            </summary>
-            <param name="error">The error.</param>
-        </member>
-        <member name="M:BattleField7Namespace.ILogger.LogWarning(System.String)">
-            <summary>
-            Logs the warning.
-            </summary>
-            <param name="warning">The warning.</param>
-        </member>
-        <member name="M:BattleField7Namespace.ILogger.LogStartUp">
-            <summary>
-            Logs the start up event.
-            </summary>
-        </member>
-        <member name="M:BattleField7Namespace.ILogger.LogEvent(System.String)">
-            <summary>
-            Logs the event.
-            </summary>
-            <param name="eventMsg">The event message.</param>
+            <value>
+            The logger.
+            </value>
         </member>
         <member name="T:BattleField7Namespace.InitialGameClass.BattleGame">
             <summary>
@@ -130,6 +104,17 @@
         <member name="F:BattleField7Namespace.Condition.BlownUp">
             <summary>
             When a Field has been blown up by a bomb.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IField.IntentionalDetonate">
+            <summary>
+            Intentionaly detonates the field
+            </summary>
+            <returns>Fields explosive power</returns>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IField.DetonateByChainReaction">
+            <summary>
+            Detonates the field by chain reaction
             </summary>
         </member>
         <member name="T:BattleField7Namespace.ConsoleUI">
@@ -442,6 +427,40 @@
             Class used for logging to a text file.
             </summary>
         </member>
+        <member name="T:BattleField7Namespace.ILogger">
+            <summary>
+            Interface used for logging.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.ILogger.Log(System.String)">
+            <summary>
+            Logs the specified message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:BattleField7Namespace.ILogger.LogError(System.String)">
+            <summary>
+            Logs the error.
+            </summary>
+            <param name="error">The error.</param>
+        </member>
+        <member name="M:BattleField7Namespace.ILogger.LogWarning(System.String)">
+            <summary>
+            Logs the warning.
+            </summary>
+            <param name="warning">The warning.</param>
+        </member>
+        <member name="M:BattleField7Namespace.ILogger.LogStartUp">
+            <summary>
+            Logs the start up event.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.ILogger.LogEvent(System.String)">
+            <summary>
+            Logs the event.
+            </summary>
+            <param name="eventMsg">The event message.</param>
+        </member>
         <member name="F:BattleField7Namespace.Logger.restrictionLevel">
             <summary>
             The restriction level of the logger.
@@ -521,6 +540,11 @@
         <member name="F:BattleField7Namespace.LoggingRestrictionLevels.Errors">
             <summary>
             Event, StartUp and Warning logs are to be ignored. Only Error logs will be logged.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.MainClass.Main">
+            <summary>
+            Simply calls the engine and runs it.
             </summary>
         </member>
         <member name="T:BattleField7Namespace.PopupSizeInput">
