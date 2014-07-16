@@ -96,22 +96,15 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         }
 
         /// <summary>
-        /// Runs the game via Poor Man's Dependency Injevtion. Highly Not Recomended.
+        /// Runs the game via Poor Man's Dependency Injevtion. Highly NOT recomended.
         /// </summary>
         /// <param name="userInterface">The user interface.</param>
         public void RunGame(IUserInterface userInterface)
         {
             if (this.Logger != null)
-	        {
-		        try
-                {
-                    throw new Exception("Usage of Poor Man's Dependency Injevtion");
-                }
-                catch (Exception ex)
-                {
-                    this.Logger.LogWarning(ex.ToString());
-                }
-	        }
+            {
+                this.Logger.LogWarning("Usage of Poor Man's Dependency Injevtion");
+            }
 
             this.RunGame(userInterface,
                 new SimpleBattleField(
@@ -128,11 +121,18 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         /// <param name="battleField">The battle field.</param>
         public void RunGame(IUserInterface userInterface, IBattleField battleField)
         {
+            if (this.Logger != null)
+            {
+                this.Logger.LogStartUp();
+            }
+
             this.UserInterface = userInterface;
             this.BattleField = battleField;
 
             InitializeBattleField();
             this.UserInterface.DrawGame(this.BattleField.StringifyBattleField());
+            this.UserInterface.ShowBombsCount(bombsCount);
+            this.UserInterface.ShowTurnsCount(turnsCount);
 
             while (this.bombsCount > 0)
             {
@@ -141,14 +141,17 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
                 int detonatedBombs = this.BattleField.DetonateFieldAtPosition(position[0], position[1]);
                 if (detonatedBombs > 0)
                 {
-                    this.UserInterface.ShowNote("A bomb was hit");
-                    for (int i = 1; i <= detonatedBombs; i++)
+                    this.UserInterface.ShowNote("A bomb was hit.");
+                    for (int i = 1; i < detonatedBombs; i++)
                     {
                         this.UserInterface.ShowNote("A bomb was detonated by chain reaction");
                     }
                 }
                 this.bombsCount -= detonatedBombs;
+
                 this.UserInterface.DrawGame(this.BattleField.StringifyBattleField());
+                this.UserInterface.ShowBombsCount(bombsCount);
+                this.UserInterface.ShowTurnsCount(turnsCount);
             }
 
             this.UserInterface.ShowCongratulations("You beat the game in " + this.turnsCount + " turns. Congrats!");

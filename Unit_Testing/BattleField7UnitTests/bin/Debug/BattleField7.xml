@@ -1,0 +1,1166 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BattleField7</name>
+    </assembly>
+    <members>
+        <member name="T:BattleField7Namespace.BattleFieldGame">
+            <summary>
+            Knows how to initialize every version of the BattleField7 Game.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.BattleFieldGame.logger">
+            <summary>
+            The logger
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.BattleFieldGame.RunOldVersion">
+            <summary>
+            Runs the old version of the game.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.BattleFieldGame.RunNewConsoleVersion">
+            <summary>
+            Runs the new console version of the game.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.BattleFieldGame.RunNewWinFormsVersion">
+            <summary>
+            Runs the new windows forms version of the game.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.BattleFieldGame.RunTheNewDesignVersionInTheConsole">
+            <summary>
+            Runs the new design version of the came in the console.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.BattleFieldGame.RunTheNewDesignVersionInWinForms">
+            <summary>
+            Runs the new design version of the came in Windows Forms.
+            </summary>
+        </member>
+        <member name="P:BattleField7Namespace.BattleFieldGame.Logger">
+            <summary>
+            Gets or sets the logger.
+            </summary>
+            <value>
+            The logger.
+            </value>
+        </member>
+        <member name="T:BattleField7Namespace.InitialGameClass.BattleGame">
+            <summary>
+            Това е по - лесен за четене вариант на основния клас. Единствените промени до момента са в именуването и подреждането,
+            има изведени и няколко помощни метода от повтарящия се код. Оставил съм закоментирани старите съдържания на най - 
+            безобразно заплетените методи за сравнение и в случай, че абстракцията ми не е сработила добре.
+            Не съм променял нищо по логиката, макар на места да може да има нужда (NumberInRange() методът със сигурност).
+            Ако ще пренаписваме всичко отначало, поне ще може да сравняваме функционалността с този вариант.
+            Оставих името Bombi, за да не заемам някое по - подходящо, което да дадем на нов проект. //vnci
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.InitialGameClass.BattleGame.NumberInRange(System.Int32,System.Int32)">
+            <summary>
+            Random number generator
+            </summary>
+            <param name="min">lower bound</param>
+            <param name="max">upper bound</param>
+            <returns>An Integer in the range between <paramref name="min"/> and <paramref name="max"/></returns>
+            <remarks>Needs rebuild to generate new numbers, otherwise the field prodiced is always the
+            same for the given size.</remarks>
+        </member>
+        <member name="M:BattleField7Namespace.InitialGameClass.BattleGame.StraightSplash(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Represents an explosion that spreads straight in all four directions,
+            clearing bombs and empty cells in its path
+            </summary>
+            <param name="row"></param>
+            <param name="column"></param>
+            <param name="range"></param>
+        </member>
+        <member name="M:BattleField7Namespace.InitialGameClass.BattleGame.DiagonalSplash(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Represents an explosion that spreads diagonally in all four directions,
+            clearing bombs and empty cells in its path
+            </summary>
+            <param name="row"></param>
+            <param name="column"></param>
+            <param name="range"></param>
+        </member>
+        <member name="M:BattleField7Namespace.InitialGameClass.BattleGame.ValidCoordinates(System.Int32,System.Int32)">
+            <summary>
+            Checks if the coordinates given are within the field
+            </summary>
+            <param name="row"></param>
+            <param name="column"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BattleField7Namespace.InitialGameClass.BattleGame.IsBomb(System.Int32,System.Int32)">
+            <summary>
+            Determines if there is a bomb at given coordinates
+            </summary>
+            <param name="row"></param>
+            <param name="column"></param>
+            <returns>True if the cell has not been cleared already and is not marked as empty in the beginning</returns>
+        </member>
+        <member name="T:BattleField7Namespace.Condition">
+            <summary>
+            Condition types for Field
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.Condition.Empty">
+            <summary>
+            When a field is neghter a bomb, nor blown up.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.Condition.Bomb">
+            <summary>
+            When a field has a bomb
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.Condition.BlownUp">
+            <summary>
+            When a Field has been blown up by a bomb.
+            </summary>
+        </member>
+        <member name="T:BattleField7Namespace.NewGameDesign.GameClasses.MyExplosionStrategy">
+            <summary>
+            /// Logic for getting the coordinates of a blast after detonation of a bomb
+            </summary>
+        </member>
+        <member name="T:BattleField7Namespace.NewGameDesign.Interfaces.IExplosionStrategy">
+            <summary>
+            Logic for getting the coordinates of a blast after detonation of a bomb
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IExplosionStrategy.GetCoordsToDetonateByTheBlast(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Gets the coords to detonate by the blast.
+            </summary>
+            <param name="row">The row.</param>
+            <param name="col">The col.</param>
+            <param name="explosivePower">The explosive power.</param>
+            <returns>The coordinates of the fields to detonate by chain reaction.</returns>
+        </member>
+        <member name="F:BattleField7Namespace.NewGameDesign.GameClasses.MyExplosionStrategy.explosionRangePositionsGroupedByPower">
+            <summary>
+            The explosion range positions grouped by power.
+            The outer List has 5 elements (lists), representing the 5 possible explosive powers.
+            The middle List has all the relative cell positions for a specific explosive power (only the unique positions)
+            A relative position is represented by an int array of 2 elements - row and column,
+            witch are to be added to the detonation position in order to get the coordinates of the specified position.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.MyExplosionStrategy.GetCoordsToDetonateByTheBlast(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Gets the coords to detonate by the blast.
+            </summary>
+            <param name="row">The row.</param>
+            <param name="col">The col.</param>
+            <param name="explosivePower">The explosive power.</param>
+            <returns>
+            The coordinates of the fields to detonate by chain reaction.
+            </returns>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.MyExplosionStrategy.InitializeExplosionRanges">
+            <summary>
+            Initializes the explosion ranges.
+            ExplosionRanges holds the reletive positions to detonate for each explosion power
+            </summary>
+        </member>
+        <member name="T:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField">
+            <summary>
+            The battle field contains all the Fields of the game as well as some logic about them.
+            </summary>
+        </member>
+        <member name="T:BattleField7Namespace.NewGameDesign.Interfaces.IBattleField">
+            <summary>
+            The battle field is a collection of IFields with some methods
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IBattleField.InitializeBattleField(System.Int32)">
+            <summary>
+            Initializes the battle field.
+            </summary>
+            <param name="size">The size.</param>
+            <returns>The count of the bombs.</returns>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IBattleField.StringifyBattleField">
+            <summary>
+            Stringifies the battle field.
+            </summary>
+            <returns>
+            The Stringified battle field.
+            </returns>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IBattleField.DetonateFieldAtPosition(System.Int32,System.Int32)">
+            <summary>
+            Detonates the field at position.
+            </summary>
+            <param name="row">The row.</param>
+            <param name="col">The col.</param>
+            <returns>
+            Count of detonated bombs.
+            </returns>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IBattleField.CoordinatesAreValid(System.Int32,System.Int32)">
+            <summary>
+            Checks if the given coordinateses are valid.
+            </summary>
+            <param name="row">The row.</param>
+            <param name="col">The col.</param>
+            <returns>True if valid, False if not.</returns>
+        </member>
+        <member name="F:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.fields">
+            <summary>
+            The fields of the battle field.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.bombsFrequency">
+            <summary>
+            The bombs frequency.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.basicField">
+            <summary>
+            The basic field. Used only for cloning.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.explosionStrategy">
+            <summary>
+            The explosion strategy.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.#ctor(BattleField7Namespace.NewGameDesign.Interfaces.IField,BattleField7Namespace.NewGameDesign.Interfaces.IExplosionStrategy)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField"/> class.
+            </summary>
+            <param name="basicField">The basic field.</param>
+            <param name="explosionStrategy">The explosion strategy.</param>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.InitializeBattleField(System.Int32)">
+            <summary>
+            Initializes the battle field.
+            </summary>
+            <param name="size">The size.</param>
+            <returns>The count of the bombs.</returns>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.StringifyBattleField">
+            <summary>
+            Stringifies the battle field.
+            </summary>
+            <returns>
+            The Stringified battle field.
+            </returns>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.DetonateFieldAtPosition(System.Int32,System.Int32)">
+            <summary>
+            Detonates the field at position.
+            </summary>
+            <param name="row">The row.</param>
+            <param name="col">The col.</param>
+            <returns>
+            Count of detonated bombs.
+            </returns>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.CoordinatesAreValid(System.Int32,System.Int32)">
+            <summary>
+            Checks if the given coordinateses are valid.
+            </summary>
+            <param name="row">The row.</param>
+            <param name="col">The col.</param>
+            <returns>True if valid, False if not.</returns>
+        </member>
+        <member name="P:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.BombsFrequency">
+            <summary>
+            Gets or sets the bombs frequency.
+            </summary>
+            <value>
+            The bombs frequency.
+            </value>
+        </member>
+        <member name="P:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.BasicField">
+            <summary>
+            Gets or sets the basic field.
+            </summary>
+            <value>
+            The basic field.
+            </value>
+            <remarks>Huge security leak! Permits the basic field to have Condition.Bomb</remarks>
+        </member>
+        <member name="P:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.ExplosionStrategy">
+            <summary>
+            Gets or sets the explosion strategy.
+            </summary>
+            <value>
+            The explosion strategy.
+            </value>
+        </member>
+        <member name="T:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine">
+            <summary>
+            A Simple version of the engine
+            </summary>
+        </member>
+        <member name="T:BattleField7Namespace.NewGameDesign.Interfaces.IEngine">
+            <summary>
+            The engine runs the main thread of the game;
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IEngine.RunGame(BattleField7Namespace.NewGameDesign.Interfaces.IUserInterface,BattleField7Namespace.NewGameDesign.Interfaces.IBattleField)">
+            <summary>
+            Runs the game.
+            </summary>
+            <param name="ui">The UI.</param>
+            <param name="battleField">The battle field.</param>
+        </member>
+        <member name="F:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.userInterface">
+            <summary>
+            The user interface
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.battleField">
+            <summary>
+            The battle field
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.bombsCount">
+            <summary>
+            The bombs counter.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.turnsCount">
+            <summary>
+            The turns counter.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.logger">
+            <summary>
+            The logger
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.RunGame(BattleField7Namespace.NewGameDesign.Interfaces.IUserInterface)">
+            <summary>
+            Runs the game via Poor Man's Dependency Injevtion. Highly Not Recomended.
+            </summary>
+            <param name="userInterface">The user interface.</param>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.RunGame(BattleField7Namespace.NewGameDesign.Interfaces.IUserInterface,BattleField7Namespace.NewGameDesign.Interfaces.IBattleField)">
+            <summary>
+            Runs the game.
+            </summary>
+            <param name="userInterface">The user interface.</param>
+            <param name="battleField">The battle field.</param>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.InitializeBattleField">
+            <summary>
+            Initializes the battle field.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.GetPositionInput">
+            <summary>
+            Gets the position input.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.Logger">
+            <summary>
+            Gets or sets the logger.
+            </summary>
+            <value>
+            The logger.
+            </value>
+        </member>
+        <member name="P:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.BattleField">
+            <summary>
+            Gets or sets the battle field.
+            </summary>
+            <value>
+            The battle field.
+            </value>
+        </member>
+        <member name="P:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.UserInterface">
+            <summary>
+            Gets or sets the user interface.
+            </summary>
+            <value>
+            The user interface.
+            </value>
+        </member>
+        <member name="T:BattleField7Namespace.NewGameDesign.GameClasses.SimpleField">
+            <summary>
+            A single field of the Battle Field 7 game.
+            Can be either an empty field or a field with a bomb.
+            </summary>
+        </member>
+        <member name="T:BattleField7Namespace.NewGameDesign.Interfaces.IField">
+            <summary>
+            A single field of the Battle Field 7 game.
+            Can be either an empty field or a field with a bomb.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IField.IntentionalDetonate">
+            <summary>
+            Intentionaly detonates the field
+            </summary>
+            <returns>Field's explosive power</returns>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IField.DetonateByChainReaction">
+            <summary>
+            Detonates the field by chain reaction
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IField.ToChar">
+            <summary>
+            Gets the character representation of the field.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IField.GetCondition">
+            <summary>
+            Gets the condition.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IField.SetCondition(BattleField7Namespace.Condition)">
+            <summary>
+            Sets the condition of the field.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IField.GetExplosivePower">
+            <summary>
+            Gets the explosive power.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IField.SetExplosivePower(System.Int32)">
+            <summary>
+            Sets the explosive power.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.NewGameDesign.GameClasses.SimpleField.condition">
+            <summary>
+            The condition of the field.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.NewGameDesign.GameClasses.SimpleField.explosivePower">
+            <summary>
+            The explosive power of the field.
+            It is always 0 if the condition of the field is not Condition.Bomb
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleField.#ctor(BattleField7Namespace.Condition,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BattleField7Namespace.Field"/> class.
+            </summary>
+            <param name="condition">The condition of the field.</param>
+            <param name="explosivePower">The explosive power.</param>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleField.IntentionalDetonate">
+            <summary>
+            Intentionaly detonates the field
+            </summary>
+            <returns>Fields explosive power</returns>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleField.DetonateByChainReaction">
+            <summary>
+            Detonates the field by chain reaction
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleField.ToChar">
+            <summary>
+            To the character.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleField.GetCondition">
+            <summary>
+            Gets the condition.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleField.SetCondition(BattleField7Namespace.Condition)">
+            <summary>
+            Sets the condition of the field.
+            </summary>
+            <param name="condition"></param>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleField.GetExplosivePower">
+            <summary>
+            Gets the explosive power.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleField.SetExplosivePower(System.Int32)">
+            <summary>
+            Sets the explosive power.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleField.Clone">
+            <summary>
+            Creates a new object that is a copy of the current instance.
+            </summary>
+            <returns>
+            A new object that is a copy of this instance.
+            </returns>
+        </member>
+        <member name="P:BattleField7Namespace.NewGameDesign.GameClasses.SimpleField.Condition">
+            <summary>
+            Gets the condition.
+            </summary>
+            <value>
+            The condition.
+            </value>
+        </member>
+        <member name="P:BattleField7Namespace.NewGameDesign.GameClasses.SimpleField.ExplosivePower">
+            <summary>
+            Gets the explosive power.
+            </summary>
+            <value>
+            The explosive power.
+            </value>
+            <exception cref="T:System.ArgumentOutOfRangeException">Explosive power of field must be between 0 an 5.</exception>
+        </member>
+        <member name="T:BattleField7Namespace.ConsoleUI">
+            <summary>
+            Draws the game in the console.
+            </summary>
+        </member>
+        <member name="T:BattleField7Namespace.NewGameDesign.Interfaces.IUserInterface">
+            <summary>
+            Basic functionality to display Battle Field 7 game.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IUserInterface.DrawGame(System.Char[0:,0:])">
+            <summary>
+            Draws the game.
+            </summary>
+            <param name="gameField">The game field.</param>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IUserInterface.AskForSizeInput(System.String)">
+            <summary>
+            Asks for size input.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IUserInterface.AskForPositionInput(System.String)">
+            <summary>
+            Asks for position input.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IUserInterface.ShowMessage(System.String)">
+            <summary>
+            Shows the message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IUserInterface.ShowCongratulations(System.String)">
+            <summary>
+            Shows the congratulations message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IUserInterface.ShowGameOver(System.String)">
+            <summary>
+            Shows the game over message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IUserInterface.ShowNote(System.String)">
+            <summary>
+            Shows a note message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IUserInterface.ShowBombsCount(System.Int32)">
+            <summary>
+            Shows the bombs count.
+            </summary>
+            <param name="count">The count.</param>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IUserInterface.ShowTurnsCount(System.Int32)">
+            <summary>
+            Shows the turns count.
+            </summary>
+            <param name="count">The count.</param>
+        </member>
+        <member name="M:BattleField7Namespace.ConsoleUI.DrawGame(System.Char[0:,0:])">
+            <summary>
+            Draws the game in the console.
+            </summary>
+            <param name="gameField">The game field.</param>
+            <exception cref="T:System.NotImplementedException">ConsoleDrawer.DrawGame() is not implemented</exception>
+        </member>
+        <member name="M:BattleField7Namespace.ConsoleUI.AskForSizeInput(System.String)">
+            <summary>
+            Asks for size input.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BattleField7Namespace.ConsoleUI.AskForPositionInput(System.String)">
+            <summary>
+            Asks for position input.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BattleField7Namespace.ConsoleUI.ShowMessage(System.String)">
+            <summary>
+            Shows the message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:BattleField7Namespace.ConsoleUI.ShowCongratulations(System.String)">
+            <summary>
+            Shows the congratulations message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:BattleField7Namespace.ConsoleUI.ShowGameOver(System.String)">
+            <summary>
+            Shows the game over message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:BattleField7Namespace.ConsoleUI.ShowNote(System.String)">
+            <summary>
+            Shows a note message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:BattleField7Namespace.ConsoleUI.ShowBombsCount(System.Int32)">
+            <summary>
+            Shows the bombs count.
+            </summary>
+            <param name="count">The count.</param>
+        </member>
+        <member name="M:BattleField7Namespace.ConsoleUI.ShowTurnsCount(System.Int32)">
+            <summary>
+            Shows the turns count.
+            </summary>
+            <param name="count">The count.</param>
+        </member>
+        <member name="T:BattleField7Namespace.Engine">
+            <summary>
+            Engine that runs the Battle Field 7 game
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.Engine.bombsFrequency">
+            <summary>
+            The bombs frequency is the percentage of the cells that will become bombs.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.Engine.bombsCount">
+            <summary>
+            Keeps track of the bombs left to blow up.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.Engine.turnsCount">
+            <summary>
+            Keeps track of the turns.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.Engine.cols">
+            <summary>
+            The columns of the game grid.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.Engine.rows">
+            <summary>
+            The rows of the game grid.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.Engine.userInterface">
+            <summary>
+            The userInterface witch displays the game.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.Engine.gameField">
+            <summary>
+            The game field.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.Engine.explosionRangePositionsGroupedByPower">
+            <summary>
+            The explosion range positions grouped by power.
+            The outer List has 5 elements (lists), representing the 5 possible explosive powers.
+            The middle List has all the relative cell positions for a specific explosive power (only the unique positions)
+            A relative position is represented by an int array of 2 elements - row and column,
+            witch are to be added to the detonation position in order to get the coordinates of the specified position.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.Engine.#ctor(BattleField7Namespace.NewGameDesign.Interfaces.IUserInterface)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BattleField7Namespace.Engine"/> class.
+            </summary>
+            <param name="drawer">The drawer.</param>
+        </member>
+        <member name="M:BattleField7Namespace.Engine.RunGame">
+            <summary>
+            Runs the game.
+            </summary>
+            <exception cref="T:System.ArgumentException">Size input must be a number between 1 and 10;size</exception>
+        </member>
+        <member name="M:BattleField7Namespace.Engine.StartGame">
+            <summary>
+            Starts the game.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.Engine.DetonateNearbyFields(BattleField7Namespace.Field[0:,0:],System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Detonates the nearby fields after explosion.
+            </summary>
+            <param name="gameField">The game field.</param>
+            <param name="positionCol">The position x.</param>
+            <param name="positionRow">The position y.</param>
+            <param name="explosionPower">The explosion power.</param>
+        </member>
+        <member name="M:BattleField7Namespace.Engine.TryGetCoords(System.String,System.Int32,System.Int32,System.Int32@,System.Int32@)">
+            <summary>
+            Tries the get coordinates.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="cols">The size x.</param>
+            <param name="rows">The size y.</param>
+            <param name="col">The coord x.</param>
+            <param name="row">The coord y.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BattleField7Namespace.Engine.OnBombBlownUpEvent">
+            <summary>
+            Keeps count of the bombs left.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.Engine.InitializeGameField(System.Int32,System.Int32)">
+            <summary>
+            Initializes the game field.
+            </summary>
+            <param name="col">The size x.</param>
+            <param name="row">The size y.</param>
+            <returns>The game field</returns>
+        </member>
+        <member name="M:BattleField7Namespace.Engine.SetSizeOfGameField">
+            <summary>
+            Sets the size of game field.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.Engine.InitializeExplosionRanges">
+            <summary>
+            Initializes the explosion ranges.
+            ExplosionRanges holds the reletive positions to detonate for each explosion power
+            </summary>
+        </member>
+        <member name="P:BattleField7Namespace.Engine.TurnsCount">
+            <summary>
+            Gets or sets the turns count.
+            </summary>
+            <value>
+            The turns count.
+            </value>
+        </member>
+        <member name="P:BattleField7Namespace.Engine.BombsCount">
+            <summary>
+            Gets or sets the bombs count.
+            </summary>
+            <value>
+            The bombs count.
+            </value>
+        </member>
+        <member name="P:BattleField7Namespace.Engine.Logger">
+            <summary>
+            Gets or sets the logger.
+            </summary>
+            <value>
+            The logger.
+            </value>
+        </member>
+        <member name="T:BattleField7Namespace.Field">
+            <summary>
+            A single field of the Battle Field 7 game.
+            Can be either an empty field or a field with a bomb.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.Field.condition">
+            <summary>
+            The condition of the field.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.Field.explosivePower">
+            <summary>
+            The explosive power of the field.
+            It is always 0 if the condition of the field is not Condition.Bomb
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.Field.#ctor(BattleField7Namespace.Condition,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BattleField7Namespace.Field"/> class.
+            </summary>
+            <param name="condition">The condition of the field.</param>
+            <param name="explosivePower">The explosive power.</param>
+        </member>
+        <member name="M:BattleField7Namespace.Field.IntentionalDetonate">
+            <summary>
+            Intentionaly detonates the field
+            </summary>
+            <returns>Fields explosive power</returns>
+        </member>
+        <member name="M:BattleField7Namespace.Field.DetonateByChainReaction">
+            <summary>
+            Detonates the field by chain reaction
+            </summary>
+        </member>
+        <member name="P:BattleField7Namespace.Field.Condition">
+            <summary>
+            Gets the condition.
+            </summary>
+            <value>
+            The condition.
+            </value>
+        </member>
+        <member name="P:BattleField7Namespace.Field.ExplosivePower">
+            <summary>
+            Gets the explosive power.
+            </summary>
+            <value>
+            The explosive power.
+            </value>
+            <exception cref="T:System.ArgumentOutOfRangeException">Explosive power of field must be between 0 an 5.</exception>
+        </member>
+        <member name="T:BattleField7Namespace.Logger">
+            <summary>
+            Class used for logging to a text file.
+            </summary>
+        </member>
+        <member name="T:BattleField7Namespace.NewGameDesign.Interfaces.ILogger">
+            <summary>
+            Interface used for logging.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.ILogger.Log(System.String)">
+            <summary>
+            Logs the specified message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.ILogger.LogError(System.String)">
+            <summary>
+            Logs the error.
+            </summary>
+            <param name="error">The error.</param>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.ILogger.LogWarning(System.String)">
+            <summary>
+            Logs the warning.
+            </summary>
+            <param name="warning">The warning.</param>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.ILogger.LogStartUp">
+            <summary>
+            Logs the start up event.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.ILogger.LogEvent(System.String)">
+            <summary>
+            Logs the event.
+            </summary>
+            <param name="eventMsg">The event message.</param>
+        </member>
+        <member name="F:BattleField7Namespace.Logger.restrictionLevel">
+            <summary>
+            The restriction level of the logger.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.Logger.filePath">
+            <summary>
+            The file path of the logger. Only *.txt paths are acceptable.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.Logger.Log(System.String)">
+            <summary>
+            Logs the specified message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:BattleField7Namespace.Logger.LogError(System.String)">
+            <summary>
+            Logs the error.
+            </summary>
+            <param name="error">The error.</param>
+        </member>
+        <member name="M:BattleField7Namespace.Logger.LogWarning(System.String)">
+            <summary>
+            Logs the warning.
+            </summary>
+            <param name="warning">The warning.</param>
+        </member>
+        <member name="M:BattleField7Namespace.Logger.LogStartUp">
+            <summary>
+            Logs the start up event.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.Logger.LogEvent(System.String)">
+            <summary>
+            Logs the event.
+            </summary>
+            <param name="eventMsg">The event message.</param>
+        </member>
+        <member name="P:BattleField7Namespace.Logger.RestrictionLevel">
+            <summary>
+            Gets or sets the restriction level.
+            </summary>
+            <value>
+            The restriction level.
+            </value>
+        </member>
+        <member name="P:BattleField7Namespace.Logger.FilePath">
+            <summary>
+            Gets or sets the file path.
+            </summary>
+            <value>
+            The file path.
+            </value>
+            <exception cref="T:System.ArgumentException">Logger.FilePath must be a path to a .txt file.  + value + is not a valid FilePath.</exception>
+        </member>
+        <member name="T:BattleField7Namespace.LoggingRestrictionLevels">
+            <summary>
+            Enumeration of the possible restriction levels for the Logger.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.LoggingRestrictionLevels.All">
+            <summary>
+            The lowest restriction level - everything is to be logged.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.LoggingRestrictionLevels.StartUps">
+            <summary>
+            Event logs are to be ignored. Only StartUp, Warning and Erorr logs will be logged.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.LoggingRestrictionLevels.Warnings">
+            <summary>
+            Event and StartUp logs are to be ignored. Only Warning and Error logs will be logged.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.LoggingRestrictionLevels.Errors">
+            <summary>
+            Event, StartUp and Warning logs are to be ignored. Only Error logs will be logged.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.MainClass.Main">
+            <summary>
+            Simply calls the engine and runs it.
+            </summary>
+        </member>
+        <member name="T:BattleField7Namespace.PopupSizeInput">
+            <summary>
+            A small window used to get the initial game grid size input.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.PopupSizeInput.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BattleField7Namespace.PopupSizeInput"/> class.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.PopupSizeInput.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.PopupSizeInput.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BattleField7Namespace.PopupSizeInput.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:BattleField7Namespace.PopupSizeInput.Input">
+            <summary>
+            Gets or sets the input.
+            </summary>
+            <value>
+            The input.
+            </value>
+        </member>
+        <member name="T:BattleField7Namespace.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:BattleField7Namespace.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:BattleField7Namespace.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:BattleField7Namespace.WinFormsUI">
+            <summary>
+            A Windows Forms game interface
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.WinFormsUI.sizeInputWindow">
+            <summary>
+            The size input window
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.WinFormsUI.gameFieldIsInitialized">
+            <summary>
+            Needed for a check before drawing the game field,
+            becouse the thread of the form might still not be ready with setting up the game grid's size,
+            when the Drawer.DrawGame() method is called.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.WinFormsUI.gameFieldCellIsSelected">
+            <summary>
+            Needed for the active waiting for cell position input.
+            It is false when input is not needed, or when a cell isn't yet clicked.
+            It becomes true only for a moment, when a cell is selected during an active waiting.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.WinFormsUI.awaitingGameFieldCellSelection">
+            <summary>
+            Needed for for a check on game grid cell selection.
+            If there is an active waiting for input, the method will set gameFieldCellIsSelected to true.
+            Otherwise it will ignore the input.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.WinFormsUI.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BattleField7Namespace.WinFormsUI"/> class.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.WinFormsUI.DrawGame(System.Char[0:,0:])">
+            <summary>
+            Draws the game.
+            </summary>
+            <param name="gameField">The game field.</param>
+        </member>
+        <member name="M:BattleField7Namespace.WinFormsUI.AskForSizeInput(System.String)">
+            <summary>
+            Asks for size input.
+            </summary>
+            <returns>size input</returns>
+        </member>
+        <member name="M:BattleField7Namespace.WinFormsUI.AskForPositionInput(System.String)">
+            <summary>
+            Asks for position input.
+            </summary>
+            <returns>position input</returns>
+        </member>
+        <member name="M:BattleField7Namespace.WinFormsUI.ShowMessage(System.String)">
+            <summary>
+            Shows the message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:BattleField7Namespace.WinFormsUI.ShowCongratulations(System.String)">
+            <summary>
+            Shows the congratulations message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:BattleField7Namespace.WinFormsUI.ShowGameOver(System.String)">
+            <summary>
+            Shows the game over message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:BattleField7Namespace.WinFormsUI.ShowNote(System.String)">
+            <summary>
+            Shows a note message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:BattleField7Namespace.WinFormsUI.ShowBombsCount(System.Int32)">
+            <summary>
+            Shows the bombs count.
+            </summary>
+            <param name="count">The count.</param>
+        </member>
+        <member name="M:BattleField7Namespace.WinFormsUI.ShowTurnsCount(System.Int32)">
+            <summary>
+            Shows the turns count.
+            </summary>
+            <param name="count">The count.</param>
+        </member>
+        <member name="M:BattleField7Namespace.WinFormsUI.SetGameFieldSize(System.Int32)">
+            <summary>
+            Sets the size of the game field.
+            </summary>
+            <param name="size">The size.</param>
+        </member>
+        <member name="M:BattleField7Namespace.WinFormsUI.SetFieldValue(System.String[])">
+            <summary>
+            Sets the field value.
+            </summary>
+            <param name="paramsOfField">The parameters of field.</param>
+        </member>
+        <member name="M:BattleField7Namespace.WinFormsUI.WinFormsDrawer_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
+            <summary>
+            Handles the FormClosing event of the WinFormsDrawer control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Forms.FormClosingEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:BattleField7Namespace.WinFormsUI.gameFieldGridView_CellMouseClick(System.Object,System.Windows.Forms.DataGridViewCellMouseEventArgs)">
+            <summary>
+            Handles the CellMouseClick event of the gameFieldGridView control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Forms.DataGridViewCellMouseEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="F:BattleField7Namespace.WinFormsUI.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.WinFormsUI.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BattleField7Namespace.WinFormsUI.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:BattleField7Namespace.WinFormsUI.ShowCountCallBack">
+            <summary>
+            Delegate used to safely access a count label (bombs or turns) from the thread of the game.
+            </summary>
+            <param name="count">The count to be displayed.</param>
+        </member>
+        <member name="T:BattleField7Namespace.WinFormsUI.SetGameFieldSizeCallback">
+            <summary>
+            Delegate used to safely access the grid controle from the thread of the game, in order to set its sizes.
+            </summary>
+            <param name="size">The size.</param>
+        </member>
+        <member name="T:BattleField7Namespace.WinFormsUI.SetFieldValueCallBack">
+            <summary>
+            Delegate used to safely access a grid cell's value from the thread of the game.
+            </summary>
+            <param name="paramsOfField">The parameters of field.</param>
+        </member>
+        <member name="T:BattleField7Namespace.WinFormsUI.GetInputCallBack">
+            <summary>
+            Delegate used to safely access the AskForSizeInput() method from the thread of the game.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BattleField7Namespace.WinFormsUI.ShowMessageCallBack">
+            <summary>
+            Delegate used to safely access the message area of the form, from the thread of the game.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+    </members>
+</doc>

@@ -76,12 +76,22 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
             {
                 return (IField)this.basicField.Clone();
             }
-            set 
+            set
             {
-                if (value != null)
+                if (value == null)
                 {
-                    this.basicField = value;
+                    throw new ArgumentException("Basic Field of SimpleBattleField can not be null.");
                 }
+                if (value.GetCondition() == Condition.Bomb)
+                {
+                    throw new ArgumentException("Basic Field of SimpleBattleField can not be a bomb.");
+                }
+                if (value.GetExplosivePower() > 0)
+                {
+                    throw new ArgumentException("Basic Field of SimpleBattleField can not have an explosive charge.");
+                }
+
+                this.basicField = value;
             }
         }
 

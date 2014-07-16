@@ -338,7 +338,7 @@
         </member>
         <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.RunGame(BattleField7Namespace.NewGameDesign.Interfaces.IUserInterface)">
             <summary>
-            Runs the game via Poor Man's Dependency Injevtion. Highly Not Recomended.
+            Runs the game via Poor Man's Dependency Injevtion. Highly NOT recomended.
             </summary>
             <param name="userInterface">The user interface.</param>
         </member>

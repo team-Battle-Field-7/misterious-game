@@ -81,9 +81,13 @@ namespace BattleField7Namespace
         public void RunTheNewDesignVersionInTheConsole()
         {
             ConsoleUI consoleUI = new ConsoleUI();
+            SimpleBattleField battleField = new SimpleBattleField(
+                                                new SimpleField(Condition.Empty, 0),
+                                                new MyExplosionStrategy());
+
             SimpleEngine engine = new SimpleEngine();
             engine.Logger = this.logger;
-            engine.RunGame(consoleUI);
+            engine.RunGame(consoleUI, battleField);
         }
 
         /// <summary>
@@ -91,15 +95,21 @@ namespace BattleField7Namespace
         /// </summary>
         public void RunTheNewDesignVersionInWinForms()
         {
+
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             WinFormsUI form = new WinFormsUI();
+            SimpleBattleField battleField = new SimpleBattleField(
+                                                new SimpleField(Condition.Empty, 0),
+                                                new MyExplosionStrategy());
+
             Thread formThread = new Thread(
                 delegate()
                 {
                     SimpleEngine engine = new SimpleEngine();
                     engine.Logger = this.logger;
-                    engine.RunGame(form);
+                    engine.RunGame(form, battleField);
                 }
             );
             formThread.Start();

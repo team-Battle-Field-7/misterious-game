@@ -1,0 +1,8 @@
+D:\git\misterious-game\Unit_Testing\BattleField7UnitTests\bin\Debug\BattleField7UnitTests.dll
+D:\git\misterious-game\Unit_Testing\BattleField7UnitTests\bin\Debug\BattleField7UnitTests.pdb
+D:\git\misterious-game\Unit_Testing\BattleField7UnitTests\bin\Debug\BattleField7.exe
+D:\git\misterious-game\Unit_Testing\BattleField7UnitTests\bin\Debug\BattleField7.pdb
+D:\git\misterious-game\Unit_Testing\BattleField7UnitTests\bin\Debug\BattleField7.xml
+D:\git\misterious-game\Unit_Testing\BattleField7UnitTests\obj\Debug\BattleField7UnitTests.csprojResolveAssemblyReference.cache
+D:\git\misterious-game\Unit_Testing\BattleField7UnitTests\obj\Debug\BattleField7UnitTests.dll
+D:\git\misterious-game\Unit_Testing\BattleField7UnitTests\obj\Debug\BattleField7UnitTests.pdb
