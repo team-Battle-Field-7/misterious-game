@@ -25,6 +25,18 @@ namespace BattleField7UnitTests.NewGameDesignTests
         }
 
         [TestMethod]
+        public void TestMultipleBattleFieldInitializations()
+        {
+            var testField = Utils.NormalBattleFieldGen();
+            var size = Utils.ValidSize();
+            testField.InitializeBattleField(size);
+            int bombCount1 = Utils.BombCount(testField);
+            testField.InitializeBattleField(size);
+            int bombCount2 = Utils.BombCount(testField);
+            Assert.AreEqual(bombCount1, bombCount2, "Initializing a battlefield a second time shouldn't affect the bomb count.");
+        }
+
+        [TestMethod]
         public void TestStringifyBattleField()
         {
             var battleField = Utils.NormalBattleFieldGen();
@@ -32,13 +44,40 @@ namespace BattleField7UnitTests.NewGameDesignTests
 
             var actual = battleField.StringifyBattleField();
             char[,] expected = { { '-' } };
-            Assert.IsTrue(actual.ContentEquals(expected));
+            Assert.IsTrue(actual.ContentEquals(expected), "We can't even represent a one-field battleField!");
         }
 
+        /// <summary>
+        /// Not so much to mess up with returning an int, just to make sure no ArgumentOutOfRangeException-s are thrown
+        /// </summary>
         [TestMethod]
         public void TestDetonateFieldAtPosition()
         {
-            //To be continued (After I add some more Utils to make precise-case battlefields.)
+            var testBattleField = Utils.NormalBattleFieldGen();
+            var size = Utils.ValidSize(4); //If the size is less than 4, we may have no bombs put in the field.
+            testBattleField.InitializeBattleField(size);
+
+            Tuple<int, int> foundBombCoords;
+            bool bombFound = Utils.TryFindEdgeBomb(testBattleField, out foundBombCoords);
+            while (!bombFound)
+            {
+                testBattleField.InitializeBattleField(size); //It's not important whether InitializeBattleField adds more bombs, as long as it puts at least one of them on an edge.
+                bombFound = Utils.TryFindEdgeBomb(testBattleField, out foundBombCoords);
+            }
+
+            Assert.IsTrue(testBattleField.DetonateFieldAtPosition(foundBombCoords.Item1, foundBombCoords.Item2) > 0);
+        }
+
+        [TestMethod]
+        public void TestCoordinatesAreValid()
+        {
+            var testBattleField = Utils.NormalBattleFieldGen();
+            testBattleField.InitializeBattleField(1);
+            Assert.IsTrue(testBattleField.CoordinatesAreValid(0, 0), "CoordinatesAreValid gives false-negative results");
+            Assert.IsFalse(testBattleField.CoordinatesAreValid(0, 1), "CoordinatesAreValid gives false-positive results (max columns + 1)");
+            Assert.IsFalse(testBattleField.CoordinatesAreValid(0, -1), "CoordinatesAreValid gives false-positive results (columns = -1)");
+            Assert.IsFalse(testBattleField.CoordinatesAreValid(1, 0), "CoordinatesAreValid gives false-positive results (max rows + 1)");
+            Assert.IsFalse(testBattleField.CoordinatesAreValid(-1, 0), "CoordinatesAreValid gives false-positive results (rows = -1)");
         }
     }
 }

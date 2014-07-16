@@ -23,11 +23,12 @@ namespace BattleField7UnitTests
         /// <summary>
         /// Provides a random nonzero battlefield size.
         /// </summary>
-        /// <returns>An int between 1 and 10</returns>
-        public static int ValidSize()
+        /// <param name="lowerBound">The minimal size of the test battlefield needed</param>
+        /// <returns>An int between <paramref name="lowerBound"/> and 10</returns>
+        public static int ValidSize(int lowerBound = 1)
         {
             var random = new Random();
-            return random.Next(1, 10);
+            return random.Next(lowerBound, 10);
         }
 
         /// <summary>
@@ -74,6 +75,75 @@ namespace BattleField7UnitTests
             }
 
             return true;
+        }
+
+        /// <summary>
+        /// Searched for and identifies of a bomb that's at an edge of a battlefield
+        /// for test purposes.
+        /// </summary>
+        /// <param name="battleField">A PRE-INITIALIZED SimpleBattleField object</param>
+        /// <returns>True or false depending on whether such a bomb was found</returns>
+        /// <remarks>Optimized for rectangular battlefields as well, not just square ones.</remarks>
+        /// <note>Uses <c>StringifyBattleField</c> to find bomb's coordinates</note>
+        public static bool TryFindEdgeBomb(SimpleBattleField battleField, out Tuple<int, int> resultCoords)
+        {
+            char[,] fieldView = battleField.StringifyBattleField();
+            for (int i = 0; i < fieldView.GetLength(0); i++)
+            {
+                if (Char.IsDigit(fieldView[i,0]))
+                {
+                    resultCoords = new Tuple<int, int>(i, 0);
+                    return true;
+                }
+
+                if (Char.IsDigit(fieldView[i, fieldView.GetLength(1) - 1]))
+                {
+                    resultCoords = new Tuple<int, int>(i, fieldView.GetLength(1) - 1);
+                    return true;
+                }
+            }
+
+            for (int i = 0; i < fieldView.GetLength(1); i++)
+            {
+                if (Char.IsDigit(fieldView[0, i]))
+                {
+                    resultCoords = new Tuple<int, int>(0, i);
+                    return true;
+                }
+
+                if (Char.IsDigit(fieldView[fieldView.GetLength(0), i]))
+                {
+                    resultCoords = new Tuple<int, int>(fieldView.GetLength(0), i);
+                    return true;
+                }
+            }
+
+            resultCoords = null;
+            return false;
+        }
+
+        /// <summary>
+        /// Finds the number of bombs in a battlefield
+        /// </summary>
+        /// <param name="testField">A PRE-INITIALIZED SimpleBattleField object</param>
+        /// <returns>The count of all digit characters returned by <c>StringifyBattleField</c></returns>
+        public static int BombCount(SimpleBattleField testField)
+        {
+            int result = 0;
+            char[,] fieldView = testField.StringifyBattleField();
+
+            for (int i = 0; i < fieldView.GetLength(0); i++)
+            {
+                for (int j = 0; j < fieldView.GetLength(1); j++)
+                {
+                    if (Char.IsDigit(fieldView[i,j]))
+                    {
+                        result++;
+                    }
+                }
+            }
+
+            return result;
         }
     }
 }

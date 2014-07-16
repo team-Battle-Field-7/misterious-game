@@ -69,3 +69,5 @@
    at BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.RunGame(IUserInterface userInterface) in d:\C#\GitReps\misterious-game\NewGameDesign\GameClasses\SimpleEngine.cs:line 108
 [07.16.14 18:02:21] [Warning] System.Exception: Usage of Poor Man's Dependency Injevtion
    at BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.RunGame(IUserInterface userInterface) in d:\C#\GitReps\misterious-game\NewGameDesign\GameClasses\SimpleEngine.cs:line 108
+[07.16.14 21:08:08] [Warning] System.Exception: Usage of Poor Man's Dependency Injevtion
+   at BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.RunGame(IUserInterface userInterface) in d:\C#\GitReps\misterious-game\NewGameDesign\GameClasses\SimpleEngine.cs:line 108
