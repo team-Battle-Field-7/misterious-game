@@ -9,7 +9,7 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
     /// <summary>
     /// /// Logic for getting the coordinates of a blast after detonation of a bomb
     /// </summary>
-    class MyExplosionStrategy : IExplosionStrategy
+    public class MyExplosionStrategy : IExplosionStrategy
     {
         /// <summary>
         /// The explosion range positions grouped by power.
@@ -39,7 +39,7 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
             List<int[]> fieldsToDetonate = new List<int[]>();
             for (int power = 0; power < explosivePower; power++)
             {
-                foreach (int[] relativePosition in explosionRangePositionsGroupedByPower[power])
+                foreach (int[] relativePosition in this.explosionRangePositionsGroupedByPower[power])
                 {
                     int[] coords = new int[2];
                     coords[0] = row + relativePosition[0];

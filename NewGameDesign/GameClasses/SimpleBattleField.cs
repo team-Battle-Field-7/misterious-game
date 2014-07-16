@@ -69,6 +69,7 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         /// <value>
         /// The basic field.
         /// </value>
+        /// <remarks>Huge security leak! Permits the basic field to have Condition.Bomb</remarks>
         public IField BasicField
         {
             get 
@@ -130,7 +131,7 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
                 while (true)
                 {
                     int[] coords = this.GetRandomPosition();
-                    if (this.fields[coords[0], coords[1]].GetCondition() != Condition.Bomb)
+                    if (this.fields[coords[0], coords[1]].GetCondition() != Condition.Bomb) //Never satisfied if the object is contructed with a basicField with condition.Bomb; infinite loop!
                     {
                         this.ConvertFieldToBomb(coords[0], coords[1]);
                         break;

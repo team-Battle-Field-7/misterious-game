@@ -284,6 +284,7 @@
             <value>
             The basic field.
             </value>
+            <remarks>Huge security leak! Permits the basic field to have Condition.Bomb</remarks>
         </member>
         <member name="P:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.ExplosionStrategy">
             <summary>
