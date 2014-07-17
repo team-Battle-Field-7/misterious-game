@@ -149,6 +149,11 @@
             witch are to be added to the detonation position in order to get the coordinates of the specified position.
             </summary>
         </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.MyExplosionStrategy.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BattleField7Namespace.NewGameDesign.GameClasses.MyExplosionStrategy"/> class.
+            </summary>
+        </member>
         <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.MyExplosionStrategy.GetCoordsToDetonateByTheBlast(System.Int32,System.Int32,System.Int32)">
             <summary>
             Gets the coords to detonate by the blast.
@@ -159,6 +164,11 @@
             <returns>
             The coordinates of the fields to detonate by chain reaction.
             </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            A negative coordinate is out of range
+            or
+            Negative explosive power is out of range
+            </exception>
         </member>
         <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.MyExplosionStrategy.InitializeExplosionRanges">
             <summary>
@@ -241,7 +251,10 @@
             Initializes the battle field.
             </summary>
             <param name="size">The size.</param>
-            <returns>The count of the bombs.</returns>
+            <returns>
+            The count of the bombs.
+            </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">Size of BattleField can not be 0 or negative</exception>
         </member>
         <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.StringifyBattleField">
             <summary>
@@ -284,7 +297,13 @@
             <value>
             The basic field.
             </value>
-            <remarks>Huge security leak! Permits the basic field to have Condition.Bomb</remarks>
+            <exception cref="T:System.ArgumentException">
+            Basic Field of SimpleBattleField can not be null.
+            or
+            Basic Field of SimpleBattleField can not be a bomb.
+            or
+            Basic Field of SimpleBattleField can not have an explosive charge.
+            </exception>
         </member>
         <member name="P:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.ExplosionStrategy">
             <summary>
@@ -335,12 +354,6 @@
             <summary>
             The logger
             </summary>
-        </member>
-        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.RunGame(BattleField7Namespace.NewGameDesign.Interfaces.IUserInterface)">
-            <summary>
-            Runs the game via Poor Man's Dependency Injevtion. Highly NOT recomended.
-            </summary>
-            <param name="userInterface">The user interface.</param>
         </member>
         <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.RunGame(BattleField7Namespace.NewGameDesign.Interfaces.IUserInterface,BattleField7Namespace.NewGameDesign.Interfaces.IBattleField)">
             <summary>

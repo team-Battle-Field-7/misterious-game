@@ -32,7 +32,7 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         private IExplosionStrategy explosionStrategy;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SimpleBattleField"/> class.
+        /// Initializes a new instance of the <see cref="SimpleBattleField" /> class.
         /// </summary>
         /// <param name="basicField">The basic field.</param>
         /// <param name="explosionStrategy">The explosion strategy.</param>
@@ -69,7 +69,13 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         /// <value>
         /// The basic field.
         /// </value>
-        /// <remarks>Huge security leak! Permits the basic field to have Condition.Bomb</remarks>
+        /// <exception cref="System.ArgumentException">
+        /// Basic Field of SimpleBattleField can not be null.
+        /// or
+        /// Basic Field of SimpleBattleField can not be a bomb.
+        /// or
+        /// Basic Field of SimpleBattleField can not have an explosive charge.
+        /// </exception>
         public IField BasicField
         {
             get 
@@ -121,9 +127,17 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         /// Initializes the battle field.
         /// </summary>
         /// <param name="size">The size.</param>
-        /// <returns>The count of the bombs.</returns>
+        /// <returns>
+        /// The count of the bombs.
+        /// </returns>
+        /// <exception cref="System.ArgumentOutOfRangeException">Size of BattleField can not be 0 or negative</exception>
         public int InitializeBattleField(int size)
         {
+            if (0 >= size)
+            {
+                throw new ArgumentOutOfRangeException("Size of BattleField can not be 0 or negative");
+            }
+
             this.fields = new IField[size, size];
 
             for (int r = 0; r < size; r++)

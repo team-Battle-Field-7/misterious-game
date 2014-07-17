@@ -95,24 +95,25 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
             }
         }
 
-        /// <summary>
-        /// Runs the game via Poor Man's Dependency Injevtion. Highly NOT recomended.
-        /// </summary>
-        /// <param name="userInterface">The user interface.</param>
-        public void RunGame(IUserInterface userInterface)
-        {
-            if (this.Logger != null)
-            {
-                this.Logger.LogWarning("Usage of Poor Man's Dependency Injevtion");
-            }
+        ///// <summary>
+        ///// Runs the game via Poor Man's Dependency Injevtion. Highly NOT recomended.
+        ///// </summary>
+        ///// <param name="userInterface">The user interface.</param>
+        ///// 
+        //public void RunGame(IUserInterface userInterface)
+        //{
+        //    if (this.Logger != null)
+        //    {
+        //        this.Logger.LogWarning("Usage of Poor Man's Dependency Injevtion");
+        //    }
 
-            this.RunGame(userInterface,
-                new SimpleBattleField(
-                    new SimpleField(Condition.Empty, 0),
-                    new MyExplosionStrategy()
-                    )
-                );
-        }
+        //    this.RunGame(userInterface,
+        //        new SimpleBattleField(
+        //            new SimpleField(Condition.Empty, 0),
+        //            new MyExplosionStrategy()
+        //            )
+        //        );
+        //}
 
         /// <summary>
         /// Runs the game.

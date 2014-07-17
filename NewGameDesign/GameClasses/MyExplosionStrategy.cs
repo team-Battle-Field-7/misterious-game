@@ -20,6 +20,9 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         /// </summary>
         private List<List<int[]>> explosionRangePositionsGroupedByPower;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MyExplosionStrategy"/> class.
+        /// </summary>
         public MyExplosionStrategy()
         {
             this.InitializeExplosionRanges();
@@ -34,10 +37,26 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         /// <returns>
         /// The coordinates of the fields to detonate by chain reaction.
         /// </returns>
+        /// <exception cref="System.ArgumentOutOfRangeException">
+        /// A negative coordinate is out of range
+        /// or
+        /// Negative explosive power is out of range
+        /// </exception>
         public IList<int[]> GetCoordsToDetonateByTheBlast(int row, int col, int explosivePower)
         {
+            if (0 > row ||
+                0 > col)
+            {
+                throw new ArgumentOutOfRangeException("A negative coordinate is out of range");
+            }
+            if (0 > explosivePower)
+            {
+                throw new ArgumentOutOfRangeException("Negative explosive power is out of range");
+            }
+
             List<int[]> fieldsToDetonate = new List<int[]>();
-            for (int power = 0; power < explosivePower; power++)
+            int maxPower = Math.Min(explosivePower, 5);
+            for (int power = 0; power < maxPower; power++)
             {
                 foreach (int[] relativePosition in this.explosionRangePositionsGroupedByPower[power])
                 {
