@@ -9,17 +9,14 @@ namespace BattleField7UnitTests.NewGameDesignTests
     public class SimpleBattleFieldTest
     {
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
         public void TestBadBasicFieldConstruct()
         {
             var badBasicField = new SimpleField(Condition.Bomb, Utils.ValidPower());
             var notOkBattleField = new SimpleBattleField(badBasicField, new MyExplosionStrategy());
-            
             Assert.Fail("Construction of a SimpleBattleField with an explosive basic field shouldn't be allowed. That can brake the initialization logic.");
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void TestValidSizeBattleFieldInitialization()
         {
             var commonBattleField = Utils.NormalBattleFieldGen();

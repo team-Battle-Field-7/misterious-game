@@ -1,4 +1,5 @@
 ﻿using BattleField7Namespace.NewGameDesign.Interfaces;
+using BattleField7Namespace.NewGameDesign.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -154,10 +155,10 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
             {
                 while (true)
                 {
-                    int[] coords = this.GetRandomPosition();
-                    if (this.fields[coords[0], coords[1]].GetCondition() != Condition.Bomb) //Never satisfied if the object is contructed with a basicField with condition.Bomb; infinite loop!
+                    Coord2D coords = this.GetRandomPosition();
+                    if (this.fields[coords.Row, coords.Column].GetCondition() != Condition.Bomb) //Never satisfied if the object is contructed with a basicField with condition.Bomb; infinite loop!
                     {
-                        this.ConvertFieldToBomb(coords[0], coords[1]);
+                        this.ConvertFieldToBomb(coords.Row, coords.Column);
                         break;
                     }
                 }
@@ -189,31 +190,42 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         /// <summary>
         /// Detonates the field at position.
         /// </summary>
-        /// <param name="row">The row.</param>
-        /// <param name="col">The col.</param>
+        /// <param name="position">The position</param>
         /// <returns>
         /// Count of detonated bombs.
         /// </returns>
-        public int DetonateFieldAtPosition(int row, int col)
+        public int DetonateFieldAtPosition(int row, int column)
+        {
+            return this.DetonateFieldAtPosition(new Coord2D(row, column));
+        }
+
+        /// <summary>
+        /// Detonates the field at position.
+        /// </summary>
+        /// <param name="position">The position</param>
+        /// <returns>
+        /// Count of detonated bombs.
+        /// </returns>
+        public int DetonateFieldAtPosition(Coord2D position)
         {
             int detonatedBombs = 0;
 
-            if (this.fields[row, col].GetCondition() == Condition.Bomb)
+            if (this.fields[position.Row, position.Column].GetCondition() == Condition.Bomb)
             {
                 detonatedBombs++;
             }
 
-            int explosivePower = this.fields[row, col].IntentionalDetonate();
-            IList<int[]> coordsToDetonate = this.ExplosionStrategy.GetCoordsToDetonateByTheBlast(row, col, explosivePower);
-            foreach (int[] coord in coordsToDetonate)
+            int explosivePower = this.fields[position.Row, position.Column].IntentionalDetonate();
+            IList<Coord2D> coordsToDetonate = this.ExplosionStrategy.GetCoordsToDetonateByTheBlast(position, explosivePower);
+            foreach (Coord2D coord in coordsToDetonate)
             {
-                if (this.CoordinatesAreValid(coord[0], coord[1]))
+                if (this.CoordinatesAreValid(coord.Row, coord.Column))
                 {
-                    if (this.fields[coord[0], coord[1]].GetCondition() == Condition.Bomb)
+                    if (this.fields[coord.Row, coord.Column].GetCondition() == Condition.Bomb)
                     {
                         detonatedBombs++;
                     }
-                    this.fields[coord[0], coord[1]].DetonateByChainReaction();
+                    this.fields[coord.Row, coord.Column].DetonateByChainReaction();
                 }
             }
             return detonatedBombs;
@@ -231,12 +243,12 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
                 (0 <= col && col < this.fields.GetLength(1));
         }
 
-        private int[] GetRandomPosition()
+        private Coord2D GetRandomPosition()
         {
             Random rnd = new Random();
             int row = rnd.Next(0, this.fields.GetLength(0));
             int col = rnd.Next(0, this.fields.GetLength(1));
-            return new int[] { row, col };
+            return new Coord2D(row, col);
         }
 
         private void ConvertFieldToBomb(int row, int col)

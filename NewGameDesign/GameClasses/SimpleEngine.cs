@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 
 using BattleField7Namespace.NewGameDesign.Interfaces;
+using BattleField7Namespace.NewGameDesign.Types;
 
 namespace BattleField7Namespace.NewGameDesign.GameClasses
 {
@@ -138,8 +139,8 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
             while (this.bombsCount > 0)
             {
                 this.turnsCount++;
-                int[] position = GetPositionInput();
-                int detonatedBombs = this.BattleField.DetonateFieldAtPosition(position[0], position[1]);
+                Coord2D position = GetPositionInput();
+                int detonatedBombs = this.BattleField.DetonateFieldAtPosition(position);
                 if (detonatedBombs > 0)
                 {
                     this.UserInterface.ShowNote("A bomb was hit.");
@@ -183,7 +184,7 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         /// Gets the position input.
         /// </summary>
         /// <returns></returns>
-        private int[] GetPositionInput()
+        private Coord2D GetPositionInput()
         {
             int row = -1;
             int col = -1;
@@ -206,7 +207,7 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
                     this.UserInterface.ShowNote("Invalid position input. Try Again. ");
                 }
             }
-            return new int[] { row, col };
+            return new Coord2D(row, col);
         }
     }
 }

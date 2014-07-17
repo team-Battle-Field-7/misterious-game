@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BattleField7Namespace.NewGameDesign.Types;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,12 +29,11 @@ namespace BattleField7Namespace.NewGameDesign.Interfaces
         /// <summary>
         /// Detonates the field at position.
         /// </summary>
-        /// <param name="row">The row.</param>
-        /// <param name="col">The col.</param>
+        /// <param name="position">The position.</param>
         /// <returns>
         /// Count of detonated bombs.
         /// </returns>
-        int DetonateFieldAtPosition(int row, int col);
+        int DetonateFieldAtPosition(Coord2D position);
 
         /// <summary>
         /// Checks if the given coordinateses are valid.

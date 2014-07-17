@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BattleField7Namespace.NewGameDesign.Types;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,10 +14,11 @@ namespace BattleField7Namespace.NewGameDesign.Interfaces
         /// <summary>
         /// Gets the coords to detonate by the blast.
         /// </summary>
-        /// <param name="row">The row.</param>
-        /// <param name="col">The col.</param>
+        /// <param name="explosionCoords">The explosion coords.</param>
         /// <param name="explosivePower">The explosive power.</param>
-        /// <returns>The coordinates of the fields to detonate by chain reaction.</returns>
-        IList<int[]> GetCoordsToDetonateByTheBlast(int row, int col, int explosivePower);
+        /// <returns>
+        /// The coordinates of the fields to detonate by chain reaction.
+        /// </returns>
+        IList<Coord2D> GetCoordsToDetonateByTheBlast(Coord2D explosionCoords, int explosivePower);
     }
 }

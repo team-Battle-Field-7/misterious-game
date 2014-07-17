@@ -1,4 +1,5 @@
 ﻿using BattleField7Namespace.NewGameDesign.Interfaces;
+using BattleField7Namespace.NewGameDesign.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         /// A relative position is represented by an int array of 2 elements - row and column,
         /// witch are to be added to the detonation position in order to get the coordinates of the specified position.
         /// </summary>
-        private List<List<int[]>> explosionRangePositionsGroupedByPower;
+        private List<List<Coord2D>> explosionRangePositionsGroupedByPower;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MyExplosionStrategy"/> class.
@@ -32,37 +33,47 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         /// Gets the coords to detonate by the blast.
         /// </summary>
         /// <param name="row">The row.</param>
-        /// <param name="col">The col.</param>
+        /// <param name="column">The column.</param>
+        /// <param name="explosivePower">The explosive power.</param>
+        /// <returns></returns>
+        public IList<Coord2D> GetCoordsToDetonateByTheBlast(int row, int column, int explosivePower)
+        {
+            return this.GetCoordsToDetonateByTheBlast(new Coord2D(row, column), explosivePower);
+        }
+
+        /// <summary>
+        /// Gets the coords to detonate by the blast.
+        /// </summary>
+        /// <param name="explosionCoords">The explosion coordinates</param>
         /// <param name="explosivePower">The explosive power.</param>
         /// <returns>
         /// The coordinates of the fields to detonate by chain reaction.
         /// </returns>
-        /// <exception cref="System.ArgumentOutOfRangeException">
-        /// A negative coordinate is out of range
+        /// <exception cref="System.ArgumentOutOfRangeException">A negative coordinate is out of range
         /// or
-        /// Negative explosive power is out of range
-        /// </exception>
-        public IList<int[]> GetCoordsToDetonateByTheBlast(int row, int col, int explosivePower)
+        /// Negative explosive power is out of range</exception>
+        public IList<Coord2D> GetCoordsToDetonateByTheBlast(Coord2D explosionCoords, int explosivePower)
         {
-            if (0 > row ||
-                0 > col)
+            if (0 > explosionCoords.Row ||
+                0 > explosionCoords.Column)
             {
-                throw new ArgumentOutOfRangeException("A negative coordinate is out of range");
+                throw new ArgumentOutOfRangeException("An explosion coordinate can not be negative");
             }
             if (0 > explosivePower)
             {
-                throw new ArgumentOutOfRangeException("Negative explosive power is out of range");
+                throw new ArgumentOutOfRangeException("The explosive power can not be negative");
             }
 
-            List<int[]> fieldsToDetonate = new List<int[]>();
+            List<Coord2D> fieldsToDetonate = new List<Coord2D>();
             int maxPower = Math.Min(explosivePower, 5);
             for (int power = 0; power < maxPower; power++)
             {
-                foreach (int[] relativePosition in this.explosionRangePositionsGroupedByPower[power])
+                foreach (Coord2D relativePosition in this.explosionRangePositionsGroupedByPower[power])
                 {
-                    int[] coords = new int[2];
-                    coords[0] = row + relativePosition[0];
-                    coords[1] = col + relativePosition[1];
+
+                    int row = explosionCoords.Row + relativePosition.Row;
+                    int col = explosionCoords.Column + relativePosition.Column;
+                    Coord2D coords = new Coord2D(row, col);
                     fieldsToDetonate.Add(coords);
                 }
             }
@@ -75,41 +86,41 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         /// </summary>
         private void InitializeExplosionRanges() // hard coded, but easy to understand and change
         {
-            List<int[]> powerLevelOne = new List<int[]>();
-            powerLevelOne.Add(new int[] { 1, 1 });
-            powerLevelOne.Add(new int[] { -1, 1 });
-            powerLevelOne.Add(new int[] { 1, -1 });
-            powerLevelOne.Add(new int[] { -1, -1 });
+            List<Coord2D> powerLevelOne = new List<Coord2D>();
+            powerLevelOne.Add(new Coord2D(1, 1));
+            powerLevelOne.Add(new Coord2D(-1, 1));
+            powerLevelOne.Add(new Coord2D(1, -1));
+            powerLevelOne.Add(new Coord2D(-1, -1));
 
-            List<int[]> powerLevelTwo = new List<int[]>();
-            powerLevelTwo.Add(new int[] { 1, 0 });
-            powerLevelTwo.Add(new int[] { 0, 1 });
-            powerLevelTwo.Add(new int[] { -1, 0 });
-            powerLevelTwo.Add(new int[] { 0, -1 });
+            List<Coord2D> powerLevelTwo = new List<Coord2D>();
+            powerLevelTwo.Add(new Coord2D(1, 0));
+            powerLevelTwo.Add(new Coord2D(0, 1));
+            powerLevelTwo.Add(new Coord2D(-1, 0));
+            powerLevelTwo.Add(new Coord2D(0, -1));
 
-            List<int[]> powerLevelThree = new List<int[]>();
-            powerLevelThree.Add(new int[] { 2, 0 });
-            powerLevelThree.Add(new int[] { 0, 2 });
-            powerLevelThree.Add(new int[] { -2, 0 });
-            powerLevelThree.Add(new int[] { 0, -2 });
+            List<Coord2D> powerLevelThree = new List<Coord2D>();
+            powerLevelThree.Add(new Coord2D(2, 0));
+            powerLevelThree.Add(new Coord2D(0, 2));
+            powerLevelThree.Add(new Coord2D(-2, 0));
+            powerLevelThree.Add(new Coord2D(0, -2));
 
-            List<int[]> powerLevelFour = new List<int[]>();
-            powerLevelFour.Add(new int[] { 2, 1 });
-            powerLevelFour.Add(new int[] { -2, 1 });
-            powerLevelFour.Add(new int[] { 2, -1 });
-            powerLevelFour.Add(new int[] { -2, -1 });
-            powerLevelFour.Add(new int[] { 1, 2 });
-            powerLevelFour.Add(new int[] { -1, 2 });
-            powerLevelFour.Add(new int[] { 1, -2 });
-            powerLevelFour.Add(new int[] { -1, -2 });
+            List<Coord2D> powerLevelFour = new List<Coord2D>();
+            powerLevelFour.Add(new Coord2D(2, 1));
+            powerLevelFour.Add(new Coord2D(-2, 1));
+            powerLevelFour.Add(new Coord2D(2, -1));
+            powerLevelFour.Add(new Coord2D(-2, -1));
+            powerLevelFour.Add(new Coord2D(1, 2));
+            powerLevelFour.Add(new Coord2D(-1, 2));
+            powerLevelFour.Add(new Coord2D(1, -2));
+            powerLevelFour.Add(new Coord2D(-1, -2));
 
-            List<int[]> powerLevelFive = new List<int[]>();
-            powerLevelFive.Add(new int[] { 2, 2 });
-            powerLevelFive.Add(new int[] { -2, 2 });
-            powerLevelFive.Add(new int[] { 2, -2 });
-            powerLevelFive.Add(new int[] { -2, -2 });
+            List<Coord2D> powerLevelFive = new List<Coord2D>();
+            powerLevelFive.Add(new Coord2D(2, 2));
+            powerLevelFive.Add(new Coord2D(-2, 2));
+            powerLevelFive.Add(new Coord2D(2, -2));
+            powerLevelFive.Add(new Coord2D(-2, -2));
 
-            this.explosionRangePositionsGroupedByPower = new List<List<int[]>>();
+            this.explosionRangePositionsGroupedByPower = new List<List<Coord2D>>();
             this.explosionRangePositionsGroupedByPower.Add(powerLevelOne);
             this.explosionRangePositionsGroupedByPower.Add(powerLevelTwo);
             this.explosionRangePositionsGroupedByPower.Add(powerLevelThree);
