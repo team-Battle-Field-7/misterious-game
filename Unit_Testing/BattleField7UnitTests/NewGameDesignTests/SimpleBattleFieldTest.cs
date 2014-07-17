@@ -9,6 +9,7 @@ namespace BattleField7UnitTests.NewGameDesignTests
     public class SimpleBattleFieldTest
     {
         [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
         public void TestBadBasicFieldConstruct()
         {
             var badBasicField = new SimpleField(Condition.Bomb, Utils.ValidPower());
@@ -17,6 +18,7 @@ namespace BattleField7UnitTests.NewGameDesignTests
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void TestValidSizeBattleFieldInitialization()
         {
             var commonBattleField = Utils.NormalBattleFieldGen();

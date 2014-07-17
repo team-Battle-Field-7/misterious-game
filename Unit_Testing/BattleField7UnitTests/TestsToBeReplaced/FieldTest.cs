@@ -5,6 +5,7 @@ using BattleField7Namespace;
 namespace BattleField7UnitTests
 {
     [TestClass]
+    [Obsolete]
     public class FieldTest
     {
         [TestMethod]

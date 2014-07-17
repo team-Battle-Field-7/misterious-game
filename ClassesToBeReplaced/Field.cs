@@ -9,6 +9,7 @@ namespace BattleField7Namespace
     /// A single field of the Battle Field 7 game.
     /// Can be either an empty field or a field with a bomb.
     /// </summary>
+    [Obsolete]
     public class Field
     {
         /// <summary>

@@ -131,14 +131,15 @@
             Logic for getting the coordinates of a blast after detonation of a bomb
             </summary>
         </member>
-        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IExplosionStrategy.GetCoordsToDetonateByTheBlast(System.Int32,System.Int32,System.Int32)">
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IExplosionStrategy.GetCoordsToDetonateByTheBlast(BattleField7Namespace.NewGameDesign.Types.Coord2D,System.Int32)">
             <summary>
             Gets the coords to detonate by the blast.
             </summary>
-            <param name="row">The row.</param>
-            <param name="col">The col.</param>
+            <param name="explosionCoords">The explosion coords.</param>
             <param name="explosivePower">The explosive power.</param>
-            <returns>The coordinates of the fields to detonate by chain reaction.</returns>
+            <returns>
+            The coordinates of the fields to detonate by chain reaction.
+            </returns>
         </member>
         <member name="F:BattleField7Namespace.NewGameDesign.GameClasses.MyExplosionStrategy.explosionRangePositionsGroupedByPower">
             <summary>
@@ -149,16 +150,32 @@
             witch are to be added to the detonation position in order to get the coordinates of the specified position.
             </summary>
         </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.MyExplosionStrategy.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BattleField7Namespace.NewGameDesign.GameClasses.MyExplosionStrategy"/> class.
+            </summary>
+        </member>
         <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.MyExplosionStrategy.GetCoordsToDetonateByTheBlast(System.Int32,System.Int32,System.Int32)">
             <summary>
             Gets the coords to detonate by the blast.
             </summary>
             <param name="row">The row.</param>
-            <param name="col">The col.</param>
+            <param name="column">The column.</param>
+            <param name="explosivePower">The explosive power.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.MyExplosionStrategy.GetCoordsToDetonateByTheBlast(BattleField7Namespace.NewGameDesign.Types.Coord2D,System.Int32)">
+            <summary>
+            Gets the coords to detonate by the blast.
+            </summary>
+            <param name="explosionCoords">The explosion coordinates</param>
             <param name="explosivePower">The explosive power.</param>
             <returns>
             The coordinates of the fields to detonate by chain reaction.
             </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">A negative coordinate is out of range
+            or
+            Negative explosive power is out of range</exception>
         </member>
         <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.MyExplosionStrategy.InitializeExplosionRanges">
             <summary>
@@ -191,12 +208,11 @@
             The Stringified battle field.
             </returns>
         </member>
-        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IBattleField.DetonateFieldAtPosition(System.Int32,System.Int32)">
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IBattleField.DetonateFieldAtPosition(BattleField7Namespace.NewGameDesign.Types.Coord2D)">
             <summary>
             Detonates the field at position.
             </summary>
-            <param name="row">The row.</param>
-            <param name="col">The col.</param>
+            <param name="position">The position.</param>
             <returns>
             Count of detonated bombs.
             </returns>
@@ -241,7 +257,10 @@
             Initializes the battle field.
             </summary>
             <param name="size">The size.</param>
-            <returns>The count of the bombs.</returns>
+            <returns>
+            The count of the bombs.
+            </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">Size of BattleField can not be 0 or negative</exception>
         </member>
         <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.StringifyBattleField">
             <summary>
@@ -255,8 +274,16 @@
             <summary>
             Detonates the field at position.
             </summary>
-            <param name="row">The row.</param>
-            <param name="col">The col.</param>
+            <param name="position">The position</param>
+            <returns>
+            Count of detonated bombs.
+            </returns>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.DetonateFieldAtPosition(BattleField7Namespace.NewGameDesign.Types.Coord2D)">
+            <summary>
+            Detonates the field at position.
+            </summary>
+            <param name="position">The position</param>
             <returns>
             Count of detonated bombs.
             </returns>
@@ -284,7 +311,13 @@
             <value>
             The basic field.
             </value>
-            <remarks>Huge security leak! Permits the basic field to have Condition.Bomb</remarks>
+            <exception cref="T:System.ArgumentException">
+            Basic Field of SimpleBattleField can not be null.
+            or
+            Basic Field of SimpleBattleField can not be a bomb.
+            or
+            Basic Field of SimpleBattleField can not have an explosive charge.
+            </exception>
         </member>
         <member name="P:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.ExplosionStrategy">
             <summary>
@@ -335,12 +368,6 @@
             <summary>
             The logger
             </summary>
-        </member>
-        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.RunGame(BattleField7Namespace.NewGameDesign.Interfaces.IUserInterface)">
-            <summary>
-            Runs the game via Poor Man's Dependency Injevtion. Highly Not Recomended.
-            </summary>
-            <param name="userInterface">The user interface.</param>
         </member>
         <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.RunGame(BattleField7Namespace.NewGameDesign.Interfaces.IUserInterface,BattleField7Namespace.NewGameDesign.Interfaces.IBattleField)">
             <summary>
@@ -517,6 +544,46 @@
             The explosive power.
             </value>
             <exception cref="T:System.ArgumentOutOfRangeException">Explosive power of field must be between 0 an 5.</exception>
+        </member>
+        <member name="T:BattleField7Namespace.NewGameDesign.Types.Coord2D">
+            <summary>
+            Represent a 2 dimensional coordinate of non-floating point numbers. It's like a basic type for this application.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.NewGameDesign.Types.Coord2D.row">
+            <summary>
+            The row
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.NewGameDesign.Types.Coord2D.column">
+            <summary>
+            The column
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Types.Coord2D.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BattleField7Namespace.NewGameDesign.Types.Coord2D"/> class.
+            </summary>
+            <param name="row">The row.</param>
+            <param name="col">The col.</param>
+        </member>
+        <member name="P:BattleField7Namespace.NewGameDesign.Types.Coord2D.Row">
+            <summary>
+            Gets or sets the row.
+            </summary>
+            <value>
+            The row.
+            </value>
+            <exception cref="T:System.ArgumentOutOfRangeException">Row can not be a negative number</exception>
+        </member>
+        <member name="P:BattleField7Namespace.NewGameDesign.Types.Coord2D.Column">
+            <summary>
+            Gets or sets the column.
+            </summary>
+            <value>
+            The column.
+            </value>
+            <exception cref="T:System.ArgumentOutOfRangeException">Column can not be a negative number</exception>
         </member>
         <member name="T:BattleField7Namespace.ConsoleUI">
             <summary>

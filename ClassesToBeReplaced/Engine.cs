@@ -10,6 +10,7 @@ namespace BattleField7Namespace
     /// <summary>
     /// Engine that runs the Battle Field 7 game
     /// </summary>
+    [Obsolete]
     internal class Engine
     {
         /// <summary>
