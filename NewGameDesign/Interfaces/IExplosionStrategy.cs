@@ -19,6 +19,6 @@ namespace BattleField7Namespace.NewGameDesign.Interfaces
         /// <returns>
         /// The coordinates of the fields to detonate by chain reaction.
         /// </returns>
-        IList<Coord2D> GetCoordsToDetonateByTheBlast(Coord2D explosionCoords, int explosivePower);
+        IList<Tuple<int, int>> GetCoordsToDetonateByTheBlast(Tuple<int, int> explosionCoords, int explosivePower);
     }
 }

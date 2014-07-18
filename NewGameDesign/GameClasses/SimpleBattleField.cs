@@ -155,10 +155,10 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
             {
                 while (true)
                 {
-                    Coord2D coords = this.GetRandomPosition();
-                    if (this.fields[coords.Row, coords.Column].GetCondition() != Condition.Bomb) //Never satisfied if the object is contructed with a basicField with condition.Bomb; infinite loop!
+                    Tuple<int, int> coords = this.GetRandomPosition();
+                    if (this.fields[coords.Item1, coords.Item2].GetCondition() != Condition.Bomb) //Never satisfied if the object is contructed with a basicField with condition.Bomb; infinite loop!
                     {
-                        this.ConvertFieldToBomb(coords.Row, coords.Column);
+                        this.ConvertFieldToBomb(coords.Item1, coords.Item2);
                         break;
                     }
                 }
@@ -196,7 +196,7 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         /// </returns>
         public int DetonateFieldAtPosition(int row, int column)
         {
-            return this.DetonateFieldAtPosition(new Coord2D(row, column));
+            return this.DetonateFieldAtPosition(Tuple.Create<int, int>(row, column));
         }
 
         /// <summary>
@@ -206,32 +206,32 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         /// <returns>
         /// Count of detonated bombs.
         /// </returns>
-        public int DetonateFieldAtPosition(Coord2D position)
+        public int DetonateFieldAtPosition(Tuple<int, int> position)
         {
-            if (0 > position.Row || position.Row > this.fields.GetLength(0) ||
-                0 > position.Column || position.Column > this.fields.GetLength(1))
+            if (0 > position.Item1 || position.Item1 > this.fields.GetLength(0) ||
+                0 > position.Item2 || position.Item2 > this.fields.GetLength(1))
             {
                 throw new ArgumentOutOfRangeException("the position is out of range.");
             }
 
             int detonatedBombs = 0;
 
-            if (this.fields[position.Row, position.Column].GetCondition() == Condition.Bomb)
+            if (this.fields[position.Item1, position.Item2].GetCondition() == Condition.Bomb)
             {
                 detonatedBombs++;
             }
 
-            int explosivePower = this.fields[position.Row, position.Column].IntentionalDetonate();
-            IList<Coord2D> coordsToDetonate = this.ExplosionStrategy.GetCoordsToDetonateByTheBlast(position, explosivePower);
-            foreach (Coord2D coord in coordsToDetonate)
+            int explosivePower = this.fields[position.Item1, position.Item2].IntentionalDetonate();
+            IList<Tuple<int, int>> coordsToDetonate = this.ExplosionStrategy.GetCoordsToDetonateByTheBlast(position, explosivePower);
+            foreach (Tuple<int, int> coord in coordsToDetonate)
             {
-                if (this.CoordinatesAreValid(coord.Row, coord.Column))
+                if (this.CoordinatesAreValid(coord.Item1, coord.Item2))
                 {
-                    if (this.fields[coord.Row, coord.Column].GetCondition() == Condition.Bomb)
+                    if (this.fields[coord.Item1, coord.Item2].GetCondition() == Condition.Bomb)
                     {
                         detonatedBombs++;
                     }
-                    this.fields[coord.Row, coord.Column].DetonateByChainReaction();
+                    this.fields[coord.Item1, coord.Item2].DetonateByChainReaction();
                 }
             }
             return detonatedBombs;
@@ -249,12 +249,12 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
                 (0 <= col && col < this.fields.GetLength(1));
         }
 
-        private Coord2D GetRandomPosition()
+        private Tuple<int, int> GetRandomPosition()
         {
             Random rnd = new Random();
             int row = rnd.Next(0, this.fields.GetLength(0));
             int col = rnd.Next(0, this.fields.GetLength(1));
-            return new Coord2D(row, col);
+            return Tuple.Create<int, int>(row, col);
         }
 
         private void ConvertFieldToBomb(int row, int col)

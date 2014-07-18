@@ -8,6 +8,7 @@ namespace BattleField7Namespace.NewGameDesign.Types
     /// <summary>
     /// Represent a 2 dimensional coordinate of non-floating point numbers. It's like a basic type for this application.
     /// </summary>
+    [Obsolete]
     public class Coord2D
     {
         /// <summary>

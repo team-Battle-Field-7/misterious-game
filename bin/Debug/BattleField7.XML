@@ -131,7 +131,7 @@
             Logic for getting the coordinates of a blast after detonation of a bomb
             </summary>
         </member>
-        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IExplosionStrategy.GetCoordsToDetonateByTheBlast(BattleField7Namespace.NewGameDesign.Types.Coord2D,System.Int32)">
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IExplosionStrategy.GetCoordsToDetonateByTheBlast(System.Tuple{System.Int32,System.Int32},System.Int32)">
             <summary>
             Gets the coords to detonate by the blast.
             </summary>
@@ -164,7 +164,7 @@
             <param name="explosivePower">The explosive power.</param>
             <returns></returns>
         </member>
-        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleExplosionStrategy.GetCoordsToDetonateByTheBlast(BattleField7Namespace.NewGameDesign.Types.Coord2D,System.Int32)">
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleExplosionStrategy.GetCoordsToDetonateByTheBlast(System.Tuple{System.Int32,System.Int32},System.Int32)">
             <summary>
             Gets the coords to detonate by the blast.
             </summary>
@@ -208,7 +208,7 @@
             The Stringified battle field.
             </returns>
         </member>
-        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IBattleField.DetonateFieldAtPosition(BattleField7Namespace.NewGameDesign.Types.Coord2D)">
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IBattleField.DetonateFieldAtPosition(System.Tuple{System.Int32,System.Int32})">
             <summary>
             Detonates the field at position.
             </summary>
@@ -279,7 +279,7 @@
             Count of detonated bombs.
             </returns>
         </member>
-        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.DetonateFieldAtPosition(BattleField7Namespace.NewGameDesign.Types.Coord2D)">
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.DetonateFieldAtPosition(System.Tuple{System.Int32,System.Int32})">
             <summary>
             Detonates the field at position.
             </summary>

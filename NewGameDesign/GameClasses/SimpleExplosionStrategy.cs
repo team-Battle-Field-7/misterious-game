@@ -19,7 +19,7 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         /// A relative position is represented by an int array of 2 elements - row and column,
         /// witch are to be added to the detonation position in order to get the coordinates of the specified position.
         /// </summary>
-        private List<List<Coord2D>> explosionRangePositionsGroupedByPower;
+        private List<List<Tuple<int, int>>> explosionRangePositionsGroupedByPower;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SimpleExplosionStrategy"/> class.
@@ -36,9 +36,9 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         /// <param name="column">The column.</param>
         /// <param name="explosivePower">The explosive power.</param>
         /// <returns></returns>
-        public IList<Coord2D> GetCoordsToDetonateByTheBlast(int row, int column, int explosivePower)
+        public IList<Tuple<int, int>> GetCoordsToDetonateByTheBlast(int row, int column, int explosivePower)
         {
-            return this.GetCoordsToDetonateByTheBlast(new Coord2D(row, column), explosivePower);
+            return this.GetCoordsToDetonateByTheBlast(Tuple.Create<int, int>(row, column), explosivePower);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         /// <exception cref="System.ArgumentOutOfRangeException">A negative coordinate is out of range
         /// or
         /// Negative explosive power is out of range</exception>
-        public IList<Coord2D> GetCoordsToDetonateByTheBlast(Coord2D explosionCoords, int explosivePower)
+        public IList<Tuple<int, int>> GetCoordsToDetonateByTheBlast(Tuple<int, int> explosionCoords, int explosivePower)
         {
-            if (0 > explosionCoords.Row ||
-                0 > explosionCoords.Column)
+            if (0 > explosionCoords.Item1 ||
+                0 > explosionCoords.Item2)
             {
                 throw new ArgumentOutOfRangeException("An explosion coordinate can not be negative");
             }
@@ -65,15 +65,15 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
                 throw new ArgumentOutOfRangeException("The explosive power can not be negative, or bigger then 5.");
             }
 
-            List<Coord2D> fieldsToDetonate = new List<Coord2D>();
+            List<Tuple<int, int>> fieldsToDetonate = new List<Tuple<int, int>>();
             for (int power = 0; power < explosivePower; power++)
             {
-                foreach (Coord2D relativePosition in this.explosionRangePositionsGroupedByPower[power])
+                foreach (Tuple<int, int> relativePosition in this.explosionRangePositionsGroupedByPower[power])
                 {
 
-                    int row = explosionCoords.Row + relativePosition.Row;
-                    int col = explosionCoords.Column + relativePosition.Column;
-                    Coord2D coords = new Coord2D(row, col);
+                    int row = explosionCoords.Item1 + relativePosition.Item1;
+                    int col = explosionCoords.Item2 + relativePosition.Item2;
+                    Tuple<int, int> coords = Tuple.Create<int, int>(row, col);
                     fieldsToDetonate.Add(coords);
                 }
             }
@@ -86,41 +86,41 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         /// </summary>
         private void InitializeExplosionRanges() // hard coded, but easy to understand and change
         {
-            List<Coord2D> powerLevelOne = new List<Coord2D>();
-            powerLevelOne.Add(new Coord2D(1, 1));
-            powerLevelOne.Add(new Coord2D(-1, 1));
-            powerLevelOne.Add(new Coord2D(1, -1));
-            powerLevelOne.Add(new Coord2D(-1, -1));
+            List<Tuple<int, int>> powerLevelOne = new List<Tuple<int, int>>();
+            powerLevelOne.Add(Tuple.Create<int, int>(1, 1));
+            powerLevelOne.Add(Tuple.Create<int, int>(-1, 1));
+            powerLevelOne.Add(Tuple.Create<int, int>(1, -1));
+            powerLevelOne.Add(Tuple.Create<int, int>(-1, -1));
 
-            List<Coord2D> powerLevelTwo = new List<Coord2D>();
-            powerLevelTwo.Add(new Coord2D(1, 0));
-            powerLevelTwo.Add(new Coord2D(0, 1));
-            powerLevelTwo.Add(new Coord2D(-1, 0));
-            powerLevelTwo.Add(new Coord2D(0, -1));
+            List<Tuple<int, int>> powerLevelTwo = new List<Tuple<int, int>>();
+            powerLevelTwo.Add(Tuple.Create<int, int>(1, 0));
+            powerLevelTwo.Add(Tuple.Create<int, int>(0, 1));
+            powerLevelTwo.Add(Tuple.Create<int, int>(-1, 0));
+            powerLevelTwo.Add(Tuple.Create<int, int>(0, -1));
 
-            List<Coord2D> powerLevelThree = new List<Coord2D>();
-            powerLevelThree.Add(new Coord2D(2, 0));
-            powerLevelThree.Add(new Coord2D(0, 2));
-            powerLevelThree.Add(new Coord2D(-2, 0));
-            powerLevelThree.Add(new Coord2D(0, -2));
+            List<Tuple<int, int>> powerLevelThree = new List<Tuple<int, int>>();
+            powerLevelThree.Add(Tuple.Create<int, int>(2, 0));
+            powerLevelThree.Add(Tuple.Create<int, int>(0, 2));
+            powerLevelThree.Add(Tuple.Create<int, int>(-2, 0));
+            powerLevelThree.Add(Tuple.Create<int, int>(0, -2));
 
-            List<Coord2D> powerLevelFour = new List<Coord2D>();
-            powerLevelFour.Add(new Coord2D(2, 1));
-            powerLevelFour.Add(new Coord2D(-2, 1));
-            powerLevelFour.Add(new Coord2D(2, -1));
-            powerLevelFour.Add(new Coord2D(-2, -1));
-            powerLevelFour.Add(new Coord2D(1, 2));
-            powerLevelFour.Add(new Coord2D(-1, 2));
-            powerLevelFour.Add(new Coord2D(1, -2));
-            powerLevelFour.Add(new Coord2D(-1, -2));
+            List<Tuple<int, int>> powerLevelFour = new List<Tuple<int, int>>();
+            powerLevelFour.Add(Tuple.Create<int, int>(2, 1));
+            powerLevelFour.Add(Tuple.Create<int, int>(-2, 1));
+            powerLevelFour.Add(Tuple.Create<int, int>(2, -1));
+            powerLevelFour.Add(Tuple.Create<int, int>(-2, -1));
+            powerLevelFour.Add(Tuple.Create<int, int>(1, 2));
+            powerLevelFour.Add(Tuple.Create<int, int>(-1, 2));
+            powerLevelFour.Add(Tuple.Create<int, int>(1, -2));
+            powerLevelFour.Add(Tuple.Create<int, int>(-1, -2));
 
-            List<Coord2D> powerLevelFive = new List<Coord2D>();
-            powerLevelFive.Add(new Coord2D(2, 2));
-            powerLevelFive.Add(new Coord2D(-2, 2));
-            powerLevelFive.Add(new Coord2D(2, -2));
-            powerLevelFive.Add(new Coord2D(-2, -2));
+            List<Tuple<int, int>> powerLevelFive = new List<Tuple<int, int>>();
+            powerLevelFive.Add(Tuple.Create<int, int>(2, 2));
+            powerLevelFive.Add(Tuple.Create<int, int>(-2, 2));
+            powerLevelFive.Add(Tuple.Create<int, int>(2, -2));
+            powerLevelFive.Add(Tuple.Create<int, int>(-2, -2));
 
-            this.explosionRangePositionsGroupedByPower = new List<List<Coord2D>>();
+            this.explosionRangePositionsGroupedByPower = new List<List<Tuple<int, int>>>();
             this.explosionRangePositionsGroupedByPower.Add(powerLevelOne);
             this.explosionRangePositionsGroupedByPower.Add(powerLevelTwo);
             this.explosionRangePositionsGroupedByPower.Add(powerLevelThree);

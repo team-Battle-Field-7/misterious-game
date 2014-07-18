@@ -139,7 +139,7 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
             while (this.bombsCount > 0)
             {
                 this.turnsCount++;
-                Coord2D position = GetPositionInput();
+                Tuple<int, int> position = GetPositionInput();
                 int detonatedBombs = this.BattleField.DetonateFieldAtPosition(position);
                 if (detonatedBombs > 0)
                 {
@@ -184,7 +184,7 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         /// Gets the position input.
         /// </summary>
         /// <returns></returns>
-        private Coord2D GetPositionInput()
+        private Tuple<int, int> GetPositionInput()
         {
             int row = -1;
             int col = -1;
@@ -207,7 +207,7 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
                     this.UserInterface.ShowNote("Invalid position input. Try Again. ");
                 }
             }
-            return new Coord2D(row, col);
+            return Tuple.Create<int, int>(row, col);
         }
     }
 }

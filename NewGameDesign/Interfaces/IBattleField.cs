@@ -33,7 +33,7 @@ namespace BattleField7Namespace.NewGameDesign.Interfaces
         /// <returns>
         /// Count of detonated bombs.
         /// </returns>
-        int DetonateFieldAtPosition(Coord2D position);
+        int DetonateFieldAtPosition(Tuple<int, int> position);
 
         /// <summary>
         /// Checks if the given coordinateses are valid.
