@@ -23,6 +23,11 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         private double bombsFrequency = 0.15;
 
         /// <summary>
+        /// The bombs counter.
+        /// </summary>
+        private int bombsCount;
+
+        /// <summary>
         /// The basic field. Used only for cloning.
         /// </summary>
         private IField basicField;
@@ -31,6 +36,8 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         /// The explosion strategy.
         /// </summary>
         private IExplosionStrategy explosionStrategy;
+
+        private ICountObserver observer;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SimpleBattleField" /> class.
@@ -41,6 +48,25 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         {
             this.BasicField = basicField;
             this.ExplosionStrategy = explosionStrategy;
+        }
+
+        /// <summary>
+        /// Gets or sets the bombs count.
+        /// </summary>
+        /// <value>
+        /// The bombs count.
+        /// </value>
+        public int BombsCount
+        {
+            get
+            {
+                return this.bombsCount;
+            }
+            private set
+            {
+                this.bombsCount = value;
+                NotifyObserver();
+            }
         }
 
         /// <summary>
@@ -125,6 +151,23 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         }
 
         /// <summary>
+        /// Attaches the observer.
+        /// </summary>
+        /// <param name="observer">The observer.</param>
+        public void AttachObserver(ICountObserver observer)
+        {
+            this.observer = observer;
+        }
+
+        /// <summary>
+        /// Notifies the observer.
+        /// </summary>
+        public void NotifyObserver()
+        {
+            this.observer.UpdateCount(this.BombsCount);
+        }
+
+        /// <summary>
         /// Initializes the battle field.
         /// </summary>
         /// <param name="size">The size.</param>
@@ -132,7 +175,7 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         /// The count of the bombs.
         /// </returns>
         /// <exception cref="System.ArgumentOutOfRangeException">Size of BattleField can not be 0 or negative</exception>
-        public int InitializeBattleField(int size)
+        public void InitializeBattleField(int size)
         {
             if (0 >= size)
             {
@@ -149,9 +192,9 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
                 }
             }
 
-            int bombCount = (int)(this.BombsFrequency * size * size);
+            this.BombsCount = (int)(this.BombsFrequency * size * size);
 
-            for (int b = 0; b < bombCount; b++)
+            for (int b = 0; b < this.BombsCount; b++)
             {
                 while (true)
                 {
@@ -163,8 +206,6 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
                     }
                 }
             }
-
-            return bombCount;
         }
 
         /// <summary>
@@ -190,7 +231,8 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         /// <summary>
         /// Detonates the field at position.
         /// </summary>
-        /// <param name="position">The position</param>
+        /// <param name="row">The row.</param>
+        /// <param name="column">The column.</param>
         /// <returns>
         /// Count of detonated bombs.
         /// </returns>
@@ -234,6 +276,7 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
                     this.fields[coord.Item1, coord.Item2].DetonateByChainReaction();
                 }
             }
+            this.BombsCount -= detonatedBombs;
             return detonatedBombs;
         }
 

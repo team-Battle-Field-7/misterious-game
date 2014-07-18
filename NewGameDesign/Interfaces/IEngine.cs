@@ -8,7 +8,7 @@ namespace BattleField7Namespace.NewGameDesign.Interfaces
     /// <summary>
     /// The engine runs the main thread of the game;
     /// </summary>
-    public interface IEngine
+    public interface IEngine : ICountObserver
     {
         /// <summary>
         /// Runs the game.

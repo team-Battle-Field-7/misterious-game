@@ -22,7 +22,8 @@ namespace BattleField7UnitTests.NewGameDesignTests
         public void TestValidSizeBattleFieldInitialization()
         {
             var commonBattleField = Utils.NormalBattleFieldGen();
-            var itsBombCount = commonBattleField.InitializeBattleField(-1);
+            commonBattleField.InitializeBattleField(-1);
+            var itsBombCount = commonBattleField.BombsCount;
             Assert.AreEqual(itsBombCount, 0, "A BattleField of negative size shouldn't have any bombs.");
         }
 

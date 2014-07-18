@@ -58,10 +58,12 @@
     <Compile Include="NewGameDesign\GameClasses\SimpleEngine.cs" />
     <Compile Include="NewGameDesign\GameClasses\SimpleField.cs" />
     <Compile Include="NewGameDesign\Interfaces\IBattleField.cs" />
+    <Compile Include="NewGameDesign\Interfaces\ICountNotifier.cs" />
     <Compile Include="NewGameDesign\Interfaces\IEngine.cs" />
     <Compile Include="NewGameDesign\Interfaces\IExplosionStrategy.cs" />
     <Compile Include="NewGameDesign\Interfaces\IField.cs" />
     <Compile Include="ClassesToBeReplaced\Types\Coord2D.cs" />
+    <Compile Include="NewGameDesign\Interfaces\ICountObserver.cs" />
     <Compile Include="NewGameDesign\UIClasses\ConsoleUI.cs" />
     <Compile Include="NewGameDesign\Interfaces\IUserInterface.cs" />
     <Compile Include="ClassesToBeReplaced\Engine.cs" />

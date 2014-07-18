@@ -9,14 +9,14 @@ namespace BattleField7Namespace.NewGameDesign.Interfaces
     /// <summary>
     /// The battle field is a collection of IFields with some methods
     /// </summary>
-    public interface IBattleField
+    public interface IBattleField : ICountNotifier
     {
         /// <summary>
         /// Initializes the battle field.
         /// </summary>
         /// <param name="size">The size.</param>
         /// <returns>The count of the bombs.</returns>
-        int InitializeBattleField(int size);
+        void InitializeBattleField(int size);
 
         /// <summary>
         /// Stringifies the battle field.

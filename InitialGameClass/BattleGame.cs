@@ -13,6 +13,7 @@ namespace BattleField7Namespace.InitialGameClass
     /// Ако ще пренаписваме всичко отначало, поне ще може да сравняваме функционалността с този вариант.
     /// Оставих името Bombi, за да не заемам някое по - подходящо, което да дадем на нов проект. //vnci
     /// </summary>
+    [Obsolete]
     class BattleGame
     {
         int minesDeployed = 0;

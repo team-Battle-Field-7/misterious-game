@@ -24,14 +24,14 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         private IBattleField battleField;
 
         /// <summary>
-        /// The bombs counter.
-        /// </summary>
-        private int bombsCount;
-
-        /// <summary>
         /// The turns counter.
         /// </summary>
         private int turnsCount;
+
+        /// <summary>
+        /// True when the game is over
+        /// </summary>
+        private bool gameIsOver = false;
 
         /// <summary>
         /// The logger
@@ -73,6 +73,7 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
             {
                 // TODO - Should validate
                 this.battleField = value;
+                this.Observe(this.BattleField);
             }
         }
 
@@ -93,6 +94,29 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
             {
                 // TODO - Should validate
                 this.userInterface = value;
+            }
+        }
+
+        /// <summary>
+        /// Observes the specified notifyer.
+        /// </summary>
+        /// <param name="notifyer">The notifyer.</param>
+        public void Observe(ICountNotifier notifyer)
+        {
+            notifyer.AttachObserver(this);
+        }
+
+        /// <summary>
+        /// Updates the count.
+        /// </summary>
+        /// <param name="bombsCount">The bombs count.</param>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public void UpdateCount(int bombsCount)
+        {
+            this.UserInterface.ShowBombsCount(bombsCount);
+            if (bombsCount <= 0)
+            {
+                this.gameIsOver = true;
             }
         }
 
@@ -133,10 +157,9 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
 
             InitializeBattleField();
             this.UserInterface.DrawGame(this.BattleField.StringifyBattleField());
-            this.UserInterface.ShowBombsCount(bombsCount);
             this.UserInterface.ShowTurnsCount(turnsCount);
 
-            while (this.bombsCount > 0)
+            while (!this.gameIsOver)
             {
                 this.turnsCount++;
                 Tuple<int, int> position = GetPositionInput();
@@ -149,10 +172,7 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
                         this.UserInterface.ShowNote("A bomb was detonated by chain reaction");
                     }
                 }
-                this.bombsCount -= detonatedBombs;
-
                 this.UserInterface.DrawGame(this.BattleField.StringifyBattleField());
-                this.UserInterface.ShowBombsCount(bombsCount);
                 this.UserInterface.ShowTurnsCount(turnsCount);
             }
 
@@ -177,7 +197,7 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
                 }
 	        }
 
-            this.bombsCount = this.BattleField.InitializeBattleField(size);
+            this.BattleField.InitializeBattleField(size);
         }
 
         /// <summary>

@@ -193,6 +193,22 @@
             The battle field is a collection of IFields with some methods
             </summary>
         </member>
+        <member name="T:BattleField7Namespace.NewGameDesign.Interfaces.ICountNotifier">
+            <summary>
+            Notifies one or more attached ICountObserver-s
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.ICountNotifier.AttachObserver(BattleField7Namespace.NewGameDesign.Interfaces.ICountObserver)">
+            <summary>
+            Attaches the observer.
+            </summary>
+            <param name="observer">The observer.</param>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.ICountNotifier.NotifyObserver">
+            <summary>
+            Notifies the observer.
+            </summary>
+        </member>
         <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IBattleField.InitializeBattleField(System.Int32)">
             <summary>
             Initializes the battle field.
@@ -235,6 +251,11 @@
             The bombs frequency.
             </summary>
         </member>
+        <member name="F:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.bombsCount">
+            <summary>
+            The bombs counter.
+            </summary>
+        </member>
         <member name="F:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.basicField">
             <summary>
             The basic field. Used only for cloning.
@@ -251,6 +272,17 @@
             </summary>
             <param name="basicField">The basic field.</param>
             <param name="explosionStrategy">The explosion strategy.</param>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.AttachObserver(BattleField7Namespace.NewGameDesign.Interfaces.ICountObserver)">
+            <summary>
+            Attaches the observer.
+            </summary>
+            <param name="observer">The observer.</param>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.NotifyObserver">
+            <summary>
+            Notifies the observer.
+            </summary>
         </member>
         <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.InitializeBattleField(System.Int32)">
             <summary>
@@ -274,7 +306,8 @@
             <summary>
             Detonates the field at position.
             </summary>
-            <param name="position">The position</param>
+            <param name="row">The row.</param>
+            <param name="column">The column.</param>
             <returns>
             Count of detonated bombs.
             </returns>
@@ -295,6 +328,14 @@
             <param name="row">The row.</param>
             <param name="col">The col.</param>
             <returns>True if valid, False if not.</returns>
+        </member>
+        <member name="P:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.BombsCount">
+            <summary>
+            Gets or sets the bombs count.
+            </summary>
+            <value>
+            The bombs count.
+            </value>
         </member>
         <member name="P:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.BombsFrequency">
             <summary>
@@ -337,6 +378,23 @@
             The engine runs the main thread of the game;
             </summary>
         </member>
+        <member name="T:BattleField7Namespace.NewGameDesign.Interfaces.ICountObserver">
+            <summary>
+            Observes one or more ICountNotifier-s
+            </summary>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.ICountObserver.Observe(BattleField7Namespace.NewGameDesign.Interfaces.ICountNotifier)">
+            <summary>
+            Observes the specified notifyer.
+            </summary>
+            <param name="notifyer">The notifyer.</param>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.ICountObserver.UpdateCount(System.Int32)">
+            <summary>
+            Updates the count.
+            </summary>
+            <param name="count">The count.</param>
+        </member>
         <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IEngine.RunGame(BattleField7Namespace.NewGameDesign.Interfaces.IUserInterface,BattleField7Namespace.NewGameDesign.Interfaces.IBattleField)">
             <summary>
             Runs the game.
@@ -354,20 +412,33 @@
             The battle field
             </summary>
         </member>
-        <member name="F:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.bombsCount">
-            <summary>
-            The bombs counter.
-            </summary>
-        </member>
         <member name="F:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.turnsCount">
             <summary>
             The turns counter.
+            </summary>
+        </member>
+        <member name="F:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.gameIsOver">
+            <summary>
+            True when the game is over
             </summary>
         </member>
         <member name="F:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.logger">
             <summary>
             The logger
             </summary>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.Observe(BattleField7Namespace.NewGameDesign.Interfaces.ICountNotifier)">
+            <summary>
+            Observes the specified notifyer.
+            </summary>
+            <param name="notifyer">The notifyer.</param>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.UpdateCount(System.Int32)">
+            <summary>
+            Updates the count.
+            </summary>
+            <param name="bombsCount">The bombs count.</param>
+            <exception cref="T:System.NotImplementedException"></exception>
         </member>
         <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.RunGame(BattleField7Namespace.NewGameDesign.Interfaces.IUserInterface,BattleField7Namespace.NewGameDesign.Interfaces.IBattleField)">
             <summary>
