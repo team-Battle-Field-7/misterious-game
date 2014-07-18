@@ -13,7 +13,7 @@ namespace BattleField7UnitTests.NewGameDesignTests
         public void TestBadBasicFieldConstruct()
         {
             var badBasicField = new SimpleField(Condition.Bomb, Utils.ValidPower());
-            var notOkBattleField = new SimpleBattleField(badBasicField, new MyExplosionStrategy());
+            var notOkBattleField = new SimpleBattleField(badBasicField, new SimpleExplosionStrategy());
             Assert.Fail("Construction of a SimpleBattleField with an explosive basic field shouldn't be allowed. That can brake the initialization logic.");
         }
 

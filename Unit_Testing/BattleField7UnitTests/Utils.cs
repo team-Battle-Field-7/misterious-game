@@ -37,7 +37,7 @@ namespace BattleField7UnitTests
         /// <returns>A <c>SimpleBattleField</c> with an <c>basicField</c> in <c>Condition.Empty</c> and explosive power 0</returns>
         public static SimpleBattleField NormalBattleFieldGen()
         {
-            return new SimpleBattleField(new SimpleField(Condition.Empty, 0), new MyExplosionStrategy());
+            return new SimpleBattleField(new SimpleField(Condition.Empty, 0), new SimpleExplosionStrategy());
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace BattleField7UnitTests
         /// <returns>A <c>SimpleBattleField</c> with an <c>basicField</c> in <c>Condition.Bomb</c> and a valid explosive power. </returns>
         public static SimpleBattleField BrokenBattleFieldGen()
         {
-            return new SimpleBattleField(new SimpleField(Condition.Bomb, Utils.ValidPower()), new MyExplosionStrategy());
+            return new SimpleBattleField(new SimpleField(Condition.Bomb, Utils.ValidPower()), new SimpleExplosionStrategy());
         }
 
         /// <summary>

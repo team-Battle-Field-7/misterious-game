@@ -83,7 +83,7 @@ namespace BattleField7Namespace
             ConsoleUI consoleUI = new ConsoleUI();
             SimpleBattleField battleField = new SimpleBattleField(
                                                 new SimpleField(Condition.Empty, 0),
-                                                new MyExplosionStrategy());
+                                                new SimpleExplosionStrategy());
 
             SimpleEngine engine = new SimpleEngine();
             engine.Logger = this.logger;
@@ -102,7 +102,7 @@ namespace BattleField7Namespace
             WinFormsUI form = new WinFormsUI();
             SimpleBattleField battleField = new SimpleBattleField(
                                                 new SimpleField(Condition.Empty, 0),
-                                                new MyExplosionStrategy());
+                                                new SimpleExplosionStrategy());
 
             Thread formThread = new Thread(
                 delegate()

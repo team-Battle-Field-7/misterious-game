@@ -10,7 +10,7 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
     /// <summary>
     /// /// Logic for getting the coordinates of a blast after detonation of a bomb
     /// </summary>
-    public class MyExplosionStrategy : IExplosionStrategy
+    public class SimpleExplosionStrategy : IExplosionStrategy
     {
         /// <summary>
         /// The explosion range positions grouped by power.
@@ -22,9 +22,9 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         private List<List<Coord2D>> explosionRangePositionsGroupedByPower;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MyExplosionStrategy"/> class.
+        /// Initializes a new instance of the <see cref="SimpleExplosionStrategy"/> class.
         /// </summary>
-        public MyExplosionStrategy()
+        public SimpleExplosionStrategy()
         {
             this.InitializeExplosionRanges();
         }
@@ -59,14 +59,14 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
             {
                 throw new ArgumentOutOfRangeException("An explosion coordinate can not be negative");
             }
-            if (0 > explosivePower)
+            if (0 > explosivePower ||
+                explosivePower > 5)
             {
-                throw new ArgumentOutOfRangeException("The explosive power can not be negative");
+                throw new ArgumentOutOfRangeException("The explosive power can not be negative, or bigger then 5.");
             }
 
             List<Coord2D> fieldsToDetonate = new List<Coord2D>();
-            int maxPower = Math.Min(explosivePower, 5);
-            for (int power = 0; power < maxPower; power++)
+            for (int power = 0; power < explosivePower; power++)
             {
                 foreach (Coord2D relativePosition in this.explosionRangePositionsGroupedByPower[power])
                 {

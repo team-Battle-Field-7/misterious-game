@@ -52,7 +52,7 @@
     <Compile Include="BattleFieldGame.cs" />
     <Compile Include="InitialGameClass\BattleGame.cs" />
     <Compile Include="NewGameDesign\Enumerations\Condition.cs" />
-    <Compile Include="NewGameDesign\GameClasses\MyExplosionStrategy.cs" />
+    <Compile Include="NewGameDesign\GameClasses\SimpleExplosionStrategy.cs" />
     <Compile Include="NewGameDesign\GameClasses\SimpleBattleField.cs" />
     <Compile Include="NewGameDesign\GameClasses\SimpleEngine.cs" />
     <Compile Include="NewGameDesign\GameClasses\SimpleField.cs" />

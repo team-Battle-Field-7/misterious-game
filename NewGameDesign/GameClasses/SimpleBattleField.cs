@@ -208,6 +208,12 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         /// </returns>
         public int DetonateFieldAtPosition(Coord2D position)
         {
+            if (0 > position.Row || position.Row > this.fields.GetLength(0) ||
+                0 > position.Column || position.Column > this.fields.GetLength(1))
+            {
+                throw new ArgumentOutOfRangeException("the position is out of range.");
+            }
+
             int detonatedBombs = 0;
 
             if (this.fields[position.Row, position.Column].GetCondition() == Condition.Bomb)
