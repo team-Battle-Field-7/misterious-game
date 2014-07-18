@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BattleField7Namespace;
 using BattleField7Namespace.NewGameDesign.GameClasses;
+using BattleField7Namespace.NewGameDesign.Enumerations;
 
 namespace BattleField7UnitTests
 {

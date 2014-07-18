@@ -1,8 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BattleField7Namespace;
+using BattleField7Namespace.ClassesToBeReplaced;
+using BattleField7Namespace.NewGameDesign.Enumerations;
 
-namespace BattleField7UnitTests
+namespace BattleField7UnitTests.TestsToBeReplaced
 {
     [TestClass]
     [Obsolete]

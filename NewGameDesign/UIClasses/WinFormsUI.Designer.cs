@@ -1,4 +1,4 @@
-﻿namespace BattleField7Namespace
+﻿namespace BattleField7Namespace.NewGameDesign.UIClasses
 {
     partial class WinFormsUI
     {
@@ -59,7 +59,7 @@
             this.gameFieldGridView.Name = "gameFieldGridView";
             this.gameFieldGridView.Size = new System.Drawing.Size(267, 290);
             this.gameFieldGridView.TabIndex = 5;
-            this.gameFieldGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gameFieldGridView_CellMouseClick);
+            this.gameFieldGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GameFieldGridViewCellMouseClick);
             // 
             // bombsCountLabel
             // 

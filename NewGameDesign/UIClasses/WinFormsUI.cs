@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 
 using BattleField7Namespace.NewGameDesign.Interfaces;
 
-namespace BattleField7Namespace
+namespace BattleField7Namespace.NewGameDesign.UIClasses
 {
     /// <summary>
     /// A Windows Forms game interface
@@ -266,9 +261,6 @@ namespace BattleField7Namespace
                 this.gameFieldGridView.ColumnCount = size;
                 gameFieldIsInitialized = true;
 
-                int width = (int)(gameFieldGridView.Width / (size * 1.2));
-                int height = (int)(gameFieldGridView.Height / (size * 1.2));
-
                 for (int i = 0; i < size; i++)
                 {
                     gameFieldGridView.Columns[i].Width = 
@@ -316,7 +308,7 @@ namespace BattleField7Namespace
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="DataGridViewCellMouseEventArgs"/> instance containing the event data.</param>
-        private void gameFieldGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void GameFieldGridViewCellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (awaitingGameFieldCellSelection)
             {

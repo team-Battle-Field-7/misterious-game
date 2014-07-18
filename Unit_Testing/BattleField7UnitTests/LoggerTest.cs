@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BattleField7Namespace;
+using BattleField7Namespace.NewGameDesign.UIClasses;
 
 namespace BattleField7UnitTests
 {

@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 using BattleField7Namespace.NewGameDesign.Interfaces;
-using BattleField7Namespace.NewGameDesign.Types;
 
 namespace BattleField7Namespace.NewGameDesign.GameClasses
 {

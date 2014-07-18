@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 using BattleField7Namespace.NewGameDesign.Interfaces;
+using BattleField7Namespace.NewGameDesign.Enumerations;
 
-namespace BattleField7Namespace
+namespace BattleField7Namespace.ClassesToBeReplaced
 {
     /// <summary>
     /// Engine that runs the Battle Field 7 game
@@ -41,7 +41,7 @@ namespace BattleField7Namespace
         /// <summary>
         /// The userInterface witch displays the game.
         /// </summary>
-        private IUserInterface userInterface;
+        private readonly IUserInterface userInterface;
 
         /// <summary>
         /// The game field.

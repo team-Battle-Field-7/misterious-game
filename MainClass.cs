@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using BattleField7Namespace.NewGameDesign.UIClasses;
+using System;
 using System.Linq;
-using System.Text;
 
 namespace BattleField7Namespace
 {

@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using BattleField7Namespace.NewGameDesign.Enumerations;
+using System;
 using System.Linq;
-using System.Text;
 
-namespace BattleField7Namespace
+namespace BattleField7Namespace.ClassesToBeReplaced
 {
     /// <summary>
     /// A single field of the Battle Field 7 game.

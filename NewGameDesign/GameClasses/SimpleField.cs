@@ -1,8 +1,7 @@
 ﻿using BattleField7Namespace.NewGameDesign.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using BattleField7Namespace.NewGameDesign.Enumerations;
 
 namespace BattleField7Namespace.NewGameDesign.GameClasses
 {
@@ -24,7 +23,7 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
 	    private int explosivePower;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Field"/> class.
+        /// Initializes a new instance of the <see cref="SimpleField" /> class.
         /// </summary>
         /// <param name="condition">The condition of the field.</param>
         /// <param name="explosivePower">The explosive power.</param>
@@ -108,11 +107,11 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         /// <returns></returns>
         public char ToChar()
         {
-            if (this.Condition == BattleField7Namespace.Condition.BlownUp)
+            if (this.Condition == Condition.BlownUp)
             {
                 return 'X';
             }
-            else if (this.Condition == BattleField7Namespace.Condition.Empty)
+            else if (this.Condition == Condition.Empty)
             {
                 return '-';
             }

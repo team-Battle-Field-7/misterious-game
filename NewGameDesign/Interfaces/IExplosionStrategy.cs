@@ -1,8 +1,6 @@
-﻿using BattleField7Namespace.NewGameDesign.Types;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace BattleField7Namespace.NewGameDesign.Interfaces
 {

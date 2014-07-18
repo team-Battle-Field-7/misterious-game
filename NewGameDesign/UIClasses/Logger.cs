@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.IO;
 using BattleField7Namespace.NewGameDesign.Interfaces;
+using BattleField7Namespace.NewGameDesign.Enumerations;
 
-namespace BattleField7Namespace
+namespace BattleField7Namespace.NewGameDesign.UIClasses
 {
     /// <summary>
     /// Class used for logging to a text file.

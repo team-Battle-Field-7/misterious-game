@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 using BattleField7Namespace.NewGameDesign.Interfaces;
 
-namespace BattleField7Namespace
+namespace BattleField7Namespace.NewGameDesign.UIClasses
 {
     /// <summary>
     /// Draws the game in the console.

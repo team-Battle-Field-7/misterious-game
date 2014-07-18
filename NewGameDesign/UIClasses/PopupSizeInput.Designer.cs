@@ -1,4 +1,4 @@
-﻿namespace BattleField7Namespace
+﻿namespace BattleField7Namespace.NewGameDesign.UIClasses
 {
     partial class PopupSizeInput
     {

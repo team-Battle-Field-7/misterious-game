@@ -4,6 +4,10 @@ using System.Windows.Forms;
 using System.Threading;
 using BattleField7Namespace.NewGameDesign.Interfaces;
 using BattleField7Namespace.NewGameDesign.GameClasses;
+using BattleField7Namespace.ClassesToBeReplaced;
+
+using BattleField7Namespace.NewGameDesign.Enumerations;
+using BattleField7Namespace.NewGameDesign.UIClasses;
 
 namespace BattleField7Namespace
 {

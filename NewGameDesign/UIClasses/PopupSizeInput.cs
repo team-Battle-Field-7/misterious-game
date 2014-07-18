@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
-namespace BattleField7Namespace
+namespace BattleField7Namespace.NewGameDesign.UIClasses
 {
     /// <summary>
     /// A small window used to get the initial game grid size input.

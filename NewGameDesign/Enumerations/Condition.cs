@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace BattleField7Namespace
+namespace BattleField7Namespace.NewGameDesign.Enumerations
 {
     /// <summary>
     /// Condition types for Field

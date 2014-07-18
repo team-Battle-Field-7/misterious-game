@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BattleField7Namespace;
 using BattleField7Namespace.NewGameDesign.GameClasses;
+using BattleField7Namespace.NewGameDesign.Enumerations;
 
 namespace BattleField7UnitTests.NewGameDesignTests
 {
