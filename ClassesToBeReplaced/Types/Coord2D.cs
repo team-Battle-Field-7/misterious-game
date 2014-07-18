@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace BattleField7Namespace.NewGameDesign.Types
+namespace BattleField7Namespace.ClassesToBeReplaced.Types
 {
     /// <summary>
     /// Represent a 2 dimensional coordinate of non-floating point numbers. It's like a basic type for this application.

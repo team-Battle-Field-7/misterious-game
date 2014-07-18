@@ -616,29 +616,29 @@
             </value>
             <exception cref="T:System.ArgumentOutOfRangeException">Explosive power of field must be between 0 an 5.</exception>
         </member>
-        <member name="T:BattleField7Namespace.NewGameDesign.Types.Coord2D">
+        <member name="T:BattleField7Namespace.ClassesToBeReplaced.Types.Coord2D">
             <summary>
             Represent a 2 dimensional coordinate of non-floating point numbers. It's like a basic type for this application.
             </summary>
         </member>
-        <member name="F:BattleField7Namespace.NewGameDesign.Types.Coord2D.row">
+        <member name="F:BattleField7Namespace.ClassesToBeReplaced.Types.Coord2D.row">
             <summary>
             The row
             </summary>
         </member>
-        <member name="F:BattleField7Namespace.NewGameDesign.Types.Coord2D.column">
+        <member name="F:BattleField7Namespace.ClassesToBeReplaced.Types.Coord2D.column">
             <summary>
             The column
             </summary>
         </member>
-        <member name="M:BattleField7Namespace.NewGameDesign.Types.Coord2D.#ctor(System.Int32,System.Int32)">
+        <member name="M:BattleField7Namespace.ClassesToBeReplaced.Types.Coord2D.#ctor(System.Int32,System.Int32)">
             <summary>
-            Initializes a new instance of the <see cref="T:BattleField7Namespace.NewGameDesign.Types.Coord2D"/> class.
+            Initializes a new instance of the <see cref="T:BattleField7Namespace.ClassesToBeReplaced.Types.Coord2D"/> class.
             </summary>
             <param name="row">The row.</param>
             <param name="col">The col.</param>
         </member>
-        <member name="P:BattleField7Namespace.NewGameDesign.Types.Coord2D.Row">
+        <member name="P:BattleField7Namespace.ClassesToBeReplaced.Types.Coord2D.Row">
             <summary>
             Gets or sets the row.
             </summary>
@@ -647,7 +647,7 @@
             </value>
             <exception cref="T:System.ArgumentOutOfRangeException">Row can not be a negative number</exception>
         </member>
-        <member name="P:BattleField7Namespace.NewGameDesign.Types.Coord2D.Column">
+        <member name="P:BattleField7Namespace.ClassesToBeReplaced.Types.Coord2D.Column">
             <summary>
             Gets or sets the column.
             </summary>
