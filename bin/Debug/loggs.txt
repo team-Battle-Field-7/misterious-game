@@ -45,5 +45,3 @@ Parameter name: Row can not be a negative number
 [07.18.14 13:01:18] [Program Started]
 [07.18.14 13:01:36] [Program Started]
 [07.18.14 13:04:30] [Program Started]
-[07.26.14 17:00:30] [Program Started]
-[07.26.14 21:54:36] [Program Started]
