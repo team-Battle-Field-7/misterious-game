@@ -61,5 +61,11 @@ namespace BattleField7Namespace.NewGameDesign.Interfaces
         /// </summary>
         /// <param name="count">The count.</param>
         void ShowTurnsCount(int count);
+
+        /// <summary>
+        /// Explicit implementation of ICloneable for IUserInterface object
+        /// </summary>
+        /// <returns>a deep copy of the current IUserInterface</returns>
+        IUserInterface Clone();
     }
 }

@@ -8,7 +8,7 @@ namespace BattleField7Namespace.NewGameDesign.UIClasses
     /// <summary>
     /// Draws the game in the console.
     /// </summary>
-    class ConsoleUI : IUserInterface
+    public class ConsoleUI : IUserInterface
     {
         /// <summary>
         /// Draws the game in the console.
@@ -111,6 +111,11 @@ namespace BattleField7Namespace.NewGameDesign.UIClasses
         public void ShowTurnsCount(int count)
         {
             // Do Nothing
+        }
+
+        public IUserInterface Clone()
+        {
+            return new ConsoleUI();
         }
     }
 }

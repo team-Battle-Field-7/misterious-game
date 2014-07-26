@@ -243,6 +243,11 @@ namespace BattleField7Namespace.NewGameDesign.UIClasses
             }
         }
 
+        public IUserInterface Clone()
+        {
+            return new WinFormsUI();
+        }
+
         /// <summary>
         /// Sets the size of the game field.
         /// </summary>

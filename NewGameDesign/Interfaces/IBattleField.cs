@@ -39,5 +39,11 @@ namespace BattleField7Namespace.NewGameDesign.Interfaces
         /// <param name="col">The col.</param>
         /// <returns>True if valid, False if not.</returns>
         bool CoordinatesAreValid(int row, int col);
+
+        /// <summary>
+        /// Explicit implementation of ICloneable for IBallefield objects
+        /// </summary>
+        /// <returns>A deep copy ot the surrent IBattleField</returns>
+        IBattleField Clone();
     }
 }

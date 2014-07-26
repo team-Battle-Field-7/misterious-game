@@ -64,7 +64,7 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
             get
             {
                 // TODO - Should rerturn a clone.
-                return this.battleField;
+                return this.battleField.Clone();
             }
             set
             {
@@ -85,7 +85,7 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
             get
             {
                 // TODO - Should rerturn a clone.
-                return this.userInterface;
+                return this.userInterface.Clone();
             }
             set
             {
