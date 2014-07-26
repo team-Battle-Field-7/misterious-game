@@ -10,9 +10,10 @@ D:\C#\GitReps\misterious-game\obj\x86\Debug\BattleField7.exe
 D:\C#\GitReps\misterious-game\obj\x86\Debug\BattleField7.pdb
 D:\C#\GitReps\misterious-game\bin\Debug\BattleField7.exe
 D:\C#\GitReps\misterious-game\bin\Debug\BattleField7.pdb
-D:\C#\GitReps\misterious-game\obj\x86\Debug\BattleField7Namespace.PopupSizeInput.resources
 D:\C#\GitReps\misterious-game\obj\x86\Debug\BattleField7Namespace.Properties.Resources.resources
-D:\C#\GitReps\misterious-game\obj\x86\Debug\BattleField7Namespace.WinFormsUI.resources
 D:\C#\GitReps\misterious-game\obj\x86\Debug\BattleField7.csproj.GenerateResource.Cache
 D:\git\misterious-game\obj\x86\Debug\BattleField7Namespace.NewGameDesign.UIClasses.PopupSizeInput.resources
 D:\git\misterious-game\obj\x86\Debug\BattleField7Namespace.NewGameDesign.UIClasses.WinFormsUI.resources
+D:\C#\GitReps\misterious-game\obj\x86\Debug\BattleField7.csprojResolveAssemblyReference.cache
+D:\C#\GitReps\misterious-game\obj\x86\Debug\BattleField7Namespace.NewGameDesign.UIClasses.PopupSizeInput.resources
+D:\C#\GitReps\misterious-game\obj\x86\Debug\BattleField7Namespace.NewGameDesign.UIClasses.WinFormsUI.resources
