@@ -433,6 +433,18 @@
             The logger
             </summary>
         </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.GetBattleField">
+            <summary>
+            Gets a copy of the battle field.
+            </summary>
+            <returns>A deep copy of the battle field</returns>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.GetUserInterface">
+            <summary>
+            Gets a copy of the user interface.
+            </summary>
+            <returns>A deep copy of the user interface</returns>
+        </member>
         <member name="M:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.Observe(BattleField7Namespace.NewGameDesign.Interfaces.ICountNotifier)">
             <summary>
             Observes the specified notifyer.
@@ -466,7 +478,7 @@
         </member>
         <member name="P:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.Logger">
             <summary>
-            Gets or sets the logger.
+            Gets or sets the logger by reference.
             </summary>
             <value>
             The logger.
@@ -479,6 +491,9 @@
             <value>
             The battle field.
             </value>
+            <remarks>The getter returns a reference instead of a clone.
+            The purpose of this is to avoid the two-way dependency loophole with <c>SimpleBattleField</c>.
+            </remarks>
         </member>
         <member name="P:BattleField7Namespace.NewGameDesign.GameClasses.SimpleEngine.UserInterface">
             <summary>
@@ -487,6 +502,9 @@
             <value>
             The user interface.
             </value>
+            <remarks>The getter returns a reference instead of a clone.
+            The purpose of this is to avoid the two-way dependency loophole with <c>SimpleBattleField</c>.
+            </remarks>
         </member>
         <member name="T:BattleField7Namespace.NewGameDesign.GameClasses.SimpleField">
             <summary>
@@ -1311,6 +1329,57 @@
             Delegate used to safely access the message area of the form, from the thread of the game.
             </summary>
             <param name="message">The message.</param>
+        </member>
+        <member name="M:BattleField7UnitTests.TestUtils.ValidPower">
+            <summary>
+            Provides random nonzero explosive power for a field
+            </summary>
+            <returns>An int between 1 and 5</returns>
+        </member>
+        <member name="M:BattleField7UnitTests.TestUtils.ValidSize(System.Int32)">
+            <summary>
+            Provides a random nonzero battlefield size.
+            </summary>
+            <param name="lowerBound">The minimal size of the test battlefield needed</param>
+            <returns>An int between <paramref name="lowerBound"/> and 10</returns>
+        </member>
+        <member name="M:BattleField7UnitTests.TestUtils.NormalBattleFieldGen">
+            <summary>
+            Provides a regular <c>SimpleBattleField</c> object, the way it would be usually created.
+            </summary>
+            <returns>A <c>SimpleBattleField</c> with an <c>basicField</c> in <c>Condition.Empty</c> and explosive power 0</returns>
+        </member>
+        <member name="M:BattleField7UnitTests.TestUtils.BrokenBattleFieldGen">
+            <summary>
+            Provides an odd <c>SimpleBattleField</c> object, the way it would never be created but would be accepted by the assembly
+            </summary>
+            <returns>A <c>SimpleBattleField</c> with an <c>basicField</c> in <c>Condition.Bomb</c> and a valid explosive power. </returns>
+        </member>
+        <member name="M:BattleField7UnitTests.TestUtils.ContentEquals``1(``0[0:,0:],``0[0:,0:])">
+            <summary>
+            Compares 2D arrays element by element
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns><c>false</c> if any two elements at the same coorfinates don't match</returns>
+        </member>
+        <member name="M:BattleField7UnitTests.TestUtils.TryFindEdgeBomb(BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField,System.Tuple{System.Int32,System.Int32}@)">
+            <summary>
+            Searches for and identifies of a bomb that's at an edge of a battlefield
+            for test purposes.
+            </summary>
+            <param name="battleField">A PRE-INITIALIZED SimpleBattleField object</param>
+            <returns>True or false depending on whether such a bomb was found</returns>
+            <remarks>Optimized for rectangular battlefields as well, not just square ones.</remarks>
+            <note>Uses <c>StringifyBattleField</c> to find bomb's coordinates</note>
+        </member>
+        <member name="M:BattleField7UnitTests.TestUtils.BombCount(BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField)">
+            <summary>
+            Finds the number of bombs in a battlefield
+            </summary>
+            <param name="testField">A PRE-INITIALIZED SimpleBattleField object</param>
+            <returns>The count of all digit characters returned by <c>StringifyBattleField</c></returns>
         </member>
     </members>
 </doc>

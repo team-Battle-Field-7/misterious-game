@@ -6,7 +6,7 @@ using BattleField7Namespace.NewGameDesign.UIClasses;
 
 namespace BattleField7UnitTests
 {
-    public static class Utils
+    public static class TestUtils
     {
         /// <summary>
         /// Provides random nonzero explosive power for a field
@@ -50,7 +50,7 @@ namespace BattleField7UnitTests
         {
             var dummyEngine = new SimpleEngine();
             dummyEngine.UserInterface = new ConsoleUI();
-            var testBattleField = new SimpleBattleField(new SimpleField(Condition.Bomb, Utils.ValidPower()), new SimpleExplosionStrategy());
+            var testBattleField = new SimpleBattleField(new SimpleField(Condition.Bomb, TestUtils.ValidPower()), new SimpleExplosionStrategy());
             dummyEngine.BattleField = testBattleField;
             return (SimpleBattleField)dummyEngine.BattleField;
         }
@@ -84,7 +84,7 @@ namespace BattleField7UnitTests
         }
 
         /// <summary>
-        /// Searched for and identifies of a bomb that's at an edge of a battlefield
+        /// Searches for and identifies of a bomb that's at an edge of a battlefield
         /// for test purposes.
         /// </summary>
         /// <param name="battleField">A PRE-INITIALIZED SimpleBattleField object</param>
@@ -117,7 +117,7 @@ namespace BattleField7UnitTests
                     return true;
                 }
 
-                if (Char.IsDigit(fieldView[fieldView.GetLength(0), i]))
+                if (Char.IsDigit(fieldView[fieldView.GetLength(0) - 1, i]))
                 {
                     resultCoords = new Tuple<int, int>(fieldView.GetLength(0), i);
                     return true;

@@ -89,6 +89,7 @@
     <Compile Include="NewGameDesign\UIClasses\WinFormsUI.Designer.cs">
       <DependentUpon>WinFormsUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="TestUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="NewGameDesign\UIClasses\PopupSizeInput.resx">

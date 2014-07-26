@@ -12,7 +12,7 @@ namespace BattleField7UnitTests.NewGameDesignTests
         [ExpectedException(typeof(ArgumentException))]
         public void TestBadBasicFieldConstruct()
         {
-            var badBasicField = new SimpleField(Condition.Bomb, Utils.ValidPower());
+            var badBasicField = new SimpleField(Condition.Bomb, TestUtils.ValidPower());
             var notOkBattleField = new SimpleBattleField(badBasicField, new SimpleExplosionStrategy());
             Assert.Fail("Construction of a SimpleBattleField with an explosive basic field shouldn't be allowed. That can brake the initialization logic.");
         }
@@ -21,7 +21,7 @@ namespace BattleField7UnitTests.NewGameDesignTests
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void TestValidSizeBattleFieldInitialization()
         {
-            var commonBattleField = Utils.NormalBattleFieldGen();
+            var commonBattleField = TestUtils.NormalBattleFieldGen();
             commonBattleField.InitializeBattleField(-1);
             var itsBombCount = commonBattleField.BombsCount;
             Assert.AreEqual(itsBombCount, 0, "A BattleField of negative size shouldn't have any bombs.");
@@ -30,19 +30,19 @@ namespace BattleField7UnitTests.NewGameDesignTests
         [TestMethod]
         public void TestMultipleBattleFieldInitializations()
         {
-            var testField = Utils.NormalBattleFieldGen();
-            var size = Utils.ValidSize();
+            var testField = TestUtils.NormalBattleFieldGen();
+            var size = TestUtils.ValidSize();
             testField.InitializeBattleField(size);
-            int bombCount1 = Utils.BombCount(testField);
+            int bombCount1 = TestUtils.BombCount(testField);
             testField.InitializeBattleField(size);
-            int bombCount2 = Utils.BombCount(testField);
-            Assert.AreEqual(bombCount1, bombCount2, "Initializing a battlefield a second time shouldn't affect the bomb count.");
+            int bombCount2 = TestUtils.BombCount(testField);
+            Assert.AreEqual(bombCount1, bombCount2, "Initializing a battlefield a second time shouldn't affect the bomb count. Size: " + size);
         }
 
         [TestMethod]
         public void TestStringifyBattleField()
         {
-            var battleField = Utils.NormalBattleFieldGen();
+            var battleField = TestUtils.NormalBattleFieldGen();
             battleField.InitializeBattleField(1);
 
             var actual = battleField.StringifyBattleField();
@@ -56,25 +56,25 @@ namespace BattleField7UnitTests.NewGameDesignTests
         [TestMethod]
         public void TestDetonateFieldAtPosition()
         {
-            var testBattleField = Utils.NormalBattleFieldGen();
-            var size = Utils.ValidSize(4); //If the size is less than 4, we may have no bombs put in the field.
+            var testBattleField = TestUtils.NormalBattleFieldGen();
+            var size = TestUtils.ValidSize(4); //If the size is less than 4, we may have no bombs put in the field.
             testBattleField.InitializeBattleField(size);
 
             Tuple<int, int> foundBombCoords;
-            bool bombFound = Utils.TryFindEdgeBomb(testBattleField, out foundBombCoords);
+            bool bombFound = TestUtils.TryFindEdgeBomb(testBattleField, out foundBombCoords);
             while (!bombFound)
             {
                 testBattleField.InitializeBattleField(size); //It's not important whether InitializeBattleField adds more bombs, as long as it puts at least one of them on an edge.
-                bombFound = Utils.TryFindEdgeBomb(testBattleField, out foundBombCoords);
+                bombFound = TestUtils.TryFindEdgeBomb(testBattleField, out foundBombCoords);
             }
 
-            Assert.IsTrue(testBattleField.DetonateFieldAtPosition(foundBombCoords.Item1, foundBombCoords.Item2) > 0);
+            Assert.IsTrue(testBattleField.DetonateFieldAtPosition(foundBombCoords.Item1, foundBombCoords.Item2) > 0, "Error with size " + size);
         }
 
         [TestMethod]
         public void TestCoordinatesAreValid()
         {
-            var testBattleField = Utils.NormalBattleFieldGen();
+            var testBattleField = TestUtils.NormalBattleFieldGen();
             testBattleField.InitializeBattleField(1);
             Assert.IsTrue(testBattleField.CoordinatesAreValid(0, 0), "CoordinatesAreValid gives false-negative results");
             Assert.IsFalse(testBattleField.CoordinatesAreValid(0, 1), "CoordinatesAreValid gives false-positive results (max columns + 1)");

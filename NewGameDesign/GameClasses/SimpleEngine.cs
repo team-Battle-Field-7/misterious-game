@@ -36,12 +36,12 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         private ILogger logger;
 
         /// <summary>
-        /// Gets or sets the logger.
+        /// Gets or sets the logger by reference.
         /// </summary>
         /// <value>
         /// The logger.
         /// </value>
-        public ILogger Logger
+        internal ILogger Logger
         {
             get
             {
@@ -54,44 +54,22 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
         }
 
         /// <summary>
-        /// Gets or sets the battle field.
+        /// Gets a copy of the battle field.
         /// </summary>
-        /// <value>
-        /// The battle field.
-        /// </value>
-        public IBattleField BattleField
+        /// <returns>A deep copy of the battle field</returns>
+        public IBattleField GetBattleField()
         {
-            get
-            {
-                // TODO - Should rerturn a clone.
-                return this.battleField.Clone();
-            }
-            set
-            {
-                // TODO - Should validate
-                this.battleField = value;
-                this.Observe(this.BattleField);
-            }
+            return this.battleField.Clone();
         }
 
+
         /// <summary>
-        /// Gets or sets the user interface.
+        /// Gets a copy of the user interface.
         /// </summary>
-        /// <value>
-        /// The user interface.
-        /// </value>
-        public IUserInterface UserInterface
+        /// <returns>A deep copy of the user interface</returns>
+        public IUserInterface GetUserInterface()
         {
-            get
-            {
-                // TODO - Should rerturn a clone.
-                return this.userInterface.Clone();
-            }
-            set
-            {
-                // TODO - Should validate
-                this.userInterface = value;
-            }
+            return this.userInterface.Clone();
         }
 
         /// <summary>
@@ -174,6 +152,53 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
             }
 
             this.UserInterface.ShowCongratulations("You beat the game in " + this.turnsCount + " turns. Congrats!");
+        }
+
+        /// <summary>
+        /// Gets or sets the battle field.
+        /// </summary>
+        /// <value>
+        /// The battle field.
+        /// </value>
+        /// <remarks>The getter returns a reference instead of a clone.
+        /// The purpose of this is to avoid the two-way dependency loophole with <c>SimpleBattleField</c>.
+        /// </remarks>
+        internal IBattleField BattleField
+        {
+            get
+            {
+                // TODO - Should rerturn a clone.
+                return this.battleField;
+            }
+            set
+            {
+                // TODO - Should validate
+                this.battleField = value;
+                this.Observe(this.battleField);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the user interface.
+        /// </summary>
+        /// <value>
+        /// The user interface.
+        /// </value>
+        /// <remarks>The getter returns a reference instead of a clone.
+        /// The purpose of this is to avoid the two-way dependency loophole with <c>SimpleBattleField</c>.
+        /// </remarks>
+        internal IUserInterface UserInterface
+        {
+            get
+            {
+                // TODO - Should rerturn a clone.
+                return this.userInterface;
+            }
+            set
+            {
+                // TODO - Should validate
+                this.userInterface = value;
+            }
         }
 
         /// <summary>
