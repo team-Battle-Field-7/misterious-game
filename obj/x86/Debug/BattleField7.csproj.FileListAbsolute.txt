@@ -14,6 +14,5 @@ D:\C#\GitReps\misterious-game\obj\x86\Debug\BattleField7Namespace.Properties.Res
 D:\C#\GitReps\misterious-game\obj\x86\Debug\BattleField7.csproj.GenerateResource.Cache
 D:\git\misterious-game\obj\x86\Debug\BattleField7Namespace.NewGameDesign.UIClasses.PopupSizeInput.resources
 D:\git\misterious-game\obj\x86\Debug\BattleField7Namespace.NewGameDesign.UIClasses.WinFormsUI.resources
-D:\C#\GitReps\misterious-game\obj\x86\Debug\BattleField7.csprojResolveAssemblyReference.cache
 D:\C#\GitReps\misterious-game\obj\x86\Debug\BattleField7Namespace.NewGameDesign.UIClasses.PopupSizeInput.resources
 D:\C#\GitReps\misterious-game\obj\x86\Debug\BattleField7Namespace.NewGameDesign.UIClasses.WinFormsUI.resources

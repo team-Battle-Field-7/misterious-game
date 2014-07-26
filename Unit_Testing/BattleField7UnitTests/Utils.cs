@@ -2,6 +2,7 @@
 using System.Linq;
 using BattleField7Namespace.NewGameDesign.GameClasses;
 using BattleField7Namespace.NewGameDesign.Enumerations;
+using BattleField7Namespace.NewGameDesign.UIClasses;
 
 namespace BattleField7UnitTests
 {
@@ -34,7 +35,11 @@ namespace BattleField7UnitTests
         /// <returns>A <c>SimpleBattleField</c> with an <c>basicField</c> in <c>Condition.Empty</c> and explosive power 0</returns>
         public static SimpleBattleField NormalBattleFieldGen()
         {
-            return new SimpleBattleField(new SimpleField(Condition.Empty, 0), new SimpleExplosionStrategy());
+            var dummyEngine = new SimpleEngine();
+            dummyEngine.UserInterface = new ConsoleUI();
+            var testBattleField = new SimpleBattleField(new SimpleField(Condition.Empty, 0), new SimpleExplosionStrategy());
+            dummyEngine.BattleField = testBattleField;
+            return (SimpleBattleField)dummyEngine.BattleField;
         }
 
         /// <summary>
@@ -43,7 +48,11 @@ namespace BattleField7UnitTests
         /// <returns>A <c>SimpleBattleField</c> with an <c>basicField</c> in <c>Condition.Bomb</c> and a valid explosive power. </returns>
         public static SimpleBattleField BrokenBattleFieldGen()
         {
-            return new SimpleBattleField(new SimpleField(Condition.Bomb, Utils.ValidPower()), new SimpleExplosionStrategy());
+            var dummyEngine = new SimpleEngine();
+            dummyEngine.UserInterface = new ConsoleUI();
+            var testBattleField = new SimpleBattleField(new SimpleField(Condition.Bomb, Utils.ValidPower()), new SimpleExplosionStrategy());
+            dummyEngine.BattleField = testBattleField;
+            return (SimpleBattleField)dummyEngine.BattleField;
         }
 
         /// <summary>

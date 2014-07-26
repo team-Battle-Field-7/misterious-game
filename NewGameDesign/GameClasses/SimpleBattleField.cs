@@ -291,6 +291,11 @@ namespace BattleField7Namespace.NewGameDesign.GameClasses
                 (0 <= col && col < this.fields.GetLength(1));
         }
 
+        public IBattleField Clone()
+        {
+            return new SimpleBattleField(this.basicField, this.explosionStrategy);
+        }
+
         private Tuple<int, int> GetRandomPosition()
         {
             Random rnd = new Random();

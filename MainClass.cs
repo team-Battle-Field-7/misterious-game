@@ -21,8 +21,8 @@ namespace BattleField7Namespace
                 //game.RunNewConsoleVersion();
                 //game.RunNewWinFormsVersion();
 
-                //game.RunTheNewDesignVersionInTheConsole();
-                game.RunTheNewDesignVersionInWinForms();
+                game.RunTheNewDesignVersionInTheConsole();
+                //game.RunTheNewDesignVersionInWinForms();
             }
             catch (Exception ex)
             {

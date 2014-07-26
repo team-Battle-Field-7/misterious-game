@@ -241,6 +241,12 @@
             <param name="col">The col.</param>
             <returns>True if valid, False if not.</returns>
         </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IBattleField.Clone">
+            <summary>
+            Explicit implementation of ICloneable for IBallefield objects
+            </summary>
+            <returns>A deep copy ot the surrent IBattleField</returns>
+        </member>
         <member name="F:BattleField7Namespace.NewGameDesign.GameClasses.SimpleBattleField.fields">
             <summary>
             The fields of the battle field.
@@ -719,6 +725,12 @@
             Shows the turns count.
             </summary>
             <param name="count">The count.</param>
+        </member>
+        <member name="M:BattleField7Namespace.NewGameDesign.Interfaces.IUserInterface.Clone">
+            <summary>
+            Explicit implementation of ICloneable for IUserInterface object
+            </summary>
+            <returns>a deep copy of the current IUserInterface</returns>
         </member>
         <member name="M:BattleField7Namespace.NewGameDesign.UIClasses.ConsoleUI.DrawGame(System.Char[0:,0:])">
             <summary>
